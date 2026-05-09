@@ -13,7 +13,7 @@ var attacking = false
 
 var food = 100.0 :
 	set(value):
-		$CanvasLayer/Control/ProgressBar.value = (value)
+		$CanvasLayer/Control/food.value = (value)
 		food = value
 var food_is_there : Area3D
 
@@ -25,6 +25,10 @@ const AMMO_MAX = 100
 
 var jumping = false
 
+var hp = 100.0:
+	set(value):
+		hp = value
+		$CanvasLayer/Control/hp.value = value
 
 
 var eating = false
