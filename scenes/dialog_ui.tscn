@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dyx5tlwujgruq"]
+
+[ext_resource type="Script" uid="uid://bg6l5u8bs2wxn" path="res://scripts/dialog.gd" id="1_xh3aw"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2041204070]
+script = ExtResource("1_xh3aw")
+
+[node name="Control" type="Control" parent="." unique_id=741444608]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=396381139]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.35000002
+offset_right = 1.0
+offset_bottom = 0.19998169
+
+[node name="label" type="RichTextLabel" parent="Control/Panel" unique_id=913491096]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
