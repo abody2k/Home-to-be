@@ -7,6 +7,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yc5nw"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_i6vl1"]
+radius = 1.0
 
 [node name="mc" type="CharacterBody3D" unique_id=2014978484 groups=["mc"]]
 script = ExtResource("1_yc5nw")
@@ -20,6 +21,7 @@ shape = SubResource("CapsuleShape3D_yc5nw")
 [node name="arm" type="SpringArm3D" parent="." unique_id=1546736937]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9819951, 0)
 shape = SubResource("SphereShape3D_i6vl1")
-spring_length = 7.0
+spring_length = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="arm" unique_id=1486056207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)

@@ -2,7 +2,20 @@
 
 [ext_resource type="Texture2D" uid="uid://6i5w6aj85ty4" path="res://3D/home_house_BaseColor.png" id="1_bwc8c"]
 [ext_resource type="Texture2D" uid="uid://dckxcjcha2k7f" path="res://3D/home_door_BaseColor.png" id="4_qcuhb"]
+[ext_resource type="PackedScene" uid="uid://d4gibrj0qhoaf" path="res://scenes/mc.tscn" id="4_se78b"]
 [ext_resource type="Texture2D" uid="uid://blw8gy1s3ccjw" path="res://3D/home_proch_BaseColor.png" id="7_bhgw4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3bgk5"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_f74lx"]
+sky_material = SubResource("ProceduralSkyMaterial_3bgk5")
+
+[sub_resource type="Environment" id="Environment_ptc3g"]
+background_mode = 2
+sky = SubResource("Sky_f74lx")
+tonemap_mode = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3boy4"]
 resource_name = "house"
@@ -175,8 +188,15 @@ data = PackedVector3Array(0.1616, 0.25, -0.1338, 0.1592, 0.2751, -0.1519, 0.1616
 
 [node name="StaticBody3D" type="StaticBody3D" unique_id=239885512]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1849541713]
+environment = SubResource("Environment_ptc3g")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1616684113]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
 [node name="Plane_026" type="MeshInstance3D" parent="." unique_id=1589963603]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.6287688, 0, 0, 0)
+transform = Transform3D(29.993277, 0, 0, 0, 29.993277, 0, 0, 0, 18.858835, 0, 6.7379184, -11.777201)
 mesh = SubResource("ArrayMesh_82h1m")
 
 [node name="Cube_008" type="MeshInstance3D" parent="Plane_026" unique_id=468857809]
@@ -190,3 +210,6 @@ mesh = SubResource("ArrayMesh_ep1bp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=775536952]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.6287688, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_rk7hg")
+
+[node name="mc" parent="." unique_id=2014978484 instance=ExtResource("4_se78b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11218542, -0.11983162, 0.71076334)
