@@ -24,6 +24,8 @@ var jumping = false
 
 
 
+
+
 func eat_food(food_value):
 	
 	if food_value + food > 100.0:

@@ -12,6 +12,7 @@ radius = 1.0
 [sub_resource type="BoxMesh" id="BoxMesh_yc5nw"]
 
 [node name="mc" type="CharacterBody3D" unique_id=2014978484 groups=["mc"]]
+collision_layer = 2
 script = ExtResource("1_yc5nw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=758614270]
