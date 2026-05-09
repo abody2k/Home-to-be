@@ -39,4 +39,9 @@ mesh = SubResource("BoxMesh_yc5nw")
 wait_time = 0.09
 one_shot = true
 
+[node name="jumping" type="Timer" parent="." unique_id=1772532581]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="jumping" to="." method="_on_jumping_timeout"]

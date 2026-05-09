@@ -16,6 +16,9 @@ var ammo = 10
 
 const AMMO_MAX = 100
 
+var jumping = false
+
+
 
 func add_ammo(number_of_bullets):
 	
@@ -71,15 +74,40 @@ func _input(event):
 var up_down = 0
 var left_right = 0
 
+var jump_vector = Vector3.ZERO
+
 func _physics_process(delta):
+	
+	if jumping:
+		
+		velocity = jump_vector
+		move_and_slide()
+		return
+		
 	up_down = -Input.get_axis("backward","forward")
 	left_right = Input.get_axis("left","right")
+	
+	
+
+		
+	if Input.is_action_just_pressed("jump"):
+		jumping = true
+		jump_vector = transform.basis.z * up_down  + transform.basis.x * left_right + Vector3.UP
+		jump_vector *= SPEED
+		$jumping.start()
+		return
 	if up_down == 0 and left_right ==0 :
-		velocity = Vector3.ZERO
+		velocity = Vector3.DOWN * 4
+		move_and_slide()
+		return
+		
 	velocity = transform.basis.z * up_down
 	velocity += transform.basis.x * left_right
+	
 	velocity *= SPEED
 	move_and_slide()
+	
+
 	
 	if aiming:
 		$aim.rotation = $arm.rotation
@@ -90,3 +118,7 @@ func _physics_process(delta):
 
 func _on_timer_timeout():
 	attacking = false
+
+
+func _on_jumping_timeout():
+	jumping = false
