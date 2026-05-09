@@ -11,6 +11,8 @@ var aiming=false
 var attacking = false
 
 
+var food = 100.0
+
 
 var ammo = 10
 
@@ -18,6 +20,15 @@ const AMMO_MAX = 100
 
 var jumping = false
 
+
+
+func eat_food(food_value):
+	
+	if food_value + food > 100.0:
+		food = 100.0
+	else:
+		food+=food_value
+	
 
 
 func add_ammo(number_of_bullets):
