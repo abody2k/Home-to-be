@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ckpime2okaobd" path="res://scripts/mc.gd" id="1_yc5nw"]
 [ext_resource type="Texture2D" uid="uid://em34tq2genen" path="res://icon.svg" id="2_i6vl1"]
+[ext_resource type="PackedScene" uid="uid://dyx5tlwujgruq" path="res://scenes/dialog_ui.tscn" id="3_a6s5m"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hy1be"]
 
@@ -95,6 +96,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "10"
 fit_content = true
+
+[node name="dialog" parent="." unique_id=2041204070 instance=ExtResource("3_a6s5m")]
+dialogs = ["How are we doing essay?", "No problemo", "Hola senior"]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="jumping" to="." method="_on_jumping_timeout"]
