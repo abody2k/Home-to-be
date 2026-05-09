@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://crp6p76ey1vfk"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2glmo"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xven1"]
+
+[node name="food" type="Area3D" unique_id=833690878]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1068876701]
+mesh = SubResource("SphereMesh_2glmo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1800501539]
+shape = SubResource("SphereShape3D_xven1")
