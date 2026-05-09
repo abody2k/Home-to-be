@@ -8,6 +8,34 @@ const NORMAL_ARM_OFFSET = 4.0
 
 var aiming=false
 
+var attacking = false
+
+
+
+var ammo = 10
+
+const AMMO_MAX = 100
+
+
+func add_ammo(number_of_bullets):
+	
+	ammo+= number_of_bullets
+	
+	if ammo > AMMO_MAX:
+		ammo = AMMO_MAX
+		return ammo - AMMO_MAX
+	else:
+		return 0
+
+
+func attack():
+	if ammo > 0 and !attacking:	
+		ammo -= 1
+		attacking = true
+	
+	
+	pass
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -53,3 +81,7 @@ func _physics_process(delta):
 	
 	if aiming:
 		$aim.rotation = $arm.rotation
+
+
+func _on_timer_timeout():
+	attacking = false

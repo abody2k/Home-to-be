@@ -34,3 +34,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3915826, -0.5090941)
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="aim" unique_id=61212191]
 transform = Transform3D(0.43, 0, 0, 0, 0.43, 0, 0, 0, 2.47, 0, 0, -1.2228577)
 mesh = SubResource("BoxMesh_yc5nw")
+
+[node name="Timer" type="Timer" parent="." unique_id=1075939269]
+wait_time = 0.09
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
