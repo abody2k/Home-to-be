@@ -19,7 +19,10 @@ var food_is_there : Area3D
 
 
 
-var ammo = 10
+var ammo = 10:
+	set(value):
+		ammo = value
+		$CanvasLayer/Control/HBoxContainer/bullets.text = str(value)
 
 const AMMO_MAX = 100
 
@@ -80,6 +83,7 @@ func _ready():
 func _input(event):
 	if Input.is_action_just_pressed("eat") and food_is_there:
 		eat_food(food_is_there.food_value)
+		
 	if event is InputEventMouseMotion:
 		var ev = event as InputEventMouseMotion
 		
@@ -109,7 +113,9 @@ var left_right = 0
 var jump_vector = Vector3.ZERO
 
 func _physics_process(delta):
-	
+	if Input.is_action_pressed("attack"):
+		attack()
+			
 	if not eating:
 		food -= delta * 0.5
 	
@@ -147,8 +153,7 @@ func _physics_process(delta):
 	if aiming:
 		$aim.rotation = $arm.rotation
 	
-	if Input.is_action_pressed("attack"):
-		attack()
+
 
 
 func _on_timer_timeout():
