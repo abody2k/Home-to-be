@@ -11,13 +11,49 @@ var aiming=false
 var attacking = false
 
 
+var food = 100.0 :
+	set(value):
+		$CanvasLayer/Control/food.value = (value)
+		food = value
+var food_is_there : Area3D
 
-var ammo = 10
+
+
+var ammo = 10:
+	set(value):
+		ammo = value
+		$CanvasLayer/Control/HBoxContainer/bullets.text = str(value)
 
 const AMMO_MAX = 100
 
 var jumping = false
 
+var hp = 100.0:
+	set(value):
+		hp = value
+		$CanvasLayer/Control/hp.value = value
+
+
+var eating = false
+
+
+
+func eat_food(food_value):
+	eating = true
+	
+	var food_tween = create_tween()
+	food_tween.finished.connect(func(): eating = false)
+	if food_value + food > 100.0:
+		food_tween.tween_property(self,"food",100.0,0.25)
+	else:
+		var x = food_value + food
+		food_tween.tween_property(self,"food",x,0.25)
+	food_is_there.eaten()
+	food_is_there = null
+	
+	#every time food is eaten the food indicator change
+	
+	
 
 
 func add_ammo(number_of_bullets):
@@ -37,9 +73,7 @@ func attack():
 		ammo -= 1
 		attacking = true
 		$Timer.start()
-	
-	
-	pass
+
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -47,7 +81,9 @@ func _ready():
 
 
 func _input(event):
-	
+	if Input.is_action_just_pressed("eat") and food_is_there:
+		eat_food(food_is_there.food_value)
+		
 	if event is InputEventMouseMotion:
 		var ev = event as InputEventMouseMotion
 		
@@ -77,6 +113,11 @@ var left_right = 0
 var jump_vector = Vector3.ZERO
 
 func _physics_process(delta):
+	if Input.is_action_pressed("attack"):
+		attack()
+			
+	if not eating:
+		food -= delta * 0.5
 	
 	if jumping:
 		
@@ -112,8 +153,7 @@ func _physics_process(delta):
 	if aiming:
 		$aim.rotation = $arm.rotation
 	
-	if Input.is_action_pressed("attack"):
-		attack()
+
 
 
 func _on_timer_timeout():

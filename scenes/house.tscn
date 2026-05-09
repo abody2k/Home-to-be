@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://6i5w6aj85ty4" path="res://3D/home_house_BaseColor.png" id="1_bwc8c"]
 [ext_resource type="Texture2D" uid="uid://dckxcjcha2k7f" path="res://3D/home_door_BaseColor.png" id="4_qcuhb"]
 [ext_resource type="PackedScene" uid="uid://d4gibrj0qhoaf" path="res://scenes/mc.tscn" id="4_se78b"]
+[ext_resource type="PackedScene" uid="uid://crp6p76ey1vfk" path="res://scenes/food.tscn" id="5_3bgk5"]
 [ext_resource type="Texture2D" uid="uid://blw8gy1s3ccjw" path="res://3D/home_proch_BaseColor.png" id="7_bhgw4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3bgk5"]
@@ -213,3 +214,9 @@ shape = SubResource("ConcavePolygonShape3D_rk7hg")
 
 [node name="mc" parent="." unique_id=2014978484 instance=ExtResource("4_se78b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11218542, -0.11983162, 0.71076334)
+
+[node name="food" parent="." unique_id=833690878 instance=ExtResource("5_3bgk5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6533446, -4.7683716e-07, 2.3387494)
+
+[node name="food2" parent="." unique_id=1361047071 instance=ExtResource("5_3bgk5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0075545, -4.7683716e-07, 2.3387494)
