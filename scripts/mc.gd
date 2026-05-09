@@ -12,6 +12,8 @@ var attacking = false
 
 
 var food = 100.0
+var food_is_there : Area3D
+
 
 
 var ammo = 10
@@ -28,6 +30,9 @@ func eat_food(food_value):
 		food = 100.0
 	else:
 		food+=food_value
+	food_is_there.eaten()
+	food_is_there = null
+	
 	
 
 
@@ -58,7 +63,8 @@ func _ready():
 
 
 func _input(event):
-	
+	if Input.is_action_just_pressed("eat") and food_is_there:
+		eat_food(food_is_there.food_value)
 	if event is InputEventMouseMotion:
 		var ev = event as InputEventMouseMotion
 		
