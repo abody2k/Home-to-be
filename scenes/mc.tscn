@@ -44,5 +44,24 @@ one_shot = true
 wait_time = 0.5
 one_shot = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1255822048]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=493399438]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control" unique_id=1957838403]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.31800002
+anchor_bottom = 0.091000006
+offset_right = -0.33602905
+offset_bottom = 0.03199768
+value = 100.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="jumping" to="." method="_on_jumping_timeout"]

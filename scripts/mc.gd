@@ -11,7 +11,10 @@ var aiming=false
 var attacking = false
 
 
-var food = 100.0
+var food = 100.0 :
+	set(value):
+		$CanvasLayer/Control/ProgressBar.value = (value)
+		food = value
 var food_is_there : Area3D
 
 
@@ -24,16 +27,24 @@ var jumping = false
 
 
 
+var eating = false
+
 
 
 func eat_food(food_value):
+	eating = true
 	
+	var food_tween = create_tween()
+	food_tween.finished.connect(func(): eating = false)
 	if food_value + food > 100.0:
-		food = 100.0
+		food_tween.tween_property(self,"food",100.0,0.25)
 	else:
-		food+=food_value
+		var x = food_value + food
+		food_tween.tween_property(self,"food",x,0.25)
 	food_is_there.eaten()
 	food_is_there = null
+	
+	#every time food is eaten the food indicator change
 	
 	
 
@@ -55,9 +66,7 @@ func attack():
 		ammo -= 1
 		attacking = true
 		$Timer.start()
-	
-	
-	pass
+
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -96,6 +105,9 @@ var left_right = 0
 var jump_vector = Vector3.ZERO
 
 func _physics_process(delta):
+	
+	if not eating:
+		food -= delta * 0.5
 	
 	if jumping:
 		
