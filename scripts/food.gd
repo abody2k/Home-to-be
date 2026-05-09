@@ -13,3 +13,7 @@ func eaten():
 
 func _on_body_entered(body):
 	body.food_is_there = self
+
+
+func _on_body_exited(body):
+	body.food_is_there = null
