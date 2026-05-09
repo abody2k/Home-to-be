@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://d4gibrj0qhoaf"]
+
+[node name="mc" type="CharacterBody3D" unique_id=2014978484 groups=["mc"]]
