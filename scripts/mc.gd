@@ -2,6 +2,11 @@ extends CharacterBody3D
 
 
 const SPEED = 10.0
+const AIMING_ARM_OFFSET = -0.791
+
+const NORMAL_ARM_OFFSET = 4.0
+
+var aiming=false
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -18,9 +23,24 @@ func _input(event):
 		$arm.rotate_x(ev.relative.y * -0.01)
 		$arm.rotation_degrees.x = clampf($arm.rotation_degrees.x,-33,33)
 		
+	if event is InputEventMouseButton:
+		if (event as InputEventMouseButton).button_index == 2 and event.pressed:
+			var aiming_tween = create_tween()
+			var pov_tween = create_tween()
+			if aiming:
+				aiming_tween.tween_property($arm,"spring_length",NORMAL_ARM_OFFSET,0.5)
+				pov_tween.tween_property($arm/Camera3D,"fov",75,0.25)
+				$aim.rotation_degrees = Vector3.ZERO
+			else :
+				aiming_tween.tween_property($arm,"spring_length",AIMING_ARM_OFFSET,0.5)
+				pov_tween.tween_property($arm/Camera3D,"fov",40,0.25)
+			
+			aiming = !aiming
+		
 
 var up_down = 0
 var left_right = 0
+
 func _physics_process(delta):
 	up_down = -Input.get_axis("backward","forward")
 	left_right = Input.get_axis("left","right")
@@ -30,3 +50,6 @@ func _physics_process(delta):
 	velocity += transform.basis.x * left_right
 	velocity *= SPEED
 	move_and_slide()
+	
+	if aiming:
+		$aim.rotation = $arm.rotation

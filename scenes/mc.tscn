@@ -9,6 +9,8 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_i6vl1"]
 radius = 1.0
 
+[sub_resource type="BoxMesh" id="BoxMesh_yc5nw"]
+
 [node name="mc" type="CharacterBody3D" unique_id=2014978484 groups=["mc"]]
 script = ExtResource("1_yc5nw")
 
@@ -24,4 +26,11 @@ shape = SubResource("SphereShape3D_i6vl1")
 spring_length = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="arm" unique_id=1486056207]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.79115605)
+
+[node name="aim" type="Node3D" parent="." unique_id=233793561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3915826, -0.5090941)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="aim" unique_id=61212191]
+transform = Transform3D(0.43, 0, 0, 0, 0.43, 0, 0, 0, 2.47, 0, 0, -1.2228577)
+mesh = SubResource("BoxMesh_yc5nw")
