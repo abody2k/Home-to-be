@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://d4gibrj0qhoaf"]
 
+[ext_resource type="Script" uid="uid://ckpime2okaobd" path="res://scripts/mc.gd" id="1_yc5nw"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hy1be"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yc5nw"]
@@ -7,6 +9,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_i6vl1"]
 
 [node name="mc" type="CharacterBody3D" unique_id=2014978484 groups=["mc"]]
+script = ExtResource("1_yc5nw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=758614270]
 mesh = SubResource("CapsuleMesh_hy1be")
