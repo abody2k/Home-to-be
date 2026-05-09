@@ -30,8 +30,10 @@ func add_ammo(number_of_bullets):
 
 func attack():
 	if ammo > 0 and !attacking:	
+		print("Bang!")
 		ammo -= 1
 		attacking = true
+		$Timer.start()
 	
 	
 	pass
@@ -81,6 +83,9 @@ func _physics_process(delta):
 	
 	if aiming:
 		$aim.rotation = $arm.rotation
+	
+	if Input.is_action_pressed("attack"):
+		attack()
 
 
 func _on_timer_timeout():
