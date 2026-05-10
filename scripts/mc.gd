@@ -68,6 +68,8 @@ func add_ammo(number_of_bullets):
 
 
 func attack():
+
+
 	if ammo > 0 and !attacking:	
 		print("Bang!")
 		ammo -= 1
