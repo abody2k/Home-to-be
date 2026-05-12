@@ -32,14 +32,16 @@ models needed:
 
 -ship
 -boat
--Monster
+
 -Guy with a gun
--Sea monster
+
 -bullet
 -gun
 -radio
 -food
 -tree
 -rock
--captain's hat
+-island
+-prisons
+
 -Aruth writing on the wall
