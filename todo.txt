@@ -30,14 +30,10 @@ monsters appear to be there underneath him in a pic where he free them once he i
 
 models needed:
 
--ship
--boat
 
--Guy with a gun
-
+-Guy of island and a guy of ship
 -bullet
--gun
--radio
+
 -food
 -tree
 -rock
