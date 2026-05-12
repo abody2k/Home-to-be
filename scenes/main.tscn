@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c11eqqo55aeqb" path="res://scenes/island.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://bdw3kfyng5tq2" path="res://3D/sea_sea_BaseColor.png" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://d4gibrj0qhoaf" path="res://scenes/mc.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://b5chy68dgi83e" path="res://scenes/ship.tscn" id="4_jyhfs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -71,3 +72,6 @@ mesh = SubResource("ArrayMesh_o6xl0")
 
 [node name="mc" parent="." unique_id=2014978484 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.82451, 9.014306, 6.534526)
+
+[node name="ship" parent="." unique_id=1459893465 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(-0.99998933, 0, 0.0046252166, 0, 1, 0, -0.0046252166, 0, -0.99998933, 653.46045, 13.131723, 42.368584)
