@@ -141,6 +141,7 @@ func _physics_process(delta):
 		return
 	if up_down == 0 and left_right ==0 :
 		velocity = Vector3.DOWN * 4
+		$AnimationPlayer.play("rig_005|mc_idle")
 		move_and_slide()
 		return
 		
@@ -148,6 +149,7 @@ func _physics_process(delta):
 	velocity += transform.basis.x * left_right
 	
 	velocity *= SPEED
+	$AnimationPlayer.play("rig_005|mc_walking_001")
 	move_and_slide()
 	
 

@@ -30,16 +30,14 @@ monsters appear to be there underneath him in a pic where he free them once he i
 
 models needed:
 
--ship
--boat
--Monster
--Guy with a gun
--Sea monster
+
+-Guy of island and a guy of ship
 -bullet
--gun
--radio
+
 -food
 -tree
 -rock
--captain's hat
+-island
+-prisons
+
 -Aruth writing on the wall

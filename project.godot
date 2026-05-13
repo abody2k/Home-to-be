@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="Home-To-Be"
+run/main_scene="uid://be573roa571fs"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [global_group]
 
 mc=""
+monsters=""
 
 [input]
 
