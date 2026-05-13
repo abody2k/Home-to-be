@@ -15,6 +15,8 @@ func _physics_process(delta):
 	
 	match mode:
 		MODES.STANDING:
+			$AnimationPlayer.play("rig_001|monster_attack")
+			$AnimationPlayer.stop()
 			return
 		MODES.WALKING:
 			path.progress_ratio+=delta
