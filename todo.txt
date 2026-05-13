@@ -30,14 +30,52 @@ monsters appear to be there underneath him in a pic where he free them once he i
 
 models needed:
 
-
--Guy of island and a guy of ship
+-boat
+-rocks
+-caves
 -bullet
-
 -food
--tree
--rock
--island
--prisons
-
+-prison cells
 -Aruth writing on the wall
+-the lab
+
+
+
+events:
+
+-waking up
+-talking to the crewmate about the dream
+-going to the captin
+-hearing the transmission while being there with the captin
+-taking the boat and going to the island
+-splitting into 3 groups, one goes to the prison, one goes to the caves, and one goes to the house on top of the island.
+-one group are killed the one that goes to the caves
+-meeting the ppl of the island on the way to the house
+-talking about the monsters that appear in the dark
+-player bringing food from the boat
+-eating with them in the cells
+-next day the player have a discussion about those who went into the forest and decides to take his friends with him even tho it's almost the night
+-scream happens
+-monsters attack this place
+-they get into the cells
+-bullets don't work on them
+-bullets work on the island ppl
+-others start killing the island ppl to slow down the monsters
+-they get lost in the forset ending up in the cave
+-they find a machine with aruthur cube, writings on the wall and more
+-they operate it and go outside
+-they to the shore and see the sea monsters in there and the monster on the island appraoching them and they see a boat similar to theirs leaving the ship and all these creatures follow it
+-they take their boat and go to the ship
+-dicussions happen
+-shotout happens, captain is dead so is the player
+-player wakes up in a lab
+-lab has pictures of cat missing named sir arthur
+-he sees drawings on the wall of the monsters
+-then he sees a lady in a lab coat working on a computer asking her where he is and asking for help
+-She says, Where did you take Sir Arthur?
+-...
+-You took him from me and I took everything from you, you see this big machine? it makes you live your worst nightmares..
+-she clicks, sounds of a click, player is sent back to the blurry screen then he wakes in the boat again.
+scene changes to the girl in the lab coat, she climbs stairs
+-outside is this man vechile for catching cats
+-game ends
