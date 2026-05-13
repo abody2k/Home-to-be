@@ -59,6 +59,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6s081")
 
+[sub_resource type="Curve3D" id="Curve3D_jyhfs"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -72.63612, 0, 20.26717, 0, 0, 0, 0, 0, 0, -69.40492, 0, -25.777576, 0, 0, 0, 0, 0, 0, -43.555237, 0, -47.588234, 0, 0, 0, 0, 0, 0, 4.1050873, 0, -58.897465, 0, 0, 0, 0, 0, 0, 40.456223, 0, -63.744274, 0, 0, 0, 0, 0, 0, 70.344894, 0, -110.59682, 0, 0, 0, 0, 0, 0, 53.381058, 0, -151.79474, 0, 0, 0, 0, 0, 0, -33.861618, 0, -163.10397),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
 [node name="main" type="Node3D" unique_id=485170224]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=619415040]
@@ -75,3 +82,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.82451, 9.014306, 6.534526
 
 [node name="ship" parent="." unique_id=1459893465 instance=ExtResource("4_jyhfs")]
 transform = Transform3D(-0.99998933, 0, 0.0046252166, 0, 1, 0, -0.0046252166, 0, -0.99998933, 653.46045, 13.131723, 42.368584)
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1878875203]
+curve = SubResource("Curve3D_jyhfs")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=292388672]
+transform = Transform3D(-0.12855378, 0, -0.9917008, 0, 1, 0, 0.9917008, 0, -0.12855378, -33.86162, 0, -163.10399)
+progress = 353.73682
+use_model_front = true
