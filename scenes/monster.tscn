@@ -4420,6 +4420,13 @@ _data = {
 &"rig_001|monster_walk": SubResource("Animation_agf1a")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jlss8"]
+radius = 2.184082
+height = 13.416016
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jlss8"]
+radius = 36.093483
+
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1281038519]
 script = ExtResource("1_jlss8")
 
@@ -6152,3 +6159,12 @@ skeleton = NodePath("..")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=782943380]
 libraries/ = SubResource("AnimationLibrary_7han3")
 speed_scale = 2.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1215826560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54589844, 0)
+shape = SubResource("CapsuleShape3D_jlss8")
+
+[node name="detector" type="Area3D" parent="." unique_id=1279202670]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="detector" unique_id=959843322]
+shape = SubResource("SphereShape3D_jlss8")
