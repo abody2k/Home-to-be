@@ -9,9 +9,14 @@ var mode : MODES = MODES.WALKING
 @export var path : PathFollow3D
 
 
-func _ready():
+
+func reset_location():
 	reparent(path)
 	transform.origin = Vector3.ZERO
+
+func _ready():
+	create_tween().tween_callback(reset_location).set_delay(0.1)
+	
 	
 	
 func _physics_process(delta):
@@ -23,7 +28,7 @@ func _physics_process(delta):
 			$AnimationPlayer.stop()
 			return
 		MODES.WALKING:
-			path.progress_ratio+=delta
+			path.progress_ratio+=delta * 0.01
 
 func _on_detector_body_entered(body):
 	if mode != MODES.GOING_HOME:

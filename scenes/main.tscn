@@ -88,8 +88,9 @@ transform = Transform3D(-0.99998933, 0, 0.0046252166, 0, 1, 0, -0.0046252166, 0,
 curve = SubResource("Curve3D_jyhfs")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=292388672]
-transform = Transform3D(-0.15073332, 0.29503608, -0.9435117, -0.07020342, 0.94880915, 0.30791032, 0.9860618, 0.11265157, -0.12230703, -14.058142, 54.37927, -160.53685)
+transform = Transform3D(-0.12855184, 0, -0.9916936, 0, 0.9999877, 0, 0.99168587, 0, -0.12855284, -14.058142, 54.37927, -160.53685)
 progress = 353.73682
+rotation_mode = 1
 use_model_front = true
 
 [node name="monster" parent="." unique_id=1281038519 node_paths=PackedStringArray("path") instance=ExtResource("5_tbgi4")]
