@@ -6164,7 +6164,9 @@ speed_scale = 2.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54589844, 0)
 shape = SubResource("CapsuleShape3D_jlss8")
 
-[node name="detector" type="Area3D" parent="." unique_id=1279202670]
+[node name="detector" type="Area3D" parent="." unique_id=1279202670 groups=["monsters"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="detector" unique_id=959843322]
 shape = SubResource("SphereShape3D_jlss8")
+
+[connection signal="body_entered" from="detector" to="." method="_on_detector_body_entered"]
