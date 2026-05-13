@@ -9,6 +9,10 @@ var mode : MODES = MODES.WALKING
 @export var path : PathFollow3D
 
 
+func _ready():
+	reparent(path)
+	transform.origin = Vector3.ZERO
+	
 	
 func _physics_process(delta):
 	
