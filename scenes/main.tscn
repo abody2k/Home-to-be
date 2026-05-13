@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bdw3kfyng5tq2" path="res://3D/sea_sea_BaseColor.png" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://d4gibrj0qhoaf" path="res://scenes/mc.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b5chy68dgi83e" path="res://scenes/ship.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://scp1y43p0n18" path="res://scenes/monster.tscn" id="5_tbgi4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -61,7 +62,7 @@ shadow_mesh = SubResource("ArrayMesh_6s081")
 
 [sub_resource type="Curve3D" id="Curve3D_jyhfs"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -72.63612, 0, 20.26717, 0, 0, 0, 0, 0, 0, -69.40492, 0, -25.777576, 0, 0, 0, 0, 0, 0, -43.555237, 0, -47.588234, 0, 0, 0, 0, 0, 0, 4.1050873, 0, -58.897465, 0, 0, 0, 0, 0, 0, 40.456223, 0, -63.744274, 0, 0, 0, 0, 0, 0, 70.344894, 0, -110.59682, 0, 0, 0, 0, 0, 0, 53.381058, 0, -151.79474, 0, 0, 0, 0, 0, 0, -33.861618, 0, -163.10397),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -72.63612, 44.102516, 20.26717, 0, 0, 0, 0, 0, 0, -69.40492, 46.860447, -25.777576, 0, 0, 0, 0, 0, 0, -43.555237, 50.27191, -47.588234, 0, 0, 0, 0, 0, 0, 4.1050873, 51.60829, -58.897465, 0, 0, 0, 0, 0, 0, 40.456223, 25.909744, -63.744274, 0, 0, 0, 0, 0, 0, 70.344894, 9.2091675, -110.59682, 0, 0, 0, 0, 0, 0, 53.381058, 32.37082, -151.79474, 0, 0, 0, 0, 0, 0, -33.861618, 60.842026, -163.10397),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 8
@@ -87,6 +88,10 @@ transform = Transform3D(-0.99998933, 0, 0.0046252166, 0, 1, 0, -0.0046252166, 0,
 curve = SubResource("Curve3D_jyhfs")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=292388672]
-transform = Transform3D(-0.12855378, 0, -0.9917008, 0, 1, 0, 0.9917008, 0, -0.12855378, -33.86162, 0, -163.10399)
+transform = Transform3D(-0.15073332, 0.29503608, -0.9435117, -0.07020342, 0.94880915, 0.30791032, 0.9860618, 0.11265157, -0.12230703, -14.058142, 54.37927, -160.53685)
 progress = 353.73682
 use_model_front = true
+
+[node name="monster" parent="." unique_id=1281038519 node_paths=PackedStringArray("path") instance=ExtResource("5_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 487.10492, 4806.9487, 892.1922)
+path = NodePath("../Path3D/PathFollow3D")
