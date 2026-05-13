@@ -1,5 +1,5 @@
 extends CharacterBody3D
-enum MODES {WALKING, HUNTING, STANDING, GOING_HOME}
+enum MODES {WALKING, HUNTING, STANDING, GOING_HOME, SLEEPING}
 
 
 var target : CharacterBody3D
