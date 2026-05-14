@@ -41,6 +41,16 @@ models needed:
 
 
 
+-cave system
+-boat
+-girl
+-food
+-computer
+-rocks
+-caves
+-bullet
+-prison cells
+
 events:
 
 -waking up
