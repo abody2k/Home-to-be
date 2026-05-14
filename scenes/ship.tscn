@@ -193,3 +193,5 @@ shape = SubResource("ConcavePolygonShape3D_gudjc")
 [node name="barrier" type="CollisionShape3D" parent="." unique_id=68951064]
 
 [node name="talking_to_captin" type="Area3D" parent="." unique_id=1122704485]
+
+[connection signal="body_entered" from="talking_to_captin" to="." method="_on_talking_to_captin_body_entered"]
