@@ -79,7 +79,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 75.993385, 1.9408035, 50.8390
 mesh = SubResource("ArrayMesh_o6xl0")
 
 [node name="mc" parent="." unique_id=2014978484 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.82451, 9.014306, 6.534526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 603.892, 56.738823, 44.335773)
 
 [node name="ship" parent="." unique_id=1459893465 instance=ExtResource("4_jyhfs")]
 transform = Transform3D(-0.99998933, 0, 0.0046252166, 0, 1, 0, -0.0046252166, 0, -0.99998933, 653.46045, 13.131723, 42.368584)
@@ -88,7 +88,7 @@ transform = Transform3D(-0.99998933, 0, 0.0046252166, 0, 1, 0, -0.0046252166, 0,
 curve = SubResource("Curve3D_jyhfs")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=292388672]
-transform = Transform3D(-0.12855184, 0, -0.9916936, 0, 0.9999877, 0, 0.99168587, 0, -0.12855284, -14.058142, 54.37927, -160.53685)
+transform = Transform3D(-0.1285518, 0, -0.9916933, 0, 0.9999877, 0, 0.99168557, 0, -0.1285528, -14.058142, 54.37927, -160.53685)
 progress = 353.73682
 rotation_mode = 1
 use_model_front = true

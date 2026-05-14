@@ -28,16 +28,22 @@ var last_mission_finished : MISSIONS
 var current_mission : MISSIONS = MISSIONS.WAKING_UP
 
 func mission_completed():
+	print("MISSION IS ACTUALLY DONE")
 	if current_mission == MISSIONS.THE_END:
 		pass
 	else:
 		last_mission_finished = current_mission
-		current_mission+=1
+		print(current_mission)
+		current_mission+= 1 as MISSIONS
 		
 func start_new_mission():
+	print("ENDING MISSION")
+	print(current_mission)
+	print(MISSIONS.TALKING_TO_CAPTIN)
 			## CALL A FUNCTION THAT DOES THINGS FOR EVERY EVENT
 	match current_mission:
 		MISSIONS.TALKING_TO_CAPTIN:
+			print("starting captain mission")
 			start_captain_mission()
 			
 			
@@ -50,7 +56,7 @@ func start_captain_mission():
 	mc.update_dialogs([
 		["Captain: Hey, seaman. I heard you were sleeping on the job, you think this is some sort of a trip?",null],
 		["You: NNno, Captain. I was just...",null],
-		["*** INCOMING TRANSMISSION ***"] ,
+		["*** INCOMING TRANSMISSION ***",null] ,
 		["HELP!, CAN YOU HEAR ME! WE HAVE BEEN STRANDED IN THE SEA FOR MONTHS, PLEASE HELP US",null],
 		["Captain: Who is this? and how did you manage to interfer with our communication?", null],
 		["PLEASE, WE DON'T HAVE ENOUGH FOOD, THEY ARE HUNTING US",null],
