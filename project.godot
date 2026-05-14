@@ -15,10 +15,15 @@ run/main_scene="uid://be573roa571fs"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalData="*uid://dhd6pb42c4beb"
+
 [global_group]
 
 mc=""
 monsters=""
+ship=""
 
 [input]
 
