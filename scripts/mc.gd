@@ -182,6 +182,7 @@ func _physics_process(delta):
 
 
 func update_dialogs(new_dialogs):
+	mode = MODES.DIALOG
 	$dialog.update_dialogs(new_dialogs)
 	
 	
