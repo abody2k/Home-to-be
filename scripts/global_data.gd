@@ -34,10 +34,11 @@ func mission_completed():
 		last_mission_finished = current_mission
 		current_mission+=1
 		
-		## CALL A FUNCTION THAT DOES THINGS FOR EVERY EVENT
-		match current_mission:
-			MISSIONS.TALKING_TO_CAPTIN:
-				start_captain_mission()
+func start_new_mission():
+			## CALL A FUNCTION THAT DOES THINGS FOR EVERY EVENT
+	match current_mission:
+		MISSIONS.TALKING_TO_CAPTIN:
+			start_captain_mission()
 			
 			
 			
