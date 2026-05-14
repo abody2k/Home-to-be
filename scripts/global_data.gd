@@ -56,7 +56,7 @@ func start_captain_mission():
 	mc.update_dialogs([
 		["Captain: Hey, seaman. I heard you were sleeping on the job, you think this is some sort of a trip?",null],
 		["You: NNno, Captain. I was just...",null],
-		["*** INCOMING TRANSMISSION ***"] ,
+		["*** INCOMING TRANSMISSION ***",null] ,
 		["HELP!, CAN YOU HEAR ME! WE HAVE BEEN STRANDED IN THE SEA FOR MONTHS, PLEASE HELP US",null],
 		["Captain: Who is this? and how did you manage to interfer with our communication?", null],
 		["PLEASE, WE DON'T HAVE ENOUGH FOOD, THEY ARE HUNTING US",null],
