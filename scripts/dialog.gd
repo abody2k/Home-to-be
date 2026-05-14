@@ -2,7 +2,14 @@ extends CanvasLayer
 
 enum DIALOG_TYPE {ONE_TIME,REPEATING}
 
-@export var dialogs = []
+@export var dialogs = [
+	
+	
+	["Wake up!",null],
+	["Wake up man, we don't have time. The captain needs you",null],
+	["He is in the control room and he demands that you be there", null],
+	["You: Yes, yes, I will be there",null]
+]
 
 @export var dialog_type : DIALOG_TYPE
 
@@ -13,7 +20,7 @@ signal finished_dialog
 var typing = false
 
 func next():
-
+	visible = true
 	if typing or current_index >= dialogs.size():
 		return
 		
@@ -27,9 +34,9 @@ func next():
 		if dialog_type == DIALOG_TYPE.REPEATING:
 			current_index = -1
 		else:
-			print("Auto destroyed")
+			
 			finished_dialog.emit()
-			queue_free()
+			visible = false
 		return
 	var tween = create_tween()
 	tween.finished.connect(func(): typing = false)

@@ -7984,6 +7984,7 @@ text = "10"
 fit_content = true
 
 [node name="dialog" parent="." unique_id=2041204070 instance=ExtResource("3_a6s5m")]
+visible = false
 dialogs = ["How are we doing essay?", "No problemo", "Hola senior"]
 
 [node name="rig_005" type="Node3D" parent="." unique_id=2059688227]

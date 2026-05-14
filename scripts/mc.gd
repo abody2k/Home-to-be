@@ -79,6 +79,11 @@ func attack():
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	#play waking up animation
+	
+	#go to the captain
+	$dialog.next()
 
 
 
