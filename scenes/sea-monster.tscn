@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://brx7mv1tj6d05"]
+
+[node name="sea_monster" type="CharacterBody3D" unique_id=464919498]
