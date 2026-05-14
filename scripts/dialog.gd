@@ -34,3 +34,9 @@ func next():
 	var tween = create_tween()
 	tween.finished.connect(func(): typing = false)
 	tween.tween_property($Control/Panel/label,"text",dialogs[current_index],1)
+
+
+
+func update_dialogs(new_dialogs):
+	dialogs = new_dialogs
+	current_index = -1

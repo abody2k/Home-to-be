@@ -30,5 +30,17 @@ func mission_completed():
 	if current_mission == MISSIONS.THE_END:
 		pass
 	else:
+		last_mission_finished = current_mission
 		current_mission+=1
-		#run function for the next mission
+		
+		## CALL A FUNCTION THAT DOES THINGS FOR EVERY EVENT
+		match current_mission:
+			MISSIONS.TALKING_TO_CAPTIN:
+				start_captain_mission()
+			
+			
+			
+
+func start_captain_mission():
+	var mc = get_tree().get_first_node_in_group("mc") as CharacterBody3D
+	
