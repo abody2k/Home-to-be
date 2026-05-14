@@ -19,6 +19,9 @@ enum MISSIONS{
 	MASSACRE,
 	GENEISIS,
 	THE_END
-	
-	
 }
+
+
+var last_mission_finished : MISSIONS
+
+var current_mission : MISSIONS = MISSIONS.WAKING_UP
