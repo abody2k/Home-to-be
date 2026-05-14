@@ -11,7 +11,7 @@ enum MODES {
 	DIALOG,FPS
 }
 
-var mode : MODES = MODES.FPS
+var mode : MODES = MODES.DIALOG
 
 var aiming=false
 
@@ -194,4 +194,5 @@ func _on_jumping_timeout():
 
 
 func _on_dialog_finished_dialog():
+	print("dialog finished")
 	mode = MODES.FPS

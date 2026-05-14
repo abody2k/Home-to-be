@@ -2,7 +2,7 @@ extends CanvasLayer
 
 enum DIALOG_TYPE {ONE_TIME,REPEATING}
 
-@export var dialogs = [
+var dialogs = [
 	
 	
 	["Wake up!",null],
@@ -45,7 +45,7 @@ func next():
 		return
 	var tween = create_tween()
 	tween.finished.connect(func(): typing = false)
-	tween.tween_property($Control/Panel/label,"text",dialogs[current_index],1)
+	tween.tween_property($Control/Panel/label,"text",dialogs[current_index][0],1)
 
 
 
