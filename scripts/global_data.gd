@@ -28,16 +28,22 @@ var last_mission_finished : MISSIONS
 var current_mission : MISSIONS = MISSIONS.WAKING_UP
 
 func mission_completed():
+	print("MISSION IS ACTUALLY DONE")
 	if current_mission == MISSIONS.THE_END:
 		pass
 	else:
 		last_mission_finished = current_mission
-		current_mission+=1
+		print(current_mission)
+		current_mission+= 1 as MISSIONS
 		
 func start_new_mission():
+	print("ENDING MISSION")
+	print(current_mission)
+	print(MISSIONS.TALKING_TO_CAPTIN)
 			## CALL A FUNCTION THAT DOES THINGS FOR EVERY EVENT
 	match current_mission:
 		MISSIONS.TALKING_TO_CAPTIN:
+			print("starting captain mission")
 			start_captain_mission()
 			
 			
