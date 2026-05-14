@@ -25,3 +25,10 @@ enum MISSIONS{
 var last_mission_finished : MISSIONS
 
 var current_mission : MISSIONS = MISSIONS.WAKING_UP
+
+func mission_completed():
+	if current_mission == MISSIONS.THE_END:
+		pass
+	else:
+		current_mission+=1
+		#run function for the next mission
