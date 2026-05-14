@@ -43,10 +43,15 @@ func next():
 			visible = false
 			
 		return
+	execute_and_show_dialog()
+
+
+func execute_and_show_dialog():
 	var tween = create_tween()
 	tween.finished.connect(func(): typing = false)
 	tween.tween_property($Control/Panel/label,"text",dialogs[current_index][0],1)
-
+	if dialogs[current_index][1] != null:
+		dialogs[current_index][1].call()
 
 
 func update_dialogs(new_dialogs):
