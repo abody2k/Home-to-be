@@ -6,9 +6,17 @@ const AIMING_ARM_OFFSET = -0.791
 
 const NORMAL_ARM_OFFSET = 4.0
 
+enum MODES {
+	
+	DIALOG,FPS
+}
+
+var mode : MODES = MODES.FPS
+
 var aiming=false
 
 var attacking = false
+
 
 
 var food = 100.0 :
@@ -69,12 +77,13 @@ func add_ammo(number_of_bullets):
 
 func attack():
 
-
-	if ammo > 0 and !attacking:	
-		print("Bang!")
-		ammo -= 1
-		attacking = true
-		$Timer.start()
+	if mode == MODES.DIALOG:
+		$dialog.next()
+	else:
+		if ammo > 0 and !attacking:	
+			ammo -= 1
+			attacking = true
+			$Timer.start()
 
 
 func _ready():
@@ -88,6 +97,10 @@ func _ready():
 
 
 func _input(event):
+	if mode == MODES.DIALOG:
+		return
+		
+		
 	if Input.is_action_just_pressed("eat") and food_is_there:
 		eat_food(food_is_there.food_value)
 		
@@ -120,9 +133,13 @@ var left_right = 0
 var jump_vector = Vector3.ZERO
 
 func _physics_process(delta):
+	
 	if Input.is_action_pressed("attack"):
 		attack()
-			
+	
+	if mode == MODES.DIALOG:
+		return
+		
 	if not eating:
 		food -= delta * 0.5
 	

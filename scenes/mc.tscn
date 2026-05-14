@@ -7985,7 +7985,7 @@ fit_content = true
 
 [node name="dialog" parent="." unique_id=2041204070 instance=ExtResource("3_a6s5m")]
 visible = false
-dialogs = ["How are we doing essay?", "No problemo", "Hola senior"]
+dialogs = []
 
 [node name="rig_005" type="Node3D" parent="." unique_id=2059688227]
 transform = Transform3D(-7.1883375e-07, -16.445, -7.1883375e-07, 0, -7.1883375e-07, 16.445, -16.445, 7.1883375e-07, 3.1421223e-14, 0, 0, 0)
