@@ -159,7 +159,10 @@ func _physics_process(delta):
 	
 
 
-
+func update_dialogs(new_dialogs):
+	$dialog.update_dialogs(new_dialogs)
+	
+	
 func _on_timer_timeout():
 	attacking = false
 
