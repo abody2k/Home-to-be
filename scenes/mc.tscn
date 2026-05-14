@@ -9534,3 +9534,4 @@ libraries/ = SubResource("AnimationLibrary_dxnr4")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="jumping" to="." method="_on_jumping_timeout"]
+[connection signal="finished_dialog" from="dialog" to="." method="_on_dialog_finished_dialog"]

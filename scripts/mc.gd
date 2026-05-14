@@ -191,3 +191,7 @@ func _on_timer_timeout():
 
 func _on_jumping_timeout():
 	jumping = false
+
+
+func _on_dialog_finished_dialog():
+	mode = MODES.FPS
