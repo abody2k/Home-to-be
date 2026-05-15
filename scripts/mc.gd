@@ -9,7 +9,7 @@ const NORMAL_ARM_OFFSET = 4.0
 
 enum MODES {
 	
-	DIALOG,FPS
+	DIALOG,FPS, IDLE
 }
 
 var mode : MODES = MODES.DIALOG
@@ -100,8 +100,9 @@ func chng_color(alpha):
 
 func teleport():
 	global_position = destination.global_position
-	create_tween().tween_method(chng_color,0.0,1.0,2).finished.connect(func (): $CanvasLayer/Control/time.visible = false)
-	
+	create_tween().tween_method(chng_color,1.0,0.0,2).finished.connect(func (): $CanvasLayer/Control.visible = false)
+	GlobalData.mission_completed()
+	GlobalData.start_new_mission()
 	
 	
 func flash_screen():
