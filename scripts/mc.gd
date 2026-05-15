@@ -197,3 +197,9 @@ func _on_jumping_timeout():
 func _on_dialog_finished_dialog():
 	print("dialog finished")
 	mode = MODES.FPS
+
+
+func _on_mc_reached_house_body_entered(body):
+	GlobalData.mission_completed()
+	GlobalData.start_new_mission()
+	get_parent().get_node("mc_reached_house").queue_free()

@@ -75,6 +75,9 @@ _data = {
 }
 point_count = 12
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_tefeu"]
+radius = 36.437
+
 [node name="main" type="Node3D" unique_id=485170224]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=619415040]
@@ -96,7 +99,7 @@ transform = Transform3D(-0.99998933, 0, 0.0046252166, 0, 1, 0, -0.0046252166, 0,
 curve = SubResource("Curve3D_jyhfs")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=292388672]
-transform = Transform3D(-0.12855172, 0, -0.9916928, 0, 0.9999877, 0, 0.99168503, 0, -0.12855273, -14.058142, 54.37927, -160.53685)
+transform = Transform3D(-0.12855172, 0, -0.9916927, 0, 0.9999877, 0, 0.991685, 0, -0.12855272, -14.058142, 54.37927, -160.53685)
 progress = 353.73682
 rotation_mode = 1
 use_model_front = true
@@ -114,3 +117,13 @@ transform = Transform3D(-0.2475984, 0, 0.9688628, 0, 1, 0, -0.9688628, 0, -0.247
 [node name="boat" parent="boat_to_island/PathFollow3D" unique_id=1471290188 node_paths=PackedStringArray("path") instance=ExtResource("6_tefeu")]
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0, 0)
 path = NodePath("..")
+
+[node name="mc_reached_house" type="Area3D" parent="." unique_id=85465003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.985558, 10.96764, 61.319588)
+collision_layer = 128
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mc_reached_house" unique_id=1645099527]
+shape = SubResource("SphereShape3D_tefeu")
+
+[connection signal="body_entered" from="mc_reached_house" to="mc" method="_on_mc_reached_house_body_entered"]
