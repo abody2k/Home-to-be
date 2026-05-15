@@ -78,6 +78,9 @@ point_count = 12
 [sub_resource type="SphereShape3D" id="SphereShape3D_tefeu"]
 radius = 36.437
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_o6xl0"]
+radius = 50.174316
+
 [node name="main" type="Node3D" unique_id=485170224]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=619415040]
@@ -125,5 +128,12 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="mc_reached_house" unique_id=1645099527]
 shape = SubResource("SphereShape3D_tefeu")
+
+[node name="reaching_cells" type="Area3D" parent="." unique_id=1756816655]
+collision_layer = 128
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="reaching_cells" unique_id=737716955]
+shape = SubResource("SphereShape3D_o6xl0")
 
 [connection signal="body_entered" from="mc_reached_house" to="mc" method="_on_mc_reached_house_body_entered"]
