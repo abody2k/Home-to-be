@@ -27,10 +27,13 @@ var food_is_there : Area3D
 
 
 
-var ammo = 10:
+var ammo = 0:
 	set(value):
 		ammo = value
 		$CanvasLayer/Control/HBoxContainer/bullets.text = str(value)
+		if ammo == 0:
+			GlobalData.mission_completed()
+			GlobalData.start_new_mission()
 
 const AMMO_MAX = 100
 
@@ -73,6 +76,8 @@ func add_ammo(number_of_bullets):
 		return ammo - AMMO_MAX
 	else:
 		return 0
+
+signal out_of_bullets
 
 
 func attack():

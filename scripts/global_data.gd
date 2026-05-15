@@ -8,9 +8,7 @@ enum MISSIONS{
 	REACHING_SHORE,
 	FINDING_LOCALS,
 	TALKING_TO_LOCALS,
-	BRINGING_FOOD,
-	PROTECTING_LOCALS,
-	VISITING_HOME,
+	DELIVERING_FOOD,
 	TRANSMISSION_FAILS,
 	HEADING_TO_CAVES,
 	TIME_TRAVEL,
@@ -156,5 +154,25 @@ func start_talking_to_locals():
 		["You: But how? do you..",null],
 		["...",null], # screaching sound and monsters come in
 		["unknown: They are here!",null],
+		["You: EVERYONE AIM AND SHOOT THE MONSTERS!",null],
+		
+	])
+	
+func start_delivering_food_mission():
+	
+	var mc = get_tree().get_first_node_in_group("mc") as CharacterBody3D
+	
+	mc.update_dialogs([
+		["You: Shit, I'm out of ammo",null],
+		["Crewmate 1: What should we do? sir",null] ,
+		["You: Let's give them something to eat! everyone shoot the natives!",null],
+		["unknown: But we had a deal", null],
+		["You: We don't even know you, thanks for the info",null],
+		["unknown : What you are going to find out..",null],
+		["...",null], #everyone shoots the islanders
+		["You: Let's head to the caves while these things are eating, the treasure is porbably there, we will take it then we will head to the boat",null],
+		["Crewmate 1: Sir yes sir!",null],
+		
+		
 	])
 	
