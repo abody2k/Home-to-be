@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d4gibrj0qhoaf" path="res://scenes/mc.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b5chy68dgi83e" path="res://scenes/ship.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://scp1y43p0n18" path="res://scenes/monster.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://doac5iuv4xfyn" path="res://scenes/boat.tscn" id="6_tefeu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -68,6 +69,11 @@ _data = {
 point_count = 8
 
 [sub_resource type="Curve3D" id="Curve3D_tbgi4"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 637.8448, 0, 100.45799, 0, 0, 0, 0, 0, 0, 600.43, 0, 110.019554, 0, 0, 0, 0, 0, 0, 560.9366, 0, 101.28943, 0, 0, 0, 0, 0, 0, 503.1515, 0, 107.94095, 0, 0, 0, 0, 0, 0, 447.0293, 0, 107.52524, 0, 0, 0, 0, 0, 0, 386.9746, 0, 135.90259, 0, 0, 0, 0, 0, 0, 333.88123, 0, 145.13623, 0, 0, 0, 0, 0, 0, 282.3268, 0, 122.05216, 0, 0, 0, 0, 0, 0, 247.70068, 0, 82.03978, 0, 0, 0, 0, 0, 0, 199.22412, 0, 66.65038, 0, 0, 0, 0, 0, 0, 148.43918, 0, 61.264107, 0, 0, 0, 0, 0, 0, 148.43918, 0, 30.485334),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 12
 
 [node name="main" type="Node3D" unique_id=485170224]
 
@@ -90,7 +96,7 @@ transform = Transform3D(-0.99998933, 0, 0.0046252166, 0, 1, 0, -0.0046252166, 0,
 curve = SubResource("Curve3D_jyhfs")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=292388672]
-transform = Transform3D(-0.12855177, 0, -0.99169314, 0, 0.9999877, 0, 0.9916854, 0, -0.12855278, -14.058142, 54.37927, -160.53685)
+transform = Transform3D(-0.12855172, 0, -0.9916928, 0, 0.9999877, 0, 0.99168503, 0, -0.12855273, -14.058142, 54.37927, -160.53685)
 progress = 353.73682
 rotation_mode = 1
 use_model_front = true
@@ -101,3 +107,10 @@ path = NodePath("../Path3D/PathFollow3D")
 
 [node name="boat_to_island" type="Path3D" parent="." unique_id=1699071162]
 curve = SubResource("Curve3D_tbgi4")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="boat_to_island" unique_id=1826125259]
+transform = Transform3D(-0.2475984, 0, 0.9688628, 0, 1, 0, -0.9688628, 0, -0.2475984, 637.8448, 0, 100.45799)
+
+[node name="boat" parent="boat_to_island/PathFollow3D" unique_id=1471290188 node_paths=PackedStringArray("path") instance=ExtResource("6_tefeu")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0, 0)
+path = NodePath("..")
