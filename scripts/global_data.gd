@@ -7,8 +7,6 @@ enum MISSIONS{
 	TAKING_BOAT,
 	REACHING_SHORE,
 	FINDING_LOCALS,
-	FINDING_HOME,
-	MEETING_THOSE_IN_CELLS,
 	TALKING_TO_LOCALS,
 	BRINGING_FOOD,
 	PROTECTING_LOCALS,
@@ -48,6 +46,8 @@ func start_new_mission():
 			start_reaching_shore_mission()
 		MISSIONS.FINDING_LOCALS:
 			start_finding_locals_mission()
+		MISSIONS.TALKING_TO_LOCALS:
+			start_talking_to_locals()
 			
 			
 			
@@ -117,5 +117,44 @@ func start_finding_locals_mission():
 		["You: I saw this house in a dream, it just feels so real...",null],
 		["Crewmate 2 : We don't have time for that, sir... we need to head back to the boat then follow the shore to the left until we meet our crewmates",null],
 		["You: Yeah.. sure.",null],
+	])
+	
+
+
+	
+func start_talking_to_locals():
+	
+	var mc = get_tree().get_first_node_in_group("mc") as CharacterBody3D
+	
+	mc.update_dialogs([
+		["You: here we are",null],
+		["Crewmate 1: ...",null] ,
+		["You: Where is the other group?",null],
+		["Crewmate 1: They haven't returned yet", null],
+		["You: What? you have to be here so that we can all depart, this is nuts.",null],
+		["Crewmate 2: What about the locals?",null],
+		["...",null], #SCRECHING SOUND
+		["Crewmates : WTF was that???",null],
+		["You: Close all the doors",null],
+		["unknown : STOP",null], # islanders move toward the player
+		["unkown: Don't be afaid, human",null],
+		["You:Yoooo, WTF are you??? EVERYONE, HOLD POSITIONS!",null],#everyone aims at the islanders
+		["unknown : We called for your help, remember? we need your help",null],
+		["You:Don't come any closer or else we will shoot",null],
+		["Crewmates : We better shoot them sir!",null],
+		["unknown: help us and we will give you the treasure of the island",null],
+		["You: hold it right there, Speak, beast.",null],
+		["unknown: We are not alone on this island as you already know, as a matter of fact there are monsters among us, they come at night and can't be killed but they live in caves on the Eastren side of the island",null],
+		["You: wait, our crewates went to the east searching for food and shelter, are you saying they are...",null],
+		["unknown: Yes they are dead. There is no food or shelted to be found, all they found is their fate waiting for them",null],
+		["You: But they have guns with them",null],
+		["unknown: Nothing works on these things, this screaching sound you here outside? that's them and they are coming for us, we are the food of the island.",null],
+		["You: What are you suggesting then?",null],
+		["unknown: There is an ancient machine in the caves that can help reverse everything and fix everything. You see, before you did what you did we weren't actually here, but you had to catch him didn't you?",null],
+		["You: What?",null],
+		["unknown: It is not a dream!",null],
+		["You: But how? do you..",null],
+		["...",null], # screaching sound and monsters come in
+		["unknown: They are here!",null],
 	])
 	
