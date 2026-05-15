@@ -110,7 +110,7 @@ transform = Transform3D(-0.99998933, 0, 0.0046252166, 0, 1, 0, -0.0046252166, 0,
 curve = SubResource("Curve3D_jyhfs")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=292388672]
-transform = Transform3D(-0.1285517, 0, -0.9916926, 0, 0.9999877, 0, 0.99168485, 0, -0.1285527, -14.058142, 54.37927, -160.53685)
+transform = Transform3D(-0.12855169, 0, -0.9916925, 0, 0.9999877, 0, 0.99168473, 0, -0.12855269, -14.058142, 54.37927, -160.53685)
 progress = 353.73682
 rotation_mode = 1
 use_model_front = true
@@ -167,3 +167,4 @@ shape = SubResource("SphereShape3D_choun")
 [connection signal="body_entered" from="reaching_cells" to="mc" method="_on_reaching_cells_body_entered"]
 [connection signal="body_entered" from="mc_reached_caves" to="mc" method="_on_mc_reached_caves_body_entered"]
 [connection signal="body_entered" from="reached_time_machine" to="mc" method="_on_reached_time_machine_body_entered"]
+[connection signal="body_entered" from="time_travel_zone" to="mc" method="_on_time_travel_zone_body_entered"]

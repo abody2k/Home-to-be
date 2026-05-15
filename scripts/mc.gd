@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 
+@export var destination : Node3D
 const SPEED = 10.0
 const AIMING_ARM_OFFSET = -0.791
 
@@ -97,8 +98,14 @@ func chng_color(alpha):
 	#$CanvasLayer/Control/time.add_theme_color_override("bg_color",Color(1,1,1,alpha))
 	
 
+func teleport():
+	global_position = destination.global_position
+	create_tween().tween_method(chng_color,0.0,1.0,2).finished.connect(func (): $CanvasLayer/Control/time.visible = false)
+	
+	
+	
 func flash_screen():
-	create_tween().tween_method(chng_color,0.0,1.0,2)
+	create_tween().tween_method(chng_color,0.0,1.0,2).finished.connect(teleport)
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -232,6 +239,15 @@ func _on_mc_reached_caves_body_entered(body):
 
 
 func _on_reached_time_machine_body_entered(body):
+	GlobalData.mission_completed()
+	GlobalData.start_new_mission()
+	get_parent().get_node("reached_time_machine").queue_free()
+
+
+func _on_time_travel_zone_body_entered(body):
+	$CanvasLayer/Control/time.visible= true
+	flash_screen()
+
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("reached_time_machine").queue_free()

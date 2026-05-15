@@ -58,7 +58,7 @@ shadow_mesh = SubResource("ArrayMesh_qvw28")
 [sub_resource type="BoxMesh" id="BoxMesh_yc5nw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkuii"]
-bg_color = Color(0.92099476, 0.9209946, 0.9209946, 1)
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obwik"]
 resource_name = "mc_clothes_low"
@@ -7987,6 +7987,7 @@ text = "10"
 fit_content = true
 
 [node name="time" type="Panel" parent="CanvasLayer/Control" unique_id=3144289]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
