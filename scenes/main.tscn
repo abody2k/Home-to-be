@@ -89,6 +89,14 @@ radius = 36.778633
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_choun"]
 
+[sub_resource type="Animation" id="Animation_tefeu"]
+resource_name = "massacre"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o6xl0"]
+_data = {
+&"massacre": SubResource("Animation_tefeu")
+}
+
 [node name="main" type="Node3D" unique_id=485170224]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=619415040]
@@ -110,7 +118,7 @@ transform = Transform3D(-0.99998933, 0, 0.0046252166, 0, 1, 0, -0.0046252166, 0,
 curve = SubResource("Curve3D_jyhfs")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=292388672]
-transform = Transform3D(-0.12855169, 0, -0.9916925, 0, 0.9999877, 0, 0.99168473, 0, -0.12855269, -14.058142, 54.37927, -160.53685)
+transform = Transform3D(-0.12855168, 0, -0.99169236, 0, 0.9999877, 0, 0.9916847, 0, -0.12855268, -14.058142, 54.37927, -160.53685)
 progress = 353.73682
 rotation_mode = 1
 use_model_front = true
@@ -162,6 +170,9 @@ shape = SubResource("SphereShape3D_85g3d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="time_travel_zone" unique_id=329002085]
 shape = SubResource("SphereShape3D_choun")
+
+[node name="player" type="AnimationPlayer" parent="." unique_id=2015613451 groups=["player"]]
+libraries/ = SubResource("AnimationLibrary_o6xl0")
 
 [connection signal="body_entered" from="mc_reached_house" to="mc" method="_on_mc_reached_house_body_entered"]
 [connection signal="body_entered" from="reaching_cells" to="mc" method="_on_reaching_cells_body_entered"]

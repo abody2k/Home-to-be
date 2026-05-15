@@ -105,6 +105,7 @@ func teleport():
 	create_tween().tween_method(chng_color,1.0,0.0,2).finished.connect(func (): $CanvasLayer/Control.visible = false)
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
+	mode = MODES.IDLE
 	
 	
 func flash_screen():

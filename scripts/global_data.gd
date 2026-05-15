@@ -50,7 +50,11 @@ func start_new_mission():
 			start_heading_to_caves()
 		MISSIONS.TIME_TRAVEL:
 			start_time_travel_mission()
-			
+		MISSIONS.MASSACRE:
+			(get_tree().get_first_node_in_group("mc") as AnimationPlayer).play("massacre")
+		MISSIONS.GENEISIS:
+			#switch to lab
+			pass
 			
 			
 			
