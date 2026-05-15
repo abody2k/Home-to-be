@@ -43,8 +43,9 @@ func start_new_mission():
 			## CALL A FUNCTION THAT DOES THINGS FOR EVERY EVENT
 	match current_mission:
 		MISSIONS.TALKING_TO_CAPTIN:
-			print("starting captain mission")
 			start_captain_mission()
+		MISSIONS.REACHING_SHORE:
+			start_reaching_shore_mission()
 			
 			
 			
