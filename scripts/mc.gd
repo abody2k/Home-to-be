@@ -78,10 +78,12 @@ func add_ammo(number_of_bullets):
 	else:
 		return 0
 
-signal out_of_bullets
 
 
 func attack():
+	if mode == MODES.IDLE:
+		return
+		
 
 	if mode == MODES.DIALOG:
 		$dialog.next()
@@ -119,6 +121,8 @@ func _ready():
 
 
 func _input(event):
+	if mode == MODES.IDLE:
+		return
 	if mode == MODES.DIALOG:
 		return
 		
@@ -155,6 +159,8 @@ var left_right = 0
 var jump_vector = Vector3.ZERO
 
 func _physics_process(delta):
+	if mode == MODES.IDLE:
+		return
 	
 	if Input.is_action_pressed("attack"):
 		attack()
