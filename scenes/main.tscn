@@ -67,6 +67,8 @@ _data = {
 }
 point_count = 8
 
+[sub_resource type="Curve3D" id="Curve3D_tbgi4"]
+
 [node name="main" type="Node3D" unique_id=485170224]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=619415040]
@@ -88,7 +90,7 @@ transform = Transform3D(-0.99998933, 0, 0.0046252166, 0, 1, 0, -0.0046252166, 0,
 curve = SubResource("Curve3D_jyhfs")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=292388672]
-transform = Transform3D(-0.1285518, 0, -0.9916933, 0, 0.9999877, 0, 0.99168557, 0, -0.1285528, -14.058142, 54.37927, -160.53685)
+transform = Transform3D(-0.12855177, 0, -0.99169314, 0, 0.9999877, 0, 0.9916854, 0, -0.12855278, -14.058142, 54.37927, -160.53685)
 progress = 353.73682
 rotation_mode = 1
 use_model_front = true
@@ -96,3 +98,6 @@ use_model_front = true
 [node name="monster" parent="." unique_id=1281038519 node_paths=PackedStringArray("path") instance=ExtResource("5_tbgi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 487.10492, 4806.9487, 892.1922)
 path = NodePath("../Path3D/PathFollow3D")
+
+[node name="boat_to_island" type="Path3D" parent="." unique_id=1699071162]
+curve = SubResource("Curve3D_tbgi4")
