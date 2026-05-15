@@ -90,6 +90,15 @@ func attack():
 			attacking = true
 			$Timer.start()
 
+func chng_color(alpha):
+	var style_box = StyleBoxFlat.new()
+	style_box.bg_color = Color(1.0,1.0,1,alpha)
+	($CanvasLayer/Control/time as Panel).add_theme_stylebox_override("panel",style_box)
+	#$CanvasLayer/Control/time.add_theme_color_override("bg_color",Color(1,1,1,alpha))
+	
+
+func flash_screen():
+	create_tween().tween_method(chng_color,0.0,1.0,2)
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
