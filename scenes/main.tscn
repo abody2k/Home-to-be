@@ -137,3 +137,4 @@ collision_mask = 2
 shape = SubResource("SphereShape3D_o6xl0")
 
 [connection signal="body_entered" from="mc_reached_house" to="mc" method="_on_mc_reached_house_body_entered"]
+[connection signal="body_entered" from="reaching_cells" to="mc" method="_on_reaching_cells_body_entered"]

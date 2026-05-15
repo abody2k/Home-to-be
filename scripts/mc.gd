@@ -203,3 +203,9 @@ func _on_mc_reached_house_body_entered(body):
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("mc_reached_house").queue_free()
+
+
+func _on_reaching_cells_body_entered(body):
+	GlobalData.mission_completed()
+	GlobalData.start_new_mission()
+	get_parent().get_node("reaching_cells").queue_free()
