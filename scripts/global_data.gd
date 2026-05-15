@@ -9,7 +9,6 @@ enum MISSIONS{
 	FINDING_LOCALS,
 	TALKING_TO_LOCALS,
 	DELIVERING_FOOD,
-	TRANSMISSION_FAILS,
 	HEADING_TO_CAVES,
 	TIME_TRAVEL,
 	DRIVING_BOAT_TO_SHIP,
@@ -46,6 +45,13 @@ func start_new_mission():
 			start_finding_locals_mission()
 		MISSIONS.TALKING_TO_LOCALS:
 			start_talking_to_locals()
+		MISSIONS.DELIVERING_FOOD:
+			start_delivering_food_mission()
+		MISSIONS.HEADING_TO_CAVES:
+			start_heading_to_caves()
+		MISSIONS.TIME_TRAVEL:
+			start_time_travel_mission()
+			
 			
 			
 			
@@ -174,5 +180,43 @@ func start_delivering_food_mission():
 		["Crewmate 1: Sir yes sir!",null],
 		
 		
+	])
+	
+func start_heading_to_caves():
+	
+	var mc = get_tree().get_first_node_in_group("mc") as CharacterBody3D
+	
+	mc.update_dialogs([
+		["You: What is this weird place",null],
+		["Crewmate 1: There are a lot of writings on the wall",null] ,
+		["You: Can't you translate it?",null],
+		["Crewmate 1: They are telling a sad story", null],
+		["You: We don't have time for that let's go deeper",null],
+		["Crewmate 1 : Yes sir...",null],
+		
+		
+	])
+	
+func start_time_travel_mission():
+	
+	var mc = get_tree().get_first_node_in_group("mc") as CharacterBody3D
+	
+	mc.update_dialogs([
+		["You: Would you look at this, A DEAD END",null],
+		["Crewmate 1: Quite the opposite sir...",null] ,
+		["You: Do you see something I'm not seeing?",null],
+		["Crewmate 1: the writing on the walls and this thing", null],
+		["You: Can you ealborate more?",null],
+		["Crewmate 1 : These sad poems are about someone missing their lover, it seems like this whole thing started because of it and judging by the fact that there are no correspondings it seems like someone was taken away!",null],
+		["You: Can you ealborate more?",null],
+		["Crewmate 1: the writing on the walls and this thing", null],
+		["You: And?",null],
+		["Crewmate 1: this thing is a time machine but it warns against questioning what happened in the past and not accepting fate.", null],		
+		["You: Are you saying we should die or what? because that's what is going to happen if we don't leave this place and we are already surrounded by these monsters",null],
+		["Crewmate 1: Judging by what we did at the prison cells? Maybe we should die.", null],		
+		["You: That's your choice man, but how do I activate this thing? these things are getting closer",null],
+		["Crewmate 1: You just walk into the white zone...", null],
+		["You: Aren't you going to come with me?",null],
+		["Crewmate 1: I have decided to face the consquences for my own actions...", null],		
 	])
 	

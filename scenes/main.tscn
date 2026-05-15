@@ -81,6 +81,12 @@ radius = 36.437
 [sub_resource type="SphereShape3D" id="SphereShape3D_o6xl0"]
 radius = 50.174316
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_tipki"]
+radius = 46.410465
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_85g3d"]
+radius = 36.778633
+
 [node name="main" type="Node3D" unique_id=485170224]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=619415040]
@@ -102,7 +108,7 @@ transform = Transform3D(-0.99998933, 0, 0.0046252166, 0, 1, 0, -0.0046252166, 0,
 curve = SubResource("Curve3D_jyhfs")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=292388672]
-transform = Transform3D(-0.12855172, 0, -0.9916927, 0, 0.9999877, 0, 0.991685, 0, -0.12855272, -14.058142, 54.37927, -160.53685)
+transform = Transform3D(-0.1285517, 0, -0.9916926, 0, 0.9999877, 0, 0.99168485, 0, -0.1285527, -14.058142, 54.37927, -160.53685)
 progress = 353.73682
 rotation_mode = 1
 use_model_front = true
@@ -136,5 +142,21 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="reaching_cells" unique_id=737716955]
 shape = SubResource("SphereShape3D_o6xl0")
 
+[node name="mc_reached_caves" type="Area3D" parent="." unique_id=1648140523]
+collision_layer = 128
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mc_reached_caves" unique_id=103067566]
+shape = SubResource("SphereShape3D_tipki")
+
+[node name="reached_time_machine" type="Area3D" parent="." unique_id=424621534]
+collision_layer = 128
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="reached_time_machine" unique_id=864988469]
+shape = SubResource("SphereShape3D_85g3d")
+
 [connection signal="body_entered" from="mc_reached_house" to="mc" method="_on_mc_reached_house_body_entered"]
 [connection signal="body_entered" from="reaching_cells" to="mc" method="_on_reaching_cells_body_entered"]
+[connection signal="body_entered" from="mc_reached_caves" to="mc" method="_on_mc_reached_caves_body_entered"]
+[connection signal="body_entered" from="reached_time_machine" to="mc" method="_on_reached_time_machine_body_entered"]
