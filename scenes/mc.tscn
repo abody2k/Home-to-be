@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ckpime2okaobd" path="res://scripts/mc.gd" id="1_yc5nw"]
 [ext_resource type="Texture2D" uid="uid://b12w5d2osppev" path="res://3D/ship_gun_BaseColor.png" id="2_gkuii"]
 [ext_resource type="Texture2D" uid="uid://em34tq2genen" path="res://icon.svg" id="2_i6vl1"]
+[ext_resource type="PackedScene" uid="uid://b5s48cbtcmq4a" path="res://scenes/rifle.tscn" id="2_ibph8"]
 [ext_resource type="PackedScene" uid="uid://dyx5tlwujgruq" path="res://scenes/dialog_ui.tscn" id="3_a6s5m"]
 [ext_resource type="Texture2D" uid="uid://bhwbtgeuy3opa" path="res://3D/mc_mc_clothes_low_BaseColor.png" id="4_3ylss"]
 [ext_resource type="Texture2D" uid="uid://d35gea01634y5" path="res://3D/Sphere_002_BaseColor.png" id="4_gkuii"]
@@ -10968,8 +10969,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.79115605)
 [node name="aim" type="Node3D" parent="." unique_id=233793561]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3915826, -0.5090941)
 
+[node name="rifle" parent="aim" unique_id=936714642 instance=ExtResource("2_ibph8")]
+transform = Transform3D(0.10290856, -0.115908705, 0, 0.115908705, 0.10290856, 0, 0, 0, 0.155, 0, 0, 0.67456216)
+
+[node name="rifle2" parent="aim" unique_id=180657353 instance=ExtResource("2_ibph8")]
+transform = Transform3D(-6.7752652e-09, 0, 0.155, 0, 0.155, 0, -0.155, 0, -6.7752652e-09, -0.3236698, 0.58087873, -0.44398075)
+visible = false
+
 [node name="Cylinder" type="MeshInstance3D" parent="aim" unique_id=1251697414]
 transform = Transform3D(2.7704936e-16, -6.3381513e-09, -0.145, -0.145, -6.3381513e-09, 4.226499e-23, -6.3381513e-09, 0.145, -6.3381513e-09, 0, 0.761238, -1.0734379)
+visible = false
 mesh = SubResource("ArrayMesh_ccss8")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="aim" unique_id=61212191]
