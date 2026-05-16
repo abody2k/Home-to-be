@@ -160,7 +160,11 @@ var left_right = 0
 var jump_vector = Vector3.ZERO
 
 func _physics_process(delta):
+	
 	if mode == MODES.IDLE:
+		velocity = Vector3.DOWN * 4
+		$AnimationPlayer.play("mc|mc_idle")
+		move_and_slide()
 		return
 	
 	if Input.is_action_pressed("attack"):
