@@ -198,7 +198,7 @@ func _physics_process(delta):
 		$jumping.start()
 		return
 	if up_down == 0 and left_right ==0 or not is_on_floor() :
-		velocity = Vector3.DOWN * 4
+		velocity = Vector3.DOWN * 40
 		$AnimationPlayer.play("mc|mc_idle")
 		move_and_slide()
 		return
