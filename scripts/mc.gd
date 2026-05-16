@@ -197,18 +197,18 @@ func _physics_process(delta):
 		jump_vector *= SPEED
 		$jumping.start()
 		return
-	if up_down == 0 and left_right ==0 :
+	if up_down == 0 and left_right ==0 or not is_on_floor() :
 		velocity = Vector3.DOWN * 4
 		$AnimationPlayer.play("mc|mc_idle")
 		move_and_slide()
 		return
 		
-	velocity = transform.basis.z * up_down
-	velocity += transform.basis.x * left_right
-	
-	velocity *= SPEED
+
 	
 	if is_on_floor():
+		velocity = transform.basis.z * up_down
+		velocity += transform.basis.x * left_right
+		velocity *= SPEED
 		move_and_slide()
 		$AnimationPlayer.play("mc|mc_walking")
 	
