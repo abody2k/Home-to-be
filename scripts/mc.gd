@@ -96,6 +96,14 @@ func chng_color(alpha):
 	($CanvasLayer/Control/time as Panel).add_theme_stylebox_override("panel",style_box)
 	#$CanvasLayer/Control/time.add_theme_color_override("bg_color",Color(1,1,1,alpha))
 	
+func chng_color_to_black(alpha):
+	var style_box = StyleBoxFlat.new()
+	style_box.bg_color = Color(0.0,0.0,0,alpha)
+	($CanvasLayer/Control/time as Panel).add_theme_stylebox_override("panel",style_box)
+	#$CanvasLayer/Control/time.add_theme_color_override("bg_color",Color(1,1,1,alpha))
+	
+
+
 
 func teleport():
 	global_position = destination.global_position
@@ -108,7 +116,20 @@ func teleport():
 func flash_screen():
 	create_tween().tween_method(chng_color,0.0,1.0,2).finished.connect(teleport)
 
+
+func unflash_black(callable):
+	
+	callable.call()
+	create_tween().tween_method(chng_color_to_black,1.0,0.0,0.5).finished.connect(func (): $CanvasLayer/Control/time.visible = false)
+	
+func flash_screen_black(callable):
+	$CanvasLayer/Control/time.visible = true
+	create_tween().tween_method(chng_color_to_black,0.0,1.0,0.5).finished.connect(func (): unflash_black(callable) )
+	
+	
+	
 func _ready():
+	flash_screen_black(func (): print("HA A"))
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	#play waking up animation
