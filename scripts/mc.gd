@@ -207,9 +207,10 @@ func _physics_process(delta):
 	velocity += transform.basis.x * left_right
 	
 	velocity *= SPEED
-	$AnimationPlayer.play("mc|mc_walking")
+	
 	if is_on_floor():
 		move_and_slide()
+		$AnimationPlayer.play("mc|mc_walking")
 	
 
 	
