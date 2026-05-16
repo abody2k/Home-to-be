@@ -235,30 +235,39 @@ func _on_dialog_finished_dialog():
 
 
 func _on_mc_reached_house_body_entered(body):
+
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("mc_reached_house").queue_free()
 
 
 func _on_reaching_cells_body_entered(body):
+	if not GlobalData.is_this_mission_over(4):
+		return
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("reaching_cells").queue_free()
 
 
 func _on_mc_reached_caves_body_entered(body):
+	if not GlobalData.is_this_mission_over(6):
+		return
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("mc_reached_caves").queue_free()
 
 
 func _on_reached_time_machine_body_entered(body):
+	if not GlobalData.is_this_mission_over(7):
+		return
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("reached_time_machine").queue_free()
 
 
 func _on_time_travel_zone_body_entered(body):
+	if not GlobalData.is_this_mission_over(8):
+		return
 	$CanvasLayer/Control/time.visible= true
 	flash_screen()
 

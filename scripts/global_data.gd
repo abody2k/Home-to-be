@@ -17,7 +17,7 @@ enum MISSIONS{
 }
 
 
-func is_this_mission_over(mission):
+func is_this_mission_over(mission : int):
 	return current_mission > mission
 	
 	
