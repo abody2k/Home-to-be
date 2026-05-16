@@ -122,6 +122,7 @@ func _ready():
 
 
 func _input(event):
+	
 	if mode == MODES.IDLE:
 		return
 	if mode == MODES.DIALOG:
