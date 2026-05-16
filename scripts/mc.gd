@@ -61,10 +61,7 @@ func eat_food(food_value):
 		var x = food_value + food
 		food_tween.tween_property(self,"food",x,0.25)
 	food_is_there.eaten()
-	food_is_there = null
-	
-	#every time food is eaten the food indicator change
-	
+	food_is_there = null	
 	
 
 
