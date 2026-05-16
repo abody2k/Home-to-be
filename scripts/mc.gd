@@ -191,7 +191,7 @@ func _physics_process(delta):
 	
 
 		
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jumping = true
 		jump_vector = transform.basis.z * up_down  + transform.basis.x * left_right + Vector3.UP
 		jump_vector *= SPEED
@@ -208,7 +208,8 @@ func _physics_process(delta):
 	
 	velocity *= SPEED
 	$AnimationPlayer.play("mc|mc_walking")
-	move_and_slide()
+	if is_on_floor():
+		move_and_slide()
 	
 
 	
