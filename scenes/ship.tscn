@@ -179,7 +179,7 @@ script = ExtResource("1_gudjc")
 mesh = SubResource("ArrayMesh_7j21i")
 
 [node name="Cube_011" type="MeshInstance3D" parent="Cube_010" unique_id=442780121]
-transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, 84.29195, 27.935474, 48.423862)
+transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, 22.996323, 24.00776, -2.521347)
 mesh = SubResource("ArrayMesh_08ed0")
 
 [node name="talking_to_captin" type="Area3D" parent="Cube_010/Cube_011" unique_id=1122704485]
@@ -190,11 +190,11 @@ collision_mask = 2
 shape = SubResource("SphereShape3D_gudjc")
 
 [node name="Cube_012" type="MeshInstance3D" parent="Cube_010" unique_id=1049353951]
-transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, 153.40417, 47.790344, 44.35226)
+transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, 85.879974, 22.813747, -5.515682)
 mesh = SubResource("ArrayMesh_7tpya")
 
 [node name="Cube_013" type="MeshInstance3D" parent="Cube_010" unique_id=1123075179]
-transform = Transform3D(0.58749413, 0, 0, 0, 1, 0, 0, 0, 0.6831677, 108.199905, 54.98561, 50.839077)
+transform = Transform3D(0.272, 0, 0, 0, 0.463, 0, 0, 0, 0.317, -54.137848, 29.5065, -14.93148)
 mesh = SubResource("ArrayMesh_q0sdf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1389433739]
