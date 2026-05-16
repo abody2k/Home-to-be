@@ -17,6 +17,11 @@ enum MISSIONS{
 }
 
 
+func is_this_mission_over(mission : int):
+	return current_mission > mission
+	
+	
+	
 var last_mission_finished : MISSIONS
 
 var current_mission : MISSIONS = MISSIONS.WAKING_UP

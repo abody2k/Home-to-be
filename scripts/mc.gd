@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 @export var destination : Node3D
-const SPEED = 10.0
+const SPEED = 20.0
 const AIMING_ARM_OFFSET = -0.791
 
 const NORMAL_ARM_OFFSET = 4.0
@@ -61,10 +61,7 @@ func eat_food(food_value):
 		var x = food_value + food
 		food_tween.tween_property(self,"food",x,0.25)
 	food_is_there.eaten()
-	food_is_there = null
-	
-	#every time food is eaten the food indicator change
-	
+	food_is_there = null	
 	
 
 
@@ -122,6 +119,7 @@ func _ready():
 
 
 func _input(event):
+	
 	if mode == MODES.IDLE:
 		return
 	if mode == MODES.DIALOG:
@@ -138,16 +136,18 @@ func _input(event):
 		#rotation_degrees.y = clampf(rotation_degrees.y,-20,20)
 		$arm.rotate_x(ev.relative.y * -0.01)
 		$arm.rotation_degrees.x = clampf($arm.rotation_degrees.x,-33,33)
-		
+		$aim.rotation_degrees.x = $arm.rotation_degrees.x
 	if event is InputEventMouseButton:
 		if (event as InputEventMouseButton).button_index == 2 and event.pressed:
 			var aiming_tween = create_tween()
 			var pov_tween = create_tween()
 			if aiming:
+				$aim/rifle2.visible=false
 				aiming_tween.tween_property($arm,"spring_length",NORMAL_ARM_OFFSET,0.5)
 				pov_tween.tween_property($arm/Camera3D,"fov",75,0.25)
 				$aim.rotation_degrees = Vector3.ZERO
 			else :
+				$aim/rifle2.visible=true
 				aiming_tween.tween_property($arm,"spring_length",AIMING_ARM_OFFSET,0.5)
 				pov_tween.tween_property($arm/Camera3D,"fov",40,0.25)
 			
@@ -160,7 +160,11 @@ var left_right = 0
 var jump_vector = Vector3.ZERO
 
 func _physics_process(delta):
+	
 	if mode == MODES.IDLE:
+		velocity = Vector3.DOWN * 4
+		$AnimationPlayer.play("mc|mc_idle")
+		move_and_slide()
 		return
 	
 	if Input.is_action_pressed("attack"):
@@ -184,24 +188,26 @@ func _physics_process(delta):
 	
 
 		
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jumping = true
 		jump_vector = transform.basis.z * up_down  + transform.basis.x * left_right + Vector3.UP
 		jump_vector *= SPEED
 		$jumping.start()
 		return
-	if up_down == 0 and left_right ==0 :
-		velocity = Vector3.DOWN * 4
-		$AnimationPlayer.play("rig_005|mc_idle")
+	if up_down == 0 and left_right ==0 or not is_on_floor() :
+		velocity = Vector3.DOWN * 40
+		$AnimationPlayer.play("mc|mc_idle")
 		move_and_slide()
 		return
 		
-	velocity = transform.basis.z * up_down
-	velocity += transform.basis.x * left_right
+
 	
-	velocity *= SPEED
-	$AnimationPlayer.play("rig_005|mc_walking_001")
-	move_and_slide()
+	if is_on_floor():
+		velocity = transform.basis.z * up_down
+		velocity += transform.basis.x * left_right
+		velocity *= SPEED
+		move_and_slide()
+		$AnimationPlayer.play("mc|mc_walking")
 	
 
 	
@@ -229,30 +235,39 @@ func _on_dialog_finished_dialog():
 
 
 func _on_mc_reached_house_body_entered(body):
+
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("mc_reached_house").queue_free()
 
 
 func _on_reaching_cells_body_entered(body):
+	if not GlobalData.is_this_mission_over(4):
+		return
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("reaching_cells").queue_free()
 
 
 func _on_mc_reached_caves_body_entered(body):
+	if not GlobalData.is_this_mission_over(6):
+		return
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("mc_reached_caves").queue_free()
 
 
 func _on_reached_time_machine_body_entered(body):
+	if not GlobalData.is_this_mission_over(7):
+		return
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("reached_time_machine").queue_free()
 
 
 func _on_time_travel_zone_body_entered(body):
+	if not GlobalData.is_this_mission_over(8):
+		return
 	$CanvasLayer/Control/time.visible= true
 	flash_screen()
 
