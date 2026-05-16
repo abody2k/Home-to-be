@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 
+@export var destination : Node3D
 const SPEED = 10.0
 const AIMING_ARM_OFFSET = -0.791
 
@@ -8,7 +9,7 @@ const NORMAL_ARM_OFFSET = 4.0
 
 enum MODES {
 	
-	DIALOG,FPS
+	DIALOG,FPS, IDLE
 }
 
 var mode : MODES = MODES.DIALOG
@@ -27,10 +28,13 @@ var food_is_there : Area3D
 
 
 
-var ammo = 10:
+var ammo = 0:
 	set(value):
 		ammo = value
 		$CanvasLayer/Control/HBoxContainer/bullets.text = str(value)
+		if ammo == 0:
+			GlobalData.mission_completed()
+			GlobalData.start_new_mission()
 
 const AMMO_MAX = 100
 
@@ -75,7 +79,11 @@ func add_ammo(number_of_bullets):
 		return 0
 
 
+
 func attack():
+	if mode == MODES.IDLE:
+		return
+		
 
 	if mode == MODES.DIALOG:
 		$dialog.next()
@@ -85,6 +93,23 @@ func attack():
 			attacking = true
 			$Timer.start()
 
+func chng_color(alpha):
+	var style_box = StyleBoxFlat.new()
+	style_box.bg_color = Color(1.0,1.0,1,alpha)
+	($CanvasLayer/Control/time as Panel).add_theme_stylebox_override("panel",style_box)
+	#$CanvasLayer/Control/time.add_theme_color_override("bg_color",Color(1,1,1,alpha))
+	
+
+func teleport():
+	global_position = destination.global_position
+	create_tween().tween_method(chng_color,1.0,0.0,2).finished.connect(func (): $CanvasLayer/Control.visible = false)
+	GlobalData.mission_completed()
+	GlobalData.start_new_mission()
+	mode = MODES.IDLE
+	
+	
+func flash_screen():
+	create_tween().tween_method(chng_color,0.0,1.0,2).finished.connect(teleport)
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -97,6 +122,8 @@ func _ready():
 
 
 func _input(event):
+	if mode == MODES.IDLE:
+		return
 	if mode == MODES.DIALOG:
 		return
 		
@@ -133,6 +160,8 @@ var left_right = 0
 var jump_vector = Vector3.ZERO
 
 func _physics_process(delta):
+	if mode == MODES.IDLE:
+		return
 	
 	if Input.is_action_pressed("attack"):
 		attack()
@@ -197,3 +226,36 @@ func _on_jumping_timeout():
 func _on_dialog_finished_dialog():
 	print("dialog finished")
 	mode = MODES.FPS
+
+
+func _on_mc_reached_house_body_entered(body):
+	GlobalData.mission_completed()
+	GlobalData.start_new_mission()
+	get_parent().get_node("mc_reached_house").queue_free()
+
+
+func _on_reaching_cells_body_entered(body):
+	GlobalData.mission_completed()
+	GlobalData.start_new_mission()
+	get_parent().get_node("reaching_cells").queue_free()
+
+
+func _on_mc_reached_caves_body_entered(body):
+	GlobalData.mission_completed()
+	GlobalData.start_new_mission()
+	get_parent().get_node("mc_reached_caves").queue_free()
+
+
+func _on_reached_time_machine_body_entered(body):
+	GlobalData.mission_completed()
+	GlobalData.start_new_mission()
+	get_parent().get_node("reached_time_machine").queue_free()
+
+
+func _on_time_travel_zone_body_entered(body):
+	$CanvasLayer/Control/time.visible= true
+	flash_screen()
+
+	GlobalData.mission_completed()
+	GlobalData.start_new_mission()
+	get_parent().get_node("reached_time_machine").queue_free()

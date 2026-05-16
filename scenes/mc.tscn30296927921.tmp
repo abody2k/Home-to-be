@@ -57,8 +57,7 @@ shadow_mesh = SubResource("ArrayMesh_qvw28")
 
 [sub_resource type="BoxMesh" id="BoxMesh_yc5nw"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkuii"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="CanvasTexture" id="CanvasTexture_gkuii"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obwik"]
 resource_name = "mc_clothes_low"
@@ -7986,15 +7985,14 @@ size_flags_horizontal = 3
 text = "10"
 fit_content = true
 
-[node name="time" type="Panel" parent="CanvasLayer/Control" unique_id=3144289]
-visible = false
+[node name="time" type="TextureRect" parent="CanvasLayer/Control" unique_id=1598399248]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_gkuii")
+texture = SubResource("CanvasTexture_gkuii")
 
 [node name="dialog" parent="." unique_id=2041204070 instance=ExtResource("3_a6s5m")]
 visible = false

@@ -24,6 +24,7 @@ GlobalData="*uid://dhd6pb42c4beb"
 mc=""
 monsters=""
 ship=""
+player=""
 
 [input]
 

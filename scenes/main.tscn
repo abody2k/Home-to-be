@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d4gibrj0qhoaf" path="res://scenes/mc.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b5chy68dgi83e" path="res://scenes/ship.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://scp1y43p0n18" path="res://scenes/monster.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://doac5iuv4xfyn" path="res://scenes/boat.tscn" id="6_tefeu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -67,6 +68,35 @@ _data = {
 }
 point_count = 8
 
+[sub_resource type="Curve3D" id="Curve3D_tbgi4"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 637.8448, 0, 100.45799, 0, 0, 0, 0, 0, 0, 600.43, 0, 110.019554, 0, 0, 0, 0, 0, 0, 560.9366, 0, 101.28943, 0, 0, 0, 0, 0, 0, 503.1515, 0, 107.94095, 0, 0, 0, 0, 0, 0, 447.0293, 0, 107.52524, 0, 0, 0, 0, 0, 0, 386.9746, 0, 135.90259, 0, 0, 0, 0, 0, 0, 333.88123, 0, 145.13623, 0, 0, 0, 0, 0, 0, 282.3268, 0, 122.05216, 0, 0, 0, 0, 0, 0, 247.70068, 0, 82.03978, 0, 0, 0, 0, 0, 0, 199.22412, 0, 66.65038, 0, 0, 0, 0, 0, 0, 148.43918, 0, 61.264107, 0, 0, 0, 0, 0, 0, 148.43918, 0, 30.485334),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 12
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tefeu"]
+radius = 36.437
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o6xl0"]
+radius = 50.174316
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tipki"]
+radius = 46.410465
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_85g3d"]
+radius = 36.778633
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_choun"]
+
+[sub_resource type="Animation" id="Animation_tefeu"]
+resource_name = "massacre"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o6xl0"]
+_data = {
+&"massacre": SubResource("Animation_tefeu")
+}
+
 [node name="main" type="Node3D" unique_id=485170224]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=619415040]
@@ -88,7 +118,7 @@ transform = Transform3D(-0.99998933, 0, 0.0046252166, 0, 1, 0, -0.0046252166, 0,
 curve = SubResource("Curve3D_jyhfs")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=292388672]
-transform = Transform3D(-0.1285518, 0, -0.9916933, 0, 0.9999877, 0, 0.99168557, 0, -0.1285528, -14.058142, 54.37927, -160.53685)
+transform = Transform3D(-0.12855168, 0, -0.99169236, 0, 0.9999877, 0, 0.9916847, 0, -0.12855268, -14.058142, 54.37927, -160.53685)
 progress = 353.73682
 rotation_mode = 1
 use_model_front = true
@@ -96,3 +126,56 @@ use_model_front = true
 [node name="monster" parent="." unique_id=1281038519 node_paths=PackedStringArray("path") instance=ExtResource("5_tbgi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 487.10492, 4806.9487, 892.1922)
 path = NodePath("../Path3D/PathFollow3D")
+
+[node name="boat_to_island" type="Path3D" parent="." unique_id=1699071162]
+curve = SubResource("Curve3D_tbgi4")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="boat_to_island" unique_id=1826125259]
+transform = Transform3D(-0.2475984, 0, 0.9688628, 0, 1, 0, -0.9688628, 0, -0.2475984, 637.8448, 0, 100.45799)
+
+[node name="boat" parent="boat_to_island/PathFollow3D" unique_id=1471290188 node_paths=PackedStringArray("path") instance=ExtResource("6_tefeu")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0, 0)
+path = NodePath("..")
+
+[node name="mc_reached_house" type="Area3D" parent="." unique_id=85465003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.985558, 10.96764, 61.319588)
+collision_layer = 128
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mc_reached_house" unique_id=1645099527]
+shape = SubResource("SphereShape3D_tefeu")
+
+[node name="reaching_cells" type="Area3D" parent="." unique_id=1756816655]
+collision_layer = 128
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="reaching_cells" unique_id=737716955]
+shape = SubResource("SphereShape3D_o6xl0")
+
+[node name="mc_reached_caves" type="Area3D" parent="." unique_id=1648140523]
+collision_layer = 128
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mc_reached_caves" unique_id=103067566]
+shape = SubResource("SphereShape3D_tipki")
+
+[node name="reached_time_machine" type="Area3D" parent="." unique_id=424621534]
+collision_layer = 128
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="reached_time_machine" unique_id=864988469]
+shape = SubResource("SphereShape3D_85g3d")
+
+[node name="time_travel_zone" type="Area3D" parent="." unique_id=1064389907]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="time_travel_zone" unique_id=329002085]
+shape = SubResource("SphereShape3D_choun")
+
+[node name="player" type="AnimationPlayer" parent="." unique_id=2015613451 groups=["player"]]
+libraries/ = SubResource("AnimationLibrary_o6xl0")
+
+[connection signal="body_entered" from="mc_reached_house" to="mc" method="_on_mc_reached_house_body_entered"]
+[connection signal="body_entered" from="reaching_cells" to="mc" method="_on_reaching_cells_body_entered"]
+[connection signal="body_entered" from="mc_reached_caves" to="mc" method="_on_mc_reached_caves_body_entered"]
+[connection signal="body_entered" from="reached_time_machine" to="mc" method="_on_reached_time_machine_body_entered"]
+[connection signal="body_entered" from="time_travel_zone" to="mc" method="_on_time_travel_zone_body_entered"]
