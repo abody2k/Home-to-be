@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 @export var destination : Node3D
-const SPEED = 20.0
+const SPEED = 10.0
 const AIMING_ARM_OFFSET = -0.791
 
 const NORMAL_ARM_OFFSET = 4.0
