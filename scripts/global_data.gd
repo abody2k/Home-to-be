@@ -87,12 +87,14 @@ func start_captain_mission():
 		["Captain: You, you were slacking off the whole time sleeping and doing nothing productive and helpful, take some with you and head to the island.",null],
 		["You: But sir, capture and rescue is not my profession, we don't know anything about these people.",null],
 		["Captain: No butts, that's an order! Do you understand?",null],
-		["Yes sir...", func(): get_tree().get_first_node_in_group("ship").get_node("barrier").queue_free()],
+		["Yes sir...", jump_into_boat.bind(mc)],
 	])
 	
 	
 
-
+func jump_into_boat(mc):
+	get_tree().get_first_node_in_group("ship").get_node("barrier").queue_free()
+	mc.jump_into_boat()
 
 func start_reaching_shore_mission():
 	var mc = get_tree().get_first_node_in_group("mc") as CharacterBody3D
