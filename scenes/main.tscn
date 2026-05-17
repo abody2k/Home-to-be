@@ -141,7 +141,7 @@ transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 3.0433445, 0)
 path = NodePath("..")
 
 [node name="troops" type="Node3D" parent="boat_to_island/PathFollow3D/boat" unique_id=1387866441 groups=["troops_group"]]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.756502, 2.4880207, -1.3025513)
+transform = Transform3D(0.5, 0, 0, 0, 0.49999988, 0, 0, 0, 0.5, 25.338787, 0.9161174, -47.66417)
 
 [node name="solider" parent="boat_to_island/PathFollow3D/boat/troops" unique_id=570714499 instance=ExtResource("7_o6xl0")]
 transform = Transform3D(0.58693963, 0, -0.4669064, 0, 0.7499998, 0, 0.4669064, 0, 0.58693963, -0.96948624, -0.07883346, -0.24775696)

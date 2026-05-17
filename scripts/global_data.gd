@@ -105,7 +105,7 @@ func start_reaching_shore_mission():
 		["You: Best thing is to split into 3 groups because it's a big island and we have different things to do, first group will search for resources, the other will try to locate the locals and me and the last group will try to locate the signal location",null],
 		["Crewmate 1: This looks like an old temple, look at these writings on the wall, I wonder what they mean", null],
 		["Crewmate 2: That's Arabic, I can help with the translations",null],
-		["You: that means you should come with me in case we needed help. Come on! let's go!",null],
+		["You: that means you should come with me in case we needed help. Come on! let's go!",mc.move_troops_to_shore],
 	])
 	
 	

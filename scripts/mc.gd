@@ -260,6 +260,13 @@ func jump_into_boat():
 	flash_screen_black(func (): position = boat.global_position + Vector3.UP * 10)
 	troops.position = Vector3.ZERO
 
+func move_troops_to_shore():
+	flash_screen_black(move_troops_and_mc_to_shore)
+	
+
+func move_troops_and_mc_to_shore():
+	troops.global_position = Vector3(165.76,11.28,-14)
+	global_position = troops.global_position
 func _on_mc_reached_house_body_entered(body):
 
 	GlobalData.mission_completed()
