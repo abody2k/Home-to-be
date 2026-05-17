@@ -255,6 +255,7 @@ func _on_dialog_finished_dialog():
 	mode = MODES.FPS
 
 func jump_into_boat():
+	flash_screen_black(null)
 	position = boat.global_position + Vector3.UP * 10
 
 func _on_mc_reached_house_body_entered(body):
