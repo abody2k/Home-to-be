@@ -120,11 +120,11 @@ func flash_screen():
 func unflash_black(callable):
 	
 	callable.call()
-	create_tween().tween_method(chng_color_to_black,1.0,0.0,0.5).finished.connect(func (): $CanvasLayer/Control/time.visible = false)
+	create_tween().tween_method(chng_color_to_black,1.0,0.0,1).finished.connect(func (): $CanvasLayer/Control/time.visible = false)
 	
 func flash_screen_black(callable):
 	$CanvasLayer/Control/time.visible = true
-	create_tween().tween_method(chng_color_to_black,0.0,1.0,0.5).finished.connect(func (): unflash_black(callable) )
+	create_tween().tween_method(chng_color_to_black,0.0,1.0,1).finished.connect(func (): unflash_black(callable) )
 	
 	
 	
@@ -255,8 +255,8 @@ func _on_dialog_finished_dialog():
 	mode = MODES.FPS
 
 func jump_into_boat():
-	flash_screen_black(null)
-	position = boat.global_position + Vector3.UP * 10
+	flash_screen_black(func (): position = boat.global_position + Vector3.UP * 10)
+	
 
 func _on_mc_reached_house_body_entered(body):
 
