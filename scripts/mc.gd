@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var destination : Node3D
 const SPEED = 10.0
 const AIMING_ARM_OFFSET = -0.791
-
+@export var boat : CharacterBody3D
 const NORMAL_ARM_OFFSET = 4.0
 
 enum MODES {
