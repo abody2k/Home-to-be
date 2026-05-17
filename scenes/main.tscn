@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b5chy68dgi83e" path="res://scenes/ship.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://scp1y43p0n18" path="res://scenes/monster.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://doac5iuv4xfyn" path="res://scenes/boat.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://ds8t8lo2u7aq1" path="res://scenes/solider.tscn" id="7_o6xl0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -108,11 +109,13 @@ environment = SubResource("Environment_jyhfs")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 75.993385, 1.9408035, 50.839085)
 mesh = SubResource("ArrayMesh_o6xl0")
 
-[node name="mc" parent="." unique_id=2014978484 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 603.892, 56.738823, 44.335773)
+[node name="mc" parent="." unique_id=2014978484 node_paths=PackedStringArray("boat", "troops") instance=ExtResource("3_sugp2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 603.892, 43.740143, 41.987534)
+boat = NodePath("../boat_to_island/PathFollow3D/boat")
+troops = NodePath("../boat_to_island/PathFollow3D/boat/troops")
 
 [node name="ship" parent="." unique_id=1459893465 instance=ExtResource("4_jyhfs")]
-transform = Transform3D(-0.99998933, 0, 0.0046252166, 0, 1, 0, -0.0046252166, 0, -0.99998933, 653.46045, 13.131723, 42.368584)
+transform = Transform3D(-0.5249944, 0, 0.0024282385, 0, 0.525, 0, -0.0024282385, 0, -0.5249944, 653.46045, 13.131723, 42.368584)
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1878875203]
 curve = SubResource("Curve3D_jyhfs")
@@ -136,6 +139,26 @@ transform = Transform3D(-0.2475984, 0, 0.9688628, 0, 1, 0, -0.9688628, 0, -0.247
 [node name="boat" parent="boat_to_island/PathFollow3D" unique_id=1471290188 node_paths=PackedStringArray("path") instance=ExtResource("6_tefeu")]
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 3.0433445, 0)
 path = NodePath("..")
+
+[node name="troops" type="Node3D" parent="boat_to_island/PathFollow3D/boat" unique_id=1387866441 groups=["troops_group"]]
+transform = Transform3D(0.5, 0, 0, 0, 0.49999988, 0, 0, 0, 0.5, 25.338787, 0.9161174, -47.66417)
+
+[node name="solider" parent="boat_to_island/PathFollow3D/boat/troops" unique_id=570714499 instance=ExtResource("7_o6xl0")]
+transform = Transform3D(0.58693963, 0, -0.4669064, 0, 0.7499998, 0, 0.4669064, 0, 0.58693963, -0.96948624, -0.07883346, -0.24775696)
+
+[node name="solider2" parent="boat_to_island/PathFollow3D/boat/troops" unique_id=1428989885 instance=ExtResource("7_o6xl0")]
+transform = Transform3D(0.74999994, 0, 0, 0, 0.74999976, 0, 0, 0, 0.74999994, -0.113861084, -0.07883346, 1.1794815)
+
+[node name="solider3" parent="boat_to_island/PathFollow3D/boat/troops" unique_id=2123212811 instance=ExtResource("7_o6xl0")]
+transform = Transform3D(0.41023415, 0, 0.62785965, 0, 0.7499998, 0, -0.62785965, 0, 0.41023415, 0.9611416, -0.07883346, 0.24562836)
+
+[node name="solider4" parent="boat_to_island/PathFollow3D/boat/troops" unique_id=667445317 instance=ExtResource("7_o6xl0")]
+transform = Transform3D(-0.67345726, 0, 0.33008367, 0, 0.7499996, 0, -0.33008367, 0, -0.67345726, 0.4424057, -0.07883346, -1.4748688)
+
+[node name="solider5" parent="boat_to_island/PathFollow3D/boat/troops" unique_id=2123375140 instance=ExtResource("7_o6xl0")]
+transform = Transform3D(0.64027214, 0, 0.39057833, 0, 0.7499994, 0, -0.39057833, 0, 0.64027214, 0.7469673, -0.07883346, 1.1299362)
+
+[node name="troops2" type="Node3D" parent="boat_to_island/PathFollow3D/boat" unique_id=1360585146]
 
 [node name="mc_reached_house" type="Area3D" parent="." unique_id=85465003]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.985558, 10.96764, 61.319588)

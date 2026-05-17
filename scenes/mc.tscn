@@ -10948,6 +10948,7 @@ _data = {
 }
 
 [node name="mc" type="CharacterBody3D" unique_id=2014978484 groups=["mc"]]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 collision_layer = 2
 script = ExtResource("1_yc5nw")
 

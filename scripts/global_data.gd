@@ -87,12 +87,14 @@ func start_captain_mission():
 		["Captain: You, you were slacking off the whole time sleeping and doing nothing productive and helpful, take some with you and head to the island.",null],
 		["You: But sir, capture and rescue is not my profession, we don't know anything about these people.",null],
 		["Captain: No butts, that's an order! Do you understand?",null],
-		["Yes sir...", func(): get_tree().get_first_node_in_group("ship").get_node("barrier").queue_free()],
+		["Yes sir...", jump_into_boat.bind(mc)],
 	])
 	
 	
 
-
+func jump_into_boat(mc):
+	get_tree().get_first_node_in_group("ship").get_node("barrier").queue_free()
+	mc.jump_into_boat()
 
 func start_reaching_shore_mission():
 	var mc = get_tree().get_first_node_in_group("mc") as CharacterBody3D
@@ -103,7 +105,7 @@ func start_reaching_shore_mission():
 		["You: Best thing is to split into 3 groups because it's a big island and we have different things to do, first group will search for resources, the other will try to locate the locals and me and the last group will try to locate the signal location",null],
 		["Crewmate 1: This looks like an old temple, look at these writings on the wall, I wonder what they mean", null],
 		["Crewmate 2: That's Arabic, I can help with the translations",null],
-		["You: that means you should come with me in case we needed help. Come on! let's go!",null],
+		["You: that means you should come with me in case we needed help. Come on! let's go!",mc.move_troops_to_shore],
 	])
 	
 	

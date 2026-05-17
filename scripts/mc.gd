@@ -2,9 +2,10 @@ extends CharacterBody3D
 
 
 @export var destination : Node3D
-const SPEED = 20.0
+const SPEED = 10.0
 const AIMING_ARM_OFFSET = -0.791
-
+@export var boat : CharacterBody3D
+@export var troops : Node3D
 const NORMAL_ARM_OFFSET = 4.0
 
 enum MODES {
@@ -120,11 +121,11 @@ func flash_screen():
 func unflash_black(callable):
 	
 	callable.call()
-	create_tween().tween_method(chng_color_to_black,1.0,0.0,0.5).finished.connect(func (): $CanvasLayer/Control/time.visible = false)
+	create_tween().tween_method(chng_color_to_black,1.0,0.0,1).finished.connect(func (): $CanvasLayer/Control/time.visible = false)
 	
 func flash_screen_black(callable):
 	$CanvasLayer/Control/time.visible = true
-	create_tween().tween_method(chng_color_to_black,0.0,1.0,0.5).finished.connect(func (): unflash_black(callable) )
+	create_tween().tween_method(chng_color_to_black,0.0,1.0,1).finished.connect(func (): unflash_black(callable) )
 	
 	
 	
@@ -254,7 +255,18 @@ func _on_dialog_finished_dialog():
 	print("dialog finished")
 	mode = MODES.FPS
 
+func jump_into_boat():
+	troops.visible = true
+	flash_screen_black(func (): position = boat.global_position + Vector3.UP * 10)
+	troops.position = Vector3.ZERO
 
+func move_troops_to_shore():
+	flash_screen_black(move_troops_and_mc_to_shore)
+	
+
+func move_troops_and_mc_to_shore():
+	troops.global_position = Vector3(165.76,11.28,-14)
+	global_position = troops.global_position
 func _on_mc_reached_house_body_entered(body):
 
 	GlobalData.mission_completed()
