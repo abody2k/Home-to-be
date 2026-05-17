@@ -109,9 +109,10 @@ environment = SubResource("Environment_jyhfs")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 75.993385, 1.9408035, 50.839085)
 mesh = SubResource("ArrayMesh_o6xl0")
 
-[node name="mc" parent="." unique_id=2014978484 node_paths=PackedStringArray("boat") instance=ExtResource("3_sugp2")]
+[node name="mc" parent="." unique_id=2014978484 node_paths=PackedStringArray("boat", "troops") instance=ExtResource("3_sugp2")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 603.892, 43.740143, 41.987534)
 boat = NodePath("../boat_to_island/PathFollow3D/boat")
+troops = NodePath("../boat_to_island/PathFollow3D/boat/troops")
 
 [node name="ship" parent="." unique_id=1459893465 instance=ExtResource("4_jyhfs")]
 transform = Transform3D(-0.5249944, 0, 0.0024282385, 0, 0.525, 0, -0.0024282385, 0, -0.5249944, 653.46045, 13.131723, 42.368584)
@@ -139,7 +140,7 @@ transform = Transform3D(-0.2475984, 0, 0.9688628, 0, 1, 0, -0.9688628, 0, -0.247
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 3.0433445, 0)
 path = NodePath("..")
 
-[node name="troops" type="Node3D" parent="boat_to_island/PathFollow3D/boat" unique_id=1387866441]
+[node name="troops" type="Node3D" parent="boat_to_island/PathFollow3D/boat" unique_id=1387866441 groups=["troops_group"]]
 visible = false
 
 [node name="solider" parent="boat_to_island/PathFollow3D/boat/troops" unique_id=570714499 instance=ExtResource("7_o6xl0")]

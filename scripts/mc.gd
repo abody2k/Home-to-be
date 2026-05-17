@@ -5,6 +5,7 @@ extends CharacterBody3D
 const SPEED = 10.0
 const AIMING_ARM_OFFSET = -0.791
 @export var boat : CharacterBody3D
+@export var troops : Node3D
 const NORMAL_ARM_OFFSET = 4.0
 
 enum MODES {
@@ -255,6 +256,7 @@ func _on_dialog_finished_dialog():
 	mode = MODES.FPS
 
 func jump_into_boat():
+	get_tree().get_first_node_in_group("troops_group").visible = true
 	flash_screen_black(func (): position = boat.global_position + Vector3.UP * 10)
 	
 
