@@ -141,7 +141,7 @@ transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 3.0433445, 0)
 path = NodePath("..")
 
 [node name="troops" type="Node3D" parent="boat_to_island/PathFollow3D/boat" unique_id=1387866441 groups=["troops_group"]]
-visible = false
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.756502, 2.4880207, -1.3025513)
 
 [node name="solider" parent="boat_to_island/PathFollow3D/boat/troops" unique_id=570714499 instance=ExtResource("7_o6xl0")]
 transform = Transform3D(0.58693963, 0, -0.4669064, 0, 0.7499998, 0, 0.4669064, 0, 0.58693963, -0.96948624, -0.07883346, -0.24775696)
@@ -157,6 +157,8 @@ transform = Transform3D(-0.67345726, 0, 0.33008367, 0, 0.7499996, 0, -0.33008367
 
 [node name="solider5" parent="boat_to_island/PathFollow3D/boat/troops" unique_id=2123375140 instance=ExtResource("7_o6xl0")]
 transform = Transform3D(0.64027214, 0, 0.39057833, 0, 0.7499994, 0, -0.39057833, 0, 0.64027214, 0.7469673, -0.07883346, 1.1299362)
+
+[node name="troops2" type="Node3D" parent="boat_to_island/PathFollow3D/boat" unique_id=1360585146]
 
 [node name="mc_reached_house" type="Area3D" parent="." unique_id=85465003]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.985558, 10.96764, 61.319588)
