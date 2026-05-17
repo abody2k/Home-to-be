@@ -25,6 +25,7 @@ mc=""
 monsters=""
 ship=""
 player=""
+troops_group=""
 
 [input]
 
