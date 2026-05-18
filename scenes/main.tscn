@@ -93,10 +93,18 @@ radius = 36.778633
 [sub_resource type="Animation" id="Animation_tefeu"]
 resource_name = "massacre"
 
+[sub_resource type="Animation" id="Animation_o6xl0"]
+resource_name = "troops_marching_from_shore"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o6xl0"]
 _data = {
-&"massacre": SubResource("Animation_tefeu")
+&"massacre": SubResource("Animation_tefeu"),
+&"troops_marching_from_shore": SubResource("Animation_o6xl0")
 }
+
+[sub_resource type="Curve3D" id="Curve3D_tipki"]
+
+[sub_resource type="Curve3D" id="Curve3D_85g3d"]
 
 [node name="main" type="Node3D" unique_id=485170224]
 
@@ -196,6 +204,18 @@ shape = SubResource("SphereShape3D_choun")
 
 [node name="player" type="AnimationPlayer" parent="." unique_id=2015613451 groups=["player"]]
 libraries/ = SubResource("AnimationLibrary_o6xl0")
+
+[node name="paths" type="Node3D" parent="." unique_id=1944652839]
+
+[node name="shore_to_caves" type="Path3D" parent="paths" unique_id=104957717]
+curve = SubResource("Curve3D_tipki")
+
+[node name="shore_to_caves_follower" type="PathFollow3D" parent="paths/shore_to_caves" unique_id=1386763247]
+
+[node name="shore_to_prison" type="Path3D" parent="paths" unique_id=790226843]
+curve = SubResource("Curve3D_85g3d")
+
+[node name="shore_to_prison_follower" type="PathFollow3D" parent="paths/shore_to_prison" unique_id=718779171]
 
 [connection signal="body_entered" from="mc_reached_house" to="mc" method="_on_mc_reached_house_body_entered"]
 [connection signal="body_entered" from="reaching_cells" to="mc" method="_on_reaching_cells_body_entered"]
