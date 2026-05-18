@@ -11,7 +11,12 @@ func _physics_process(delta):
 		var target = player.global_position
 		target.y =global_position.y
 		look_at(target)
-		velocity = normalized_dir * 15
+		
 		if global_position.distance_to(player.global_position) > 15:
+			velocity = normalized_dir * 15
 			move_and_slide()
+			$AnimationPlayer.play("rig_004|solider_walking")
+		else:
+			$AnimationPlayer.stop()
+			
 		
