@@ -1,7 +1,8 @@
 extends "res://scripts/boat.gd"
 var player : CharacterBody3D
 
-
+func remove_player():
+	player = null
 
 func _physics_process(delta):
 	if player:
