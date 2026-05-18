@@ -9,6 +9,8 @@ const AIMING_ARM_OFFSET = -0.791
 
 @export var shore_to_cave_path : PathFollow3D
 @export var shore_to_cave_prison : PathFollow3D
+
+@export var my_solider : CharacterBody3D
 const NORMAL_ARM_OFFSET = 4.0
 
 enum MODES {
