@@ -278,7 +278,7 @@ func move_troops_and_mc_to_shore():
 	children[2].reparent(shore_to_cave_prison)
 	children[3].reparent(shore_to_cave_prison)
 	children[4].top_level = true
-	
+	children[4].player = self
 	children.pop_back()
 	for solider in children:
 		solider.position= Vector3.ZERO
