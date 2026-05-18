@@ -26,6 +26,7 @@ monsters=""
 ship=""
 player=""
 troops_group=""
+soliders=""
 
 [input]
 

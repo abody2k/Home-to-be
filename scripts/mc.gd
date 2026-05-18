@@ -287,7 +287,7 @@ func move_troops_and_mc_to_shore():
 	
 	
 func _on_mc_reached_house_body_entered(body):
-
+	get_tree().call_group("soliders","remove_player")
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("mc_reached_house").queue_free()
