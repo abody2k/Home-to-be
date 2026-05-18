@@ -6,6 +6,11 @@ const SPEED = 10.0
 const AIMING_ARM_OFFSET = -0.791
 @export var boat : CharacterBody3D
 @export var troops : Node3D
+
+@export var shore_to_cave_path : PathFollow3D
+@export var shore_to_cave_prison : PathFollow3D
+
+@export var my_solider : CharacterBody3D
 const NORMAL_ARM_OFFSET = 4.0
 
 enum MODES {
@@ -267,8 +272,25 @@ func move_troops_to_shore():
 func move_troops_and_mc_to_shore():
 	troops.global_position = Vector3(165.76,11.28,-14)
 	global_position = troops.global_position
+	var children = troops.get_children()
+	#for solider in children:
+		#solider.top_level = true
+	children[0].reparent(shore_to_cave_path)
+	children[1].reparent(shore_to_cave_path)
+	children[2].reparent(shore_to_cave_prison)
+	children[3].reparent(shore_to_cave_prison)
+	children[4].top_level = true
+	children[4].player = self
+	my_solider = children[4] 
+	children.pop_back()
+	for solider in children:
+		solider.position= Vector3.ZERO
+	(get_tree().get_first_node_in_group("player") as AnimationPlayer).play("troops_marching_from_shore")
+		
+	
+	
 func _on_mc_reached_house_body_entered(body):
-
+	get_tree().call_group("soliders","remove_player")
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("mc_reached_house").queue_free()
