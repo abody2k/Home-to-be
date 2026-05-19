@@ -219,13 +219,13 @@ point_count = 7
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=619415040]
 environment = SubResource("Environment_jyhfs")
 
-[node name="Sphere_014" type="MeshInstance3D" parent="." unique_id=1284217912]
+[node name="prison" type="MeshInstance3D" parent="." unique_id=1284217912]
 transform = Transform3D(-0.15766409, -5.813743e-10, 4.9975133, -0.61484367, 4.962015, -0.0193974, -4.959547, -0.6151495, -0.15646632, 121.12262, 34.360558, 91.96695)
 mesh = SubResource("ArrayMesh_ya4ey")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Sphere_014" unique_id=2064953952]
+[node name="StaticBody3D" type="StaticBody3D" parent="prison" unique_id=2064953952]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sphere_014/StaticBody3D" unique_id=691618756]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="prison/StaticBody3D" unique_id=691618756]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
 [node name="island" parent="." unique_id=1412437666 instance=ExtResource("1_o5qli")]
@@ -259,6 +259,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 487.10492, 4806.9487, 892.192
 path = NodePath("../Path3D/PathFollow3D")
 
 [node name="boat_to_island" type="Path3D" parent="." unique_id=1699071162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.796234, 0)
 curve = SubResource("Curve3D_tbgi4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="boat_to_island" unique_id=1826125259]
@@ -289,7 +290,7 @@ transform = Transform3D(0.64027214, 0, 0.39057833, 0, 0.7499994, 0, -0.39057833,
 [node name="troops2" type="Node3D" parent="boat_to_island/PathFollow3D/boat" unique_id=1360585146]
 
 [node name="mc_reached_house" type="Area3D" parent="." unique_id=85465003]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.676758, 117.721405, -552.3351)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.676758, 339.8221, -552.3351)
 collision_layer = 128
 collision_mask = 2
 
@@ -297,7 +298,7 @@ collision_mask = 2
 shape = SubResource("SphereShape3D_tefeu")
 
 [node name="reaching_cells" type="Area3D" parent="." unique_id=1756816655]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.028534, 0, 90.84331)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.028534, 222.10071, 90.84331)
 collision_layer = 128
 collision_mask = 2
 
@@ -305,7 +306,7 @@ collision_mask = 2
 shape = SubResource("SphereShape3D_o6xl0")
 
 [node name="mc_reached_caves" type="Area3D" parent="." unique_id=1648140523]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.132416, 0, -70.75075)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.132416, 222.10071, -70.75075)
 collision_layer = 128
 collision_mask = 2
 
@@ -314,7 +315,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8053207, 17.130249, 0)
 shape = SubResource("SphereShape3D_tipki")
 
 [node name="reached_time_machine" type="Area3D" parent="." unique_id=424621534]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -42.108032, 149.02945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 179.99268, 149.02945)
 collision_layer = 128
 collision_mask = 2
 
@@ -322,6 +323,7 @@ collision_mask = 2
 shape = SubResource("SphereShape3D_85g3d")
 
 [node name="time_travel_zone" type="Area3D" parent="." unique_id=1064389907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 222.10071, 0)
 collision_layer = 128
 collision_mask = 2
 
