@@ -290,7 +290,7 @@ func move_troops_and_mc_to_shore():
 	
 	
 func _on_mc_reached_house_body_entered(body):
-	if not GlobalData.is_this_mission_over(3):
+	if not GlobalData.is_this_mission_over(2):
 		return
 	print("WE ENTERED A NEW PLACEEEEEEE 1")
 	get_tree().call_group("soliders","remove_player")
@@ -301,7 +301,7 @@ func _on_mc_reached_house_body_entered(body):
 
 func _on_reaching_cells_body_entered(body):
 	print("WE ENTERED A NEW PLACEEEEEEE 2")
-	if not GlobalData.is_this_mission_over(4):
+	if not GlobalData.is_this_mission_over(3):
 		return
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
