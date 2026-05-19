@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://scp1y43p0n18" path="res://scenes/monster.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://doac5iuv4xfyn" path="res://scenes/boat.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://ds8t8lo2u7aq1" path="res://scenes/solider.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://chega6nprcvk3" path="res://scenes/house.tscn" id="9_85g3d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -108,7 +109,7 @@ shadow_mesh = SubResource("ArrayMesh_6s081")
 
 [sub_resource type="Curve3D" id="Curve3D_jyhfs"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -72.63612, 44.102516, 20.26717, 0, 0, 0, 0, 0, 0, -69.40492, 46.860447, -25.777576, 0, 0, 0, 0, 0, 0, -43.555237, 50.27191, -47.588234, 0, 0, 0, 0, 0, 0, 4.1050873, 51.60829, -58.897465, 0, 0, 0, 0, 0, 0, 40.456223, 25.909744, -63.744274, 0, 0, 0, 0, 0, 0, 70.344894, 9.2091675, -110.59682, 0, 0, 0, 0, 0, 0, 53.381058, 32.37082, -151.79474, 0, 0, 0, 0, 0, 0, -33.861618, 60.842026, -163.10397),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -72.63612, 1.0270691, 20.26717, 0, 0, 0, 0, 0, 0, -69.40492, -8.58279, -25.777576, 0, 0, 0, 0, 0, 0, -43.555237, -23.936287, -47.588234, 0, 0, 0, 0, 0, 0, 4.1050873, 10.915192, -58.897465, 0, 0, 0, 0, 0, 0, 40.456223, 25.909744, -63.744274, 0, 0, 0, 0, 0, 0, 70.344894, 28.233788, -110.59682, 0, 0, 0, 0, 0, 0, 53.381058, 32.37082, -151.79474, 0, 0, 0, 0, 0, 0, -33.861618, -46.022285, -163.10397),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 8
@@ -127,7 +128,7 @@ radius = 36.437
 radius = 50.174316
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tipki"]
-radius = 46.410465
+radius = 24.592
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_85g3d"]
 radius = 36.778633
@@ -248,7 +249,7 @@ transform = Transform3D(-0.5249944, 0, 0.0024282385, 0, 0.525, 0, -0.0024282385,
 curve = SubResource("Curve3D_jyhfs")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=292388672]
-transform = Transform3D(-0.12855168, 0, -0.9916918, 0, 0.9999877, 0, 0.9916847, 0, -0.1285526, -14.058142, 54.37927, -160.53685)
+transform = Transform3D(-0.12855192, 0, -0.99169177, 0, 0.9999877, 0, 0.9916847, 0, -0.12855282, 2.0421348, -13.760473, -158.44978)
 progress = 353.73682
 rotation_mode = 1
 use_model_front = true
@@ -288,7 +289,7 @@ transform = Transform3D(0.64027214, 0, 0.39057833, 0, 0.7499994, 0, -0.39057833,
 [node name="troops2" type="Node3D" parent="boat_to_island/PathFollow3D/boat" unique_id=1360585146]
 
 [node name="mc_reached_house" type="Area3D" parent="." unique_id=85465003]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.985558, 10.96764, 61.319588)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.676758, 117.721405, -552.3351)
 collision_layer = 128
 collision_mask = 2
 
@@ -296,6 +297,7 @@ collision_mask = 2
 shape = SubResource("SphereShape3D_tefeu")
 
 [node name="reaching_cells" type="Area3D" parent="." unique_id=1756816655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.028534, 0, 90.84331)
 collision_layer = 128
 collision_mask = 2
 
@@ -303,13 +305,16 @@ collision_mask = 2
 shape = SubResource("SphereShape3D_o6xl0")
 
 [node name="mc_reached_caves" type="Area3D" parent="." unique_id=1648140523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.132416, 0, -70.75075)
 collision_layer = 128
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="mc_reached_caves" unique_id=103067566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8053207, 17.130249, 0)
 shape = SubResource("SphereShape3D_tipki")
 
 [node name="reached_time_machine" type="Area3D" parent="." unique_id=424621534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -42.108032, 149.02945)
 collision_layer = 128
 collision_mask = 2
 
@@ -342,6 +347,9 @@ curve = SubResource("Curve3D_85g3d")
 
 [node name="shore_to_prison_follower" type="PathFollow3D" parent="paths/shore_to_prison" unique_id=718779171]
 transform = Transform3D(0.12933934, 0, 0.9915989, 0, 1, 0, -0.9915989, 0, 0.12933934, 153.72604, 0, -5.133746)
+
+[node name="StaticBody3D" parent="." unique_id=239885512 instance=ExtResource("9_85g3d")]
+transform = Transform3D(2, 0, 0, 0, 1.9829673, -0.26046404, 0, 0.26046404, 1.9829673, -32.491367, 115.96559, -534.7532)
 
 [connection signal="body_entered" from="mc_reached_house" to="mc" method="_on_mc_reached_house_body_entered"]
 [connection signal="body_entered" from="reaching_cells" to="mc" method="_on_reaching_cells_body_entered"]
