@@ -298,6 +298,9 @@ func _on_mc_reached_house_body_entered(body):
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("mc_reached_house").queue_free()
+	flash_screen_black(get_inside_home)
+	
+func get_inside_home():
 	global_position = home_anchor.global_position
 	my_solider.global_position = global_position + Vector3.RIGHT * 7
 
