@@ -259,7 +259,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 487.10492, 4806.9487, 892.192
 path = NodePath("../Path3D/PathFollow3D")
 
 [node name="boat_to_island" type="Path3D" parent="." unique_id=1699071162]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.796234, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.446472, 0)
 curve = SubResource("Curve3D_tbgi4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="boat_to_island" unique_id=1826125259]
@@ -290,7 +290,7 @@ transform = Transform3D(0.64027214, 0, 0.39057833, 0, 0.7499994, 0, -0.39057833,
 [node name="troops2" type="Node3D" parent="boat_to_island/PathFollow3D/boat" unique_id=1360585146]
 
 [node name="mc_reached_house" type="Area3D" parent="." unique_id=85465003]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.676758, 339.8221, -552.3351)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.676758, 125.65613, -552.3351)
 collision_layer = 128
 collision_mask = 2
 
