@@ -235,12 +235,13 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2, 0)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 75.993385, 1.9408035, 50.839085)
 mesh = SubResource("ArrayMesh_o6xl0")
 
-[node name="mc" parent="." unique_id=2014978484 node_paths=PackedStringArray("boat", "troops", "shore_to_cave_path", "shore_to_cave_prison") instance=ExtResource("3_sugp2")]
+[node name="mc" parent="." unique_id=2014978484 node_paths=PackedStringArray("boat", "troops", "shore_to_cave_path", "shore_to_cave_prison", "home_anchor") instance=ExtResource("3_sugp2")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 603.892, 43.740143, 41.987534)
 boat = NodePath("../boat_to_island/PathFollow3D/boat")
 troops = NodePath("../boat_to_island/PathFollow3D/boat/troops")
 shore_to_cave_path = NodePath("../paths/shore_to_caves/shore_to_caves_follower")
 shore_to_cave_prison = NodePath("../paths/shore_to_prison/shore_to_prison_follower")
+home_anchor = NodePath("../StaticBody3D/house")
 
 [node name="ship" parent="." unique_id=1459893465 instance=ExtResource("4_jyhfs")]
 transform = Transform3D(-0.5249944, 0, 0.0024282385, 0, 0.525, 0, -0.0024282385, 0, -0.5249944, 653.46045, 13.131723, 42.368584)
