@@ -135,7 +135,7 @@ func flash_screen_black(callable):
 	
 	
 func _ready():
-	flash_screen_black(func (): print("HA A"))
+	#flash_screen_black(func (): print("HA A"))
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	#play waking up animation
@@ -290,6 +290,8 @@ func move_troops_and_mc_to_shore():
 	
 	
 func _on_mc_reached_house_body_entered(body):
+	if not GlobalData.is_this_mission_over(3):
+		return
 	print("WE ENTERED A NEW PLACEEEEEEE 1")
 	get_tree().call_group("soliders","remove_player")
 	GlobalData.mission_completed()

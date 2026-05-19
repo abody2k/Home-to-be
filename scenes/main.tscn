@@ -290,7 +290,7 @@ transform = Transform3D(0.64027214, 0, 0.39057833, 0, 0.7499994, 0, -0.39057833,
 [node name="troops2" type="Node3D" parent="boat_to_island/PathFollow3D/boat" unique_id=1360585146]
 
 [node name="mc_reached_house" type="Area3D" parent="." unique_id=85465003]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.676758, 125.65613, -552.3351)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.676758, 234.76173, -552.3351)
 collision_layer = 128
 collision_mask = 2
 

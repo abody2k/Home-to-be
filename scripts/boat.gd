@@ -5,6 +5,7 @@ extends CharacterBody3D
 
 
 func finish_job():
+	print("Finished job")
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 		
