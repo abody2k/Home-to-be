@@ -17362,6 +17362,7 @@ _data = {
 }
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1281038519]
+collision_layer = 8
 script = ExtResource("1_jlss8")
 
 [node name="rig_001" type="Node3D" parent="." unique_id=182233355]

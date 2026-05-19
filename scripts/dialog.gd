@@ -57,6 +57,5 @@ func execute_and_show_dialog():
 func update_dialogs(new_dialogs):
 	dialogs = new_dialogs
 	current_index = -1
-	print(dialogs)
 	typing = false
 	next()

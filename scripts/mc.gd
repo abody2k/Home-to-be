@@ -135,7 +135,7 @@ func flash_screen_black(callable):
 	
 	
 func _ready():
-	flash_screen_black(func (): print("HA A"))
+	#flash_screen_black(func (): print("HA A"))
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	#play waking up animation
@@ -290,6 +290,9 @@ func move_troops_and_mc_to_shore():
 	
 	
 func _on_mc_reached_house_body_entered(body):
+	if not GlobalData.is_this_mission_over(2):
+		return
+	print("WE ENTERED A NEW PLACEEEEEEE 1")
 	get_tree().call_group("soliders","remove_player")
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
@@ -297,7 +300,8 @@ func _on_mc_reached_house_body_entered(body):
 
 
 func _on_reaching_cells_body_entered(body):
-	if not GlobalData.is_this_mission_over(4):
+	print("WE ENTERED A NEW PLACEEEEEEE 2")
+	if not GlobalData.is_this_mission_over(3):
 		return
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
@@ -305,6 +309,7 @@ func _on_reaching_cells_body_entered(body):
 
 
 func _on_mc_reached_caves_body_entered(body):
+	print("WE ENTERED A NEW PLACEEEEEEE 3")
 	if not GlobalData.is_this_mission_over(6):
 		return
 	GlobalData.mission_completed()
@@ -313,6 +318,7 @@ func _on_mc_reached_caves_body_entered(body):
 
 
 func _on_reached_time_machine_body_entered(body):
+	print("WE ENTERED A NEW PLACEEEEEEE 4")
 	if not GlobalData.is_this_mission_over(7):
 		return
 	GlobalData.mission_completed()
@@ -321,6 +327,7 @@ func _on_reached_time_machine_body_entered(body):
 
 
 func _on_time_travel_zone_body_entered(body):
+	print("WE ENTERED A NEW PLACEEEEEEE 5")
 	if not GlobalData.is_this_mission_over(8):
 		return
 	$CanvasLayer/Control/time.visible= true
