@@ -298,14 +298,15 @@ func _on_mc_reached_house_body_entered(body):
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("mc_reached_house").queue_free()
+	global_position = home_anchor.global_position
+	my_solider.global_position = global_position + Vector3.RIGHT * 7
 
 
 func _on_reaching_cells_body_entered(body):
 	print("WE ENTERED A NEW PLACEEEEEEE 2")
 	if not GlobalData.is_this_mission_over(3):
 		return
-	global_position = home_anchor.global_position
-	my_solider.global_position = global_position + Vector3.RIGHT * 7
+
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("reaching_cells").queue_free()
