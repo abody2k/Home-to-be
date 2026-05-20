@@ -14,6 +14,9 @@ const AIMING_ARM_OFFSET = -0.791
 const NORMAL_ARM_OFFSET = 4.0
 
 @export var home_anchor : Node3D
+
+@export var prison_anchor : Node3D
+
 enum MODES {
 	
 	DIALOG,FPS, IDLE
@@ -309,7 +312,8 @@ func _on_reaching_cells_body_entered(body):
 	print("WE ENTERED A NEW PLACEEEEEEE 2")
 	if not GlobalData.is_this_mission_over(3):
 		return
-
+	
+	
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("reaching_cells").queue_free()
