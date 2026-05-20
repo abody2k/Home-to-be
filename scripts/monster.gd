@@ -48,7 +48,7 @@ func _physics_process(delta):
 							return
 						else:
 							attacking = true
-							$AnimationPlayer.play("rig_001|monster_attack")
+							$AnimationPlayer2.play("rig_001|monster_attack")
 						
 						return
 						

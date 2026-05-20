@@ -167,8 +167,8 @@ func start_talking_to_locals():
 		["You: What?",null],
 		["unknown: It is not a dream!",null],
 		["You: But how? do you..",func (): (get_tree().get_first_node_in_group("screeching") as AudioStreamPlayer3D).play()],
-		["...",null], # screaching sound and monsters come in
-		["unknown: They are here!",null],
+		["...",func (): get_tree().get_first_node_in_group("monster_paths").visible = true], # screaching sound and monsters come in
+		["unknown: They are here!",func (): get_tree().get_first_node_in_group("player").play("prison_mission_start") ],
 		["You: EVERYONE AIM AND SHOOT THE MONSTERS!",null],
 		
 	])
