@@ -145,7 +145,7 @@ func start_talking_to_locals():
 		["You: Where is the other group?",null],
 		["Crewmate 1: They haven't returned yet", null],
 		["You: What? you have to be here so that we can all depart, this is nuts.",null],
-		["Crewmate 2: What about the locals?",null],
+		["Crewmate 2: What about the locals?",func (): (get_tree().get_first_node_in_group("screeching") as AudioStreamPlayer3D).play()],
 		["...",null], #SCRECHING SOUND
 		["Crewmates : WTF was that???",null],
 		["You: Close all the doors",func (): (get_tree().get_first_node_in_group("player") as AnimationPlayer).play("monsters_appearing")],
