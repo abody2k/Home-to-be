@@ -29,7 +29,9 @@ func _ready():
 	create_tween().tween_callback(reset_location).set_delay(0.1)
 	
 	
-	
+var attacking = false
+
+
 func _physics_process(delta):
 	
 	
@@ -40,6 +42,16 @@ func _physics_process(delta):
 		MODES.HUNTING:
 			if player:
 				if player.global_position.distance_to(global_position) < 2:
+					if not player.is_down:
+						
+						if attacking:
+							return
+						else:
+							attacking = true
+							$AnimationPlayer.play("rig_001|monster_attack")
+						
+						return
+						
 					if not reached_body:
 						reached_body = true
 						$AnimationPlayer2.play("monster_get_down_to_eat")
@@ -72,3 +84,14 @@ func _on_detector_body_entered(body : CharacterBody3D):
 func _on_animation_player_2_animation_finished(anim_name):
 	if anim_name == "monster_get_down_to_eat":
 		$AnimationPlayer2.play("rig_001|eating")
+	elif anim_name == "rig_001|monster_attack":
+		attacking = false
+
+
+func _on_area_3d_body_entered(body):
+	if not body  == player or not attacking:
+		return
+	
+	player.is_down = true
+	
+		

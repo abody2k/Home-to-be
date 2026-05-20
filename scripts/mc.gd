@@ -20,7 +20,7 @@ const NORMAL_ARM_OFFSET = 4.0
 
 var hunter : CharacterBody3D 
 
-
+var is_down = false
 
 enum MODES {
 	
