@@ -1,10 +1,10 @@
 extends CharacterBody3D
-enum MODES {WALKING, HUNTING, STANDING, GOING_HOME, SLEEPING}
+enum MODES {SEARCHING, IDLE, EATING, ATTACKING, HUNTING}
 
 
 var target : CharacterBody3D
 
-var mode : MODES = MODES.WALKING
+var mode : MODES = MODES.IDLE
 
 var eating = false
 
@@ -29,12 +29,13 @@ func _physics_process(delta):
 	
 	
 	match mode:
-		MODES.STANDING:
+		MODES.ATTACKING:
 			$AnimationPlayer.play("rig_001|monster_attack")
-			$AnimationPlayer.stop()
+			#$AnimationPlayer.stop()
 			return
-		MODES.WALKING:
-			path.progress_ratio+=delta * 0.01
+		MODES.IDLE:
+			pass
+			#path.progress_ratio+=delta * 0.01
 
 func _on_detector_body_entered(body : CharacterBody3D):
 	
@@ -51,9 +52,10 @@ func _on_detector_body_entered(body : CharacterBody3D):
 		return
 	
 	player = body
+	mode = MODES.HUNTING
 	
 	
 	
-	if mode != MODES.GOING_HOME:
-		target = body
-		mode = MODES.HUNTING
+	#if mode != MODES.GOING_HOME:
+		#target = body
+		#mode = MODES.HUNTING
