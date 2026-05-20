@@ -220,6 +220,19 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_choun"]
 resource_name = "prison_mission_start"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:current")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_o6xl0"]
 resource_name = "troops_marching_from_shore"
@@ -271,6 +284,20 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 7
+
+[sub_resource type="Curve3D" id="Curve3D_ya4ey"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -32.055054, -6.1035156e-05, 0.07193756, 0, 0, 0, 0, 0, 0, -13.606873, -6.1035156e-05, -0.53791046, 0, 0, 0, 0, 0, 0, -0.3424759, -6.1035156e-05, -0.8428421, 0, 0, 0, 0, 0, 0, 0.5723114, -6.1035156e-05, 11.354301, 0, 0, 0, 0, 0, 0, 0.8772354, -6.1035156e-05, 21.264473, 0, 0, 0, 0, 0, 0, 0.8772354, -6.1035156e-05, 28.582764, 0, 0, 0, 0, 0, 0, 0.7247696, -6.1035156e-05, 38.49295, 0, 0, 0, 0, 0, 0, -5.98365, -6.1035156e-05, 42.914413),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="Curve3D" id="Curve3D_eb6dy"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 166.14542, 0, 92.74136, 0, 0, 0, 0, 0, 0, 147.23984, 0, 91.67412, 0, 0, 0, 0, 0, 0, 137.32965, 0, 92.13151, 0, 0, 0, 0, 0, 0, 120.863525, 0, 92.43644, 0, 0, 0, 0, 0, 0, 121.16845, 0, 108.59766, 0, 0, 0, 0, 0, 0, 121.47338, 0, 118.965225, 0, 0, 0, 0, 0, 0, 121.47338, 0, 131.77222, 0, 0, 0, 0, 0, 0, 124.217735, 0, 137.87079),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
 
 [node name="main" type="Node3D" unique_id=485170224]
 
@@ -412,6 +439,13 @@ curve = SubResource("Curve3D_85g3d")
 
 [node name="shore_to_prison_follower" type="PathFollow3D" parent="paths/shore_to_prison" unique_id=718779171]
 transform = Transform3D(0.12933934, 0, 0.9915989, 0, 1, 0, -0.9915989, 0, 0.12933934, 153.72604, 0, -5.133746)
+
+[node name="monster_1" type="Path3D" parent="paths" unique_id=1562490939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.35847, 24.629944, 94.041595)
+curve = SubResource("Curve3D_ya4ey")
+
+[node name="monster_2" type="Path3D" parent="paths" unique_id=972609378]
+curve = SubResource("Curve3D_eb6dy")
 
 [node name="StaticBody3D" parent="." unique_id=239885512 instance=ExtResource("9_85g3d")]
 transform = Transform3D(2, 0, 0, 0, 1.9829673, -0.26046404, 0, 0.26046404, 1.9829673, -32.491367, 115.96559, -534.7532)
