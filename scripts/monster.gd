@@ -7,6 +7,9 @@ var target : CharacterBody3D
 var mode : MODES = MODES.IDLE
 
 var eating = false
+var reached_body = false
+var is_down = false
+
 
 var player : CharacterBody3D
 var soliders = []
@@ -34,7 +37,20 @@ func _physics_process(delta):
 			#$AnimationPlayer.stop()
 			return
 		MODES.IDLE:
-			pass
+			return
+			
+		MODES.EATING:
+			if player:
+				if player.global_position.distance_to(global_position) < 2:
+					if not reached_body:
+						pass
+				else:
+					$AnimationPlayer2.play("rig_001|monster_walk")
+					look_at(player.global_position)
+					velocity = basis.z * 5
+					move_and_slide()
+					
+			return
 			#path.progress_ratio+=delta * 0.01
 
 func _on_detector_body_entered(body : CharacterBody3D):
@@ -59,3 +75,8 @@ func _on_detector_body_entered(body : CharacterBody3D):
 	#if mode != MODES.GOING_HOME:
 		#target = body
 		#mode = MODES.HUNTING
+
+
+func _on_animation_player_2_animation_finished(anim_name):
+	if anim_name == "monster_get_down_to_eat":
+		$AnimationPlayer2.play("rig_001|eating")
