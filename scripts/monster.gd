@@ -15,6 +15,9 @@ var player : CharacterBody3D
 var soliders = []
 var islanders  = []
 
+var has_a_target = false
+
+
 @export var path : PathFollow3D
 
 
@@ -56,9 +59,9 @@ func _physics_process(delta):
 
 func _on_detector_body_entered(body : CharacterBody3D):
 	
-	if eating:
+	if eating or has_a_target:
 		return
-		
+	has_a_target = true
 	if body.collision_layer == 16:
 		if not islanders.has(body):
 			islanders.push_back(body)
