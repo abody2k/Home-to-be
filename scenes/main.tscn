@@ -165,6 +165,12 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_tefeu"]
 resource_name = "massacre"
 
+[sub_resource type="Animation" id="Animation_85g3d"]
+resource_name = "monsters_appearing"
+
+[sub_resource type="Animation" id="Animation_choun"]
+resource_name = "prison_mission_start"
+
 [sub_resource type="Animation" id="Animation_o6xl0"]
 resource_name = "troops_marching_from_shore"
 length = 10.0
@@ -197,6 +203,8 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_tipki"),
 &"massacre": SubResource("Animation_tefeu"),
+&"monsters_appearing": SubResource("Animation_85g3d"),
+&"prison_mission_start": SubResource("Animation_choun"),
 &"troops_marching_from_shore": SubResource("Animation_o6xl0")
 }
 
