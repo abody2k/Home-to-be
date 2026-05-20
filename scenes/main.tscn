@@ -228,6 +228,9 @@ mesh = SubResource("ArrayMesh_ya4ey")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="prison/StaticBody3D" unique_id=691618756]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
+[node name="prison_anchor" type="Node3D" parent="prison" unique_id=2099426419]
+transform = Transform3D(-0.004504682, -0.017566962, -0.14170136, 4.8661014e-10, 0.14177185, -0.017575702, 0.1427861, -0.00055421144, -0.0044704597, -6.36357, -2.0710816, 0.26425362)
+
 [node name="island" parent="." unique_id=1412437666 instance=ExtResource("1_o5qli")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2, 0)
 
