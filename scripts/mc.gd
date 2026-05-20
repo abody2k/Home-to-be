@@ -13,6 +13,10 @@ const AIMING_ARM_OFFSET = -0.791
 @export var my_solider : CharacterBody3D
 const NORMAL_ARM_OFFSET = 4.0
 
+@export var home_anchor : Node3D
+
+@export var prison_anchor : Node3D
+
 enum MODES {
 	
 	DIALOG,FPS, IDLE
@@ -293,16 +297,23 @@ func _on_mc_reached_house_body_entered(body):
 	if not GlobalData.is_this_mission_over(2):
 		return
 	print("WE ENTERED A NEW PLACEEEEEEE 1")
-	get_tree().call_group("soliders","remove_player")
+	#get_tree().call_group("soliders","remove_player")
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("mc_reached_house").queue_free()
+	flash_screen_black(get_inside_home.bind(home_anchor))
+	
+func get_inside_home(node : Node3D):
+	global_position = node.global_position
+	my_solider.global_position = global_position + Vector3(7,0,7)
 
 
 func _on_reaching_cells_body_entered(body):
 	print("WE ENTERED A NEW PLACEEEEEEE 2")
 	if not GlobalData.is_this_mission_over(3):
 		return
+	
+	flash_screen_black(get_inside_home.bind(prison_anchor))
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("reaching_cells").queue_free()
