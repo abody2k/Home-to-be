@@ -41,10 +41,12 @@ func _physics_process(delta):
 			
 		MODES.HUNTING:
 			if player:
-				if player.global_position.distance_to(global_position) < 2:
+				if player.global_position.distance_to(global_position) < 5:
+					#print([attacking,is_down])
 					if not player.is_down:
-						
+						print("inhere")
 						if attacking:
+							print("attackong")
 							return
 						else:
 							attacking = true
@@ -57,8 +59,9 @@ func _physics_process(delta):
 						$AnimationPlayer2.play("monster_get_down_to_eat")
 				else:
 					$AnimationPlayer2.play("rig_001|monster_walk")
-					look_at(player.global_position)
-					velocity = basis.z * 5
+					look_at(Vector3(player.global_position.x,global_position.y,player.global_position.z))
+					velocity = -basis.z * 5
+					velocity.y = -10
 					move_and_slide()
 					
 			return
@@ -86,6 +89,8 @@ func _on_animation_player_2_animation_finished(anim_name):
 		$AnimationPlayer2.play("rig_001|eating")
 	elif anim_name == "rig_001|monster_attack":
 		attacking = false
+		$AnimationPlayer2.play("monster_get_down_to_eat")
+		mode = MODES.EATING
 
 
 func _on_area_3d_body_entered(body):
