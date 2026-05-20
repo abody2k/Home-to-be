@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bdq5xnd7b3iih"]
 
 [ext_resource type="Texture2D" uid="uid://spnopfe2ulbs" path="res://3D/islander_BaseColor.png" id="1_2e3lc"]
+[ext_resource type="Script" uid="uid://b3joxoq1gxxad" path="res://scenes/islander.gd" id="1_nakb2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cffee"]
 resource_name = "islander"
@@ -12577,6 +12578,7 @@ _data = {
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mms23"]
 
 [node name="islander" type="CharacterBody3D" unique_id=659406128]
+script = ExtResource("1_nakb2")
 
 [node name="rig_003" type="Node3D" parent="." unique_id=89218274]
 transform = Transform3D(-8.742278e-07, -20, -8.742278e-07, 0, -8.742278e-07, 20, -20, 8.742278e-07, 3.821371e-14, 0, 0.16855332, 0)

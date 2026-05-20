@@ -43,7 +43,8 @@ func _physics_process(delta):
 			if player:
 				if player.global_position.distance_to(global_position) < 2:
 					if not reached_body:
-						pass
+						reached_body = true
+						$AnimationPlayer2.play("monster_get_down_to_eat")
 				else:
 					$AnimationPlayer2.play("rig_001|monster_walk")
 					look_at(player.global_position)

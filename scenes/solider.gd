@@ -1,6 +1,10 @@
 extends "res://scripts/boat.gd"
 var player : CharacterBody3D
 
+
+var hunter : CharacterBody3D 
+
+
 func remove_player():
 	player = null
 

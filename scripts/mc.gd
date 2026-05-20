@@ -17,6 +17,11 @@ const NORMAL_ARM_OFFSET = 4.0
 
 @export var prison_anchor : Node3D
 
+
+var hunter : CharacterBody3D 
+
+
+
 enum MODES {
 	
 	DIALOG,FPS, IDLE
