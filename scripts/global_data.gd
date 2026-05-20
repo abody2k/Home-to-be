@@ -148,7 +148,7 @@ func start_talking_to_locals():
 		["Crewmate 2: What about the locals?",null],
 		["...",null], #SCRECHING SOUND
 		["Crewmates : WTF was that???",null],
-		["You: Close all the doors",null],
+		["You: Close all the doors",func (): (get_tree().get_first_node_in_group("player") as AnimationPlayer).play("monsters_appearing")],
 		["unknown : STOP",null], # islanders move toward the player
 		["unkown: Don't be afaid, human",null],
 		["You:Yoooo, WTF are you??? EVERYONE, HOLD POSITIONS!",null],#everyone aims at the islanders
