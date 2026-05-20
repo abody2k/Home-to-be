@@ -149,7 +149,7 @@ func start_talking_to_locals():
 		["...",null], #SCRECHING SOUND
 		["Crewmates : WTF was that???",null],
 		["You: Close all the doors",func (): (get_tree().get_first_node_in_group("player") as AnimationPlayer).play("monsters_appearing")],
-		["unknown : STOP",null], # islanders move toward the player
+		["unknown : STOP",func (): (get_tree().get_first_node_in_group("islanders") as Node3D).visible = true], # islanders move toward the player
 		["unkown: Don't be afaid, human",null],
 		["You:Yoooo, WTF are you??? EVERYONE, HOLD POSITIONS!",null],#everyone aims at the islanders
 		["unknown : We called for your help, remember? we need your help",null],
@@ -166,7 +166,7 @@ func start_talking_to_locals():
 		["unknown: There is an ancient machine in the caves that can help reverse everything and fix everything. You see, before you did what you did we weren't actually here, but you had to catch him didn't you?",null],
 		["You: What?",null],
 		["unknown: It is not a dream!",null],
-		["You: But how? do you..",null],
+		["You: But how? do you..",func (): (get_tree().get_first_node_in_group("screeching") as AudioStreamPlayer3D).play()],
 		["...",null], # screaching sound and monsters come in
 		["unknown: They are here!",null],
 		["You: EVERYONE AIM AND SHOOT THE MONSTERS!",null],

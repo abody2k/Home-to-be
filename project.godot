@@ -27,6 +27,8 @@ ship=""
 player=""
 troops_group=""
 soliders=""
+screeching=""
+islanders=""
 
 [input]
 

@@ -11,6 +11,7 @@ func _physics_process(delta):
 		var normalized_dir = dir.normalized()
 		var target = player.global_position
 		target.y =global_position.y
+		
 		look_at(target)
 		
 		if global_position.distance_to(player.global_position) > 15:

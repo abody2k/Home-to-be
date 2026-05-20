@@ -396,13 +396,13 @@ transform = Transform3D(2, 0, 0, 0, 1.9829673, -0.26046404, 0, 0.26046404, 1.982
 [node name="house" type="Node3D" parent="StaticBody3D" unique_id=2139794324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.792265, 1.6033401, -17.51065)
 
-[node name="screeching" type="AudioStreamPlayer3D" parent="." unique_id=1390969221]
+[node name="screeching" type="AudioStreamPlayer3D" parent="." unique_id=1390969221 groups=["screeching"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.169, 27.15394, 147.24681)
 stream = ExtResource("10_ya4ey")
 volume_db = 3.0
 max_db = 6.0
 
-[node name="islander" type="Node3D" parent="." unique_id=71672252]
+[node name="islander" type="Node3D" parent="." unique_id=71672252 groups=["islanders"]]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 110.169, 27.15394, 147.24681)
 visible = false
 

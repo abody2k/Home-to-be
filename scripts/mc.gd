@@ -305,7 +305,7 @@ func _on_mc_reached_house_body_entered(body):
 	
 func get_inside_home(node : Node3D):
 	global_position = node.global_position
-	my_solider.global_position = global_position + Vector3.RIGHT * 7
+	my_solider.global_position = global_position + Vector3(7,0,7)
 
 
 func _on_reaching_cells_body_entered(body):
