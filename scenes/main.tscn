@@ -220,7 +220,7 @@ point_count = 7
 environment = SubResource("Environment_jyhfs")
 
 [node name="prison" type="MeshInstance3D" parent="." unique_id=1284217912]
-transform = Transform3D(-0.15766409, -5.813743e-10, 4.9975133, -0.61484367, 4.962015, -0.0193974, -4.959547, -0.6151495, -0.15646632, 121.12262, 34.360558, 91.96695)
+transform = Transform3D(-0.22072941, 3.585592e-08, 6.996519, -0.86078113, 6.9468207, -0.027156355, -6.943366, -0.8612094, -0.21905252, 121.123, 40.597, 91.967)
 mesh = SubResource("ArrayMesh_ya4ey")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="prison" unique_id=2064953952]
