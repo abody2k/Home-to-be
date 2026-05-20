@@ -209,7 +209,7 @@ point_count = 8
 
 [sub_resource type="Curve3D" id="Curve3D_85g3d"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 153.72604, 0, -5.133746, 0, 0, 0, 0, 0, 0, 131.5839, 0, -8.021861, 0, 0, 0, 0, 0, 0, 93.075775, 0, 2.5678756, 0, 0, 0, 0, 0, 0, 99.81467, 0, 48.77763, 0, 0, 0, 0, 0, 0, 109.44174, 0, 94.98741, 0, 0, 0, 0, 0, 0, 110.40439, 0, 129.64471, 0, 0, 0, 0, 0, 0, 108.47897, 0, 149.8615),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 153.72604, 0, -5.133746, 0, 0, 0, 0, 0, 0, 131.5839, 0, -8.021861, 0, 0, 0, 0, 0, 0, 93.075775, 0, 2.5678756, 0, 0, 0, 0, 0, 0, 99.81467, 0, 48.77763, 0, 0, 0, 0, 0, 0, 121.49258, 3.6199036, 94.98741, 0, 0, 0, 0, 0, 0, 122.45522, 8.791203, 129.64471, 0, 0, 0, 0, 0, 0, 120.52981, 10.859722, 149.8615),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 7
@@ -238,13 +238,14 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2, 0)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 75.993385, 1.9408035, 50.839085)
 mesh = SubResource("ArrayMesh_o6xl0")
 
-[node name="mc" parent="." unique_id=2014978484 node_paths=PackedStringArray("boat", "troops", "shore_to_cave_path", "shore_to_cave_prison", "home_anchor") instance=ExtResource("3_sugp2")]
+[node name="mc" parent="." unique_id=2014978484 node_paths=PackedStringArray("boat", "troops", "shore_to_cave_path", "shore_to_cave_prison", "home_anchor", "prison_anchor") instance=ExtResource("3_sugp2")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 603.892, 43.740143, 41.987534)
 boat = NodePath("../boat_to_island/PathFollow3D/boat")
 troops = NodePath("../boat_to_island/PathFollow3D/boat/troops")
 shore_to_cave_path = NodePath("../paths/shore_to_caves/shore_to_caves_follower")
 shore_to_cave_prison = NodePath("../paths/shore_to_prison/shore_to_prison_follower")
 home_anchor = NodePath("../StaticBody3D/house")
+prison_anchor = NodePath("../prison/prison_anchor")
 
 [node name="ship" parent="." unique_id=1459893465 instance=ExtResource("4_jyhfs")]
 transform = Transform3D(-0.5249944, 0, 0.0024282385, 0, 0.525, 0, -0.0024282385, 0, -0.5249944, 653.46045, 13.131723, 42.368584)
