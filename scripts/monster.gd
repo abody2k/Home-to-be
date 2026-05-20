@@ -22,6 +22,7 @@ var has_a_target = false
 
 
 func reset_location():
+	return
 	reparent(path)
 	transform.origin = Vector3.ZERO
 
@@ -40,8 +41,11 @@ func _physics_process(delta):
 			return
 			
 		MODES.HUNTING:
+			if attacking:
+				return
+				
 			if player:
-				if player.global_position.distance_to(global_position) < 5:
+				if player.global_position.distance_to(global_position) < 2:
 					#print([attacking,is_down])
 					if not player.is_down:
 						print("inhere")
@@ -89,14 +93,20 @@ func _on_animation_player_2_animation_finished(anim_name):
 		$AnimationPlayer2.play("rig_001|eating")
 	elif anim_name == "rig_001|monster_attack":
 		attacking = false
-		$AnimationPlayer2.play("monster_get_down_to_eat")
-		mode = MODES.EATING
+
 
 
 func _on_area_3d_body_entered(body):
-	if not body  == player or not attacking:
+	print(body)
+	print(player)
+	print([( (body  != player)) , not attacking])
+	if ( (body  != player)) or not attacking:
 		return
 	
 	player.is_down = true
+	attacking = true
+	eating = true
+	$AnimationPlayer2.play("monster_get_down_to_eat")
+	mode = MODES.EATING
 	
 		

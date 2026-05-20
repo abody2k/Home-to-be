@@ -38,7 +38,8 @@ func next():
 		else:
 			if first_mission:
 				first_mission = false
-				GlobalData.mission_completed()			
+				GlobalData.mission_completed()	
+				#GlobalData.start_new_mission()			
 			finished_dialog.emit()
 			visible = false
 			
