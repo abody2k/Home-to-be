@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://doac5iuv4xfyn" path="res://scenes/boat.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://ds8t8lo2u7aq1" path="res://scenes/solider.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://chega6nprcvk3" path="res://scenes/house.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://bdq5xnd7b3iih" path="res://scenes/islander.tscn" id="10_choun"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -368,6 +369,28 @@ transform = Transform3D(2, 0, 0, 0, 1.9829673, -0.26046404, 0, 0.26046404, 1.982
 
 [node name="house" type="Node3D" parent="StaticBody3D" unique_id=2139794324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.792265, 1.6033401, -17.51065)
+
+[node name="islander" type="Node3D" parent="." unique_id=71672252]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 110.169, 27.15394, 147.24681)
+visible = false
+
+[node name="islander" parent="islander" unique_id=659406128 instance=ExtResource("10_choun")]
+transform = Transform3D(1, 0, 0, 0, 0.99912864, -0.04173615, 0, 0.04173615, 0.99912864, 0, 1.0206108, 0)
+
+[node name="islander2" parent="islander" unique_id=561222832 instance=ExtResource("10_choun")]
+transform = Transform3D(0.64039123, -0.080122985, 0.76385826, 0, 0.99454385, 0.10432017, -0.7680488, -0.06680572, 0.63689715, 1.1168518, 1.2668781, 3.1306458)
+
+[node name="islander3" parent="islander" unique_id=710168399 instance=ExtResource("10_choun")]
+transform = Transform3D(-0.98112094, 0.008071575, 0.19322678, 0, 0.9991287, -0.04173615, -0.19339536, -0.040948205, -0.980266, 11.454685, 0.4500084, -1.9769897)
+
+[node name="islander4" parent="islander" unique_id=1263701327 instance=ExtResource("10_choun")]
+transform = Transform3D(-0.7768383, 0.06569044, -0.62626445, 2.319487e-09, 0.9945438, 0.10432016, 0.6297002, 0.0810399, -0.7725997, 10.964359, 0.6962757, -5.2645264)
+
+[node name="islander5" parent="islander" unique_id=808604631 instance=ExtResource("10_choun")]
+transform = Transform3D(0.3864051, -0.03849446, -0.9215255, 0, 0.9991288, -0.041736152, 0.9223292, 0.016127054, 0.3860684, 3.217453, 0.4500084, -5.6512146)
+
+[node name="islander6" parent="islander" unique_id=1192901189 instance=ExtResource("10_choun")]
+transform = Transform3D(0.9558444, 0.030656945, -0.29227012, 1.2232231e-09, 0.9945438, 0.104320146, 0.29387358, -0.099713825, 0.9506291, 0.761528, 0.6962757, -3.4114075)
 
 [connection signal="body_entered" from="mc_reached_house" to="mc" method="_on_mc_reached_house_body_entered"]
 [connection signal="body_entered" from="reaching_cells" to="mc" method="_on_reaching_cells_body_entered"]
