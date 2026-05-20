@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ds8t8lo2u7aq1" path="res://scenes/solider.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://chega6nprcvk3" path="res://scenes/house.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://bdq5xnd7b3iih" path="res://scenes/islander.tscn" id="10_choun"]
+[ext_resource type="AudioStream" uid="uid://dwaneeubu8j0l" path="res://media/screeching.mp3" id="10_ya4ey"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -162,12 +163,37 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("islander:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_tefeu"]
 resource_name = "massacre"
 
 [sub_resource type="Animation" id="Animation_85g3d"]
 resource_name = "monsters_appearing"
+length = 0.26666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("islander:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="Animation_choun"]
 resource_name = "prison_mission_start"
@@ -369,6 +395,12 @@ transform = Transform3D(2, 0, 0, 0, 1.9829673, -0.26046404, 0, 0.26046404, 1.982
 
 [node name="house" type="Node3D" parent="StaticBody3D" unique_id=2139794324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.792265, 1.6033401, -17.51065)
+
+[node name="screeching" type="AudioStreamPlayer3D" parent="." unique_id=1390969221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.169, 27.15394, 147.24681)
+stream = ExtResource("10_ya4ey")
+volume_db = 3.0
+max_db = 6.0
 
 [node name="islander" type="Node3D" parent="." unique_id=71672252]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 110.169, 27.15394, 147.24681)
