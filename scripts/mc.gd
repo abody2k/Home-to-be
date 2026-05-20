@@ -294,7 +294,7 @@ func _on_mc_reached_house_body_entered(body):
 	if not GlobalData.is_this_mission_over(2):
 		return
 	print("WE ENTERED A NEW PLACEEEEEEE 1")
-	get_tree().call_group("soliders","remove_player")
+	#get_tree().call_group("soliders","remove_player")
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("mc_reached_house").queue_free()
