@@ -20,6 +20,8 @@ func _physics_process(delta):
 			move_and_slide()
 			$AnimationPlayer.play("rig_004|solider_walking")
 		else:
+			velocity = Vector3.DOWN * 20
+			move_and_slide()
 			$AnimationPlayer.stop()
 			
 		
