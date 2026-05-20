@@ -44,6 +44,10 @@ func _on_detector_body_entered(body : CharacterBody3D):
 	if body.collision_layer == 16:
 		if not islanders.has(body):
 			islanders.push_back(body)
+		return
+	if body.collision_layer == 4:
+		if not soliders.has(body):
+			soliders.push_back(body)
 	
 	if mode != MODES.GOING_HOME:
 		target = body
