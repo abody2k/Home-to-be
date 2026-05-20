@@ -6,6 +6,12 @@ var target : CharacterBody3D
 
 var mode : MODES = MODES.WALKING
 
+var eating = false
+
+var player : CharacterBody3D
+var soliders = []
+var islanders  = []
+
 @export var path : PathFollow3D
 
 
@@ -30,7 +36,15 @@ func _physics_process(delta):
 		MODES.WALKING:
 			path.progress_ratio+=delta * 0.01
 
-func _on_detector_body_entered(body):
+func _on_detector_body_entered(body : CharacterBody3D):
+	
+	if eating:
+		return
+		
+	if body.collision_layer == 16:
+		if not islanders.has(body):
+			islanders.push_back(body)
+	
 	if mode != MODES.GOING_HOME:
 		target = body
 		mode = MODES.HUNTING
