@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://scp1y43p0n18" path="res://scenes/monster.tscn" id="1_pcu7d"]
 [ext_resource type="PackedScene" uid="uid://d4gibrj0qhoaf" path="res://scenes/mc.tscn" id="2_l6grw"]
-[ext_resource type="PackedScene" uid="uid://bdq5xnd7b3iih" path="res://scenes/islander.tscn" id="3_l6grw"]
+[ext_resource type="PackedScene" uid="uid://ds8t8lo2u7aq1" path="res://scenes/solider.tscn" id="3_l6grw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3dx25"]
 size = Vector3(81, 1, 70)
@@ -45,5 +45,5 @@ transform = Transform3D(0.24530324, 0, 2.4879363, 0, 2.5, 0, -2.4879363, 0, 0.24
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=217052854]
 shape = SubResource("ConcavePolygonShape3D_nuoa6")
 
-[node name="islander" parent="." unique_id=659406128 instance=ExtResource("3_l6grw")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.46328282, -0.08968067)
+[node name="solider" parent="." unique_id=570714499 instance=ExtResource("3_l6grw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.040418625, 0.17298174, -1.9977188)

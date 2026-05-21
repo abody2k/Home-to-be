@@ -7,7 +7,8 @@ var is_down = false
 
 
 func die():
-	$AnimationPlayer.play("islander_death")
+	$AnimationPlayer.play("rig_004|islander_death")
+	remove_player()
 	
 	
 func remove_player():
