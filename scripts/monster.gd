@@ -45,14 +45,15 @@ func _physics_process(delta):
 				return
 				
 			if player:
-				if player.global_position.distance_to(global_position) < 2:
+				if player.global_position.distance_to(global_position) < 4:
 					#print([attacking,is_down])
 					if not player.is_down:
-						print("inhere")
+						print("player is not down")
 						if attacking:
 							print("attackong")
 							return
 						else:
+							print("Just started an attack")
 							attacking = true
 							$AnimationPlayer2.play("rig_001|monster_attack")
 						
@@ -62,6 +63,8 @@ func _physics_process(delta):
 						reached_body = true
 						$AnimationPlayer2.play("monster_get_down_to_eat")
 				else:
+					print(player.global_position.distance_to(global_position))
+					print("WALKING")
 					$AnimationPlayer2.play("rig_001|monster_walk")
 					look_at(Vector3(player.global_position.x,global_position.y,player.global_position.z))
 					velocity = -basis.z * 5
@@ -77,6 +80,8 @@ func _on_detector_body_entered(body : CharacterBody3D):
 		return
 	has_a_target = true
 	body.hunter = self
+	
+	print("assigned a new target")
 	
 	player = body
 	mode = MODES.HUNTING

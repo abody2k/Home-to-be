@@ -17363,7 +17363,7 @@ _data = {
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gp4s5"]
-radius = 0.004
+radius = 0.0058090724
 
 [node name="monster" type="CharacterBody3D" unique_id=1281038519 groups=["monsters"]]
 collision_mask = 255
@@ -18923,7 +18923,7 @@ external_skeleton = NodePath("../rig_001/Skeleton3D")
 
 [node name="Area3D" type="Area3D" parent="BoneAttachment3D" unique_id=1526248399]
 collision_layer = 8
-collision_mask = 22
+collision_mask = 38
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoneAttachment3D/Area3D" unique_id=498888145]
 shape = SubResource("SphereShape3D_gp4s5")
