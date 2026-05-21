@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5h8u47xrouo2"
+path="res://.godot/imported/Weapon trigger no ammo.mp3-9363860f57ae25b19042bc3ca720b7c8.mp3str"
+
+[deps]
+
+source_file="res://media/Weapon trigger no ammo.mp3"
+dest_files=["res://.godot/imported/Weapon trigger no ammo.mp3-9363860f57ae25b19042bc3ca720b7c8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

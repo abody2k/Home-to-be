@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://chega6nprcvk3" path="res://scenes/house.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://bdq5xnd7b3iih" path="res://scenes/islander.tscn" id="10_choun"]
 [ext_resource type="AudioStream" uid="uid://dwaneeubu8j0l" path="res://media/screeching.mp3" id="10_ya4ey"]
+[ext_resource type="AudioStream" uid="uid://swmqw65c7we1" path="res://media/screams/dragon-studio-female-zombie-screams-324744.mp3" id="12_jkv2x"]
+[ext_resource type="AudioStream" uid="uid://c0bo32q7j1pqw" path="res://media/screams/dragon-studio-pterodactyl-call-382716.mp3" id="13_jbj1t"]
+[ext_resource type="AudioStream" uid="uid://cshmhsiiwukxa" path="res://media/screams/jusatti890-scream-horror-sfx-490910.mp3" id="14_muem4"]
+[ext_resource type="AudioStream" uid="uid://nmpfcdowkrjf" path="res://media/screams/jusatti890-scream-horror-sfx-490916.mp3" id="15_dp3eg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -395,6 +399,15 @@ _data = {
 }
 point_count = 8
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_0ld40"]
+shuffle = true
+stream_count = 5
+stream_0 = ExtResource("12_jkv2x")
+stream_1 = ExtResource("13_jbj1t")
+stream_2 = ExtResource("14_muem4")
+stream_3 = ExtResource("15_dp3eg")
+stream_4 = ExtResource("10_ya4ey")
+
 [node name="main" type="Node3D" unique_id=485170224]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=619415040]
@@ -575,7 +588,7 @@ use_model_front = true
 transform = Transform3D(0.049558852, 0, 1.4991812, 0, 1.5, 0, -1.4991812, 0, 0.049558852, 0, 2.9950886, 0)
 
 [node name="BoneAttachment3D" parent="paths/monster_2/PathFollow3D2/CharacterBody3D" index="4" unique_id=505390147]
-transform = Transform3D(10.218941, -97.69012, 174.21896, -13.763552, -174.37659, -96.97115, 199.26407, -7.0346775, -15.632497, -1.4751511, 0.36815834, -0.0676918)
+transform = Transform3D(10.218941, -97.69012, 174.21896, -13.763552, -174.37659, -96.97115, 199.26407, -7.0346775, -15.632497, -1.4751511, -1.8888531, -1.8340492)
 
 [node name="StaticBody3D" parent="." unique_id=239885512 instance=ExtResource("9_85g3d")]
 transform = Transform3D(2, 0, 0, 0, 1.9829673, -0.26046404, 0, 0.26046404, 1.9829673, -32.491367, 115.96559, -534.7532)
@@ -615,6 +628,10 @@ collision_mask = 31
 transform = Transform3D(-0.7768383, 0.06569044, -0.62626445, 2.319487e-09, 0.9945438, 0.10432016, 0.6297002, 0.0810399, -0.7725997, 10.964359, 0.6962757, -5.2645264)
 collision_layer = 16
 collision_mask = 31
+
+[node name="random" type="AudioStreamPlayer" parent="." unique_id=1049115999 groups=["random"]]
+stream = SubResource("AudioStreamPlaylist_0ld40")
+volume_db = -12.34
 
 [connection signal="body_entered" from="mc_reached_house" to="mc" method="_on_mc_reached_house_body_entered"]
 [connection signal="body_entered" from="reaching_cells" to="mc" method="_on_reaching_cells_body_entered"]
