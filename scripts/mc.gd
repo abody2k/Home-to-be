@@ -158,7 +158,8 @@ func _ready():
 	$dialog.next()
 
 func die():
-	$AnimationPlayer.play("islander_death")
+	return
+	#$AnimationPlayer.play("islander_death")
 
 func _input(event):
 	
