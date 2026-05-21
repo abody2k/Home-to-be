@@ -185,7 +185,7 @@ func start_delivering_food_mission():
 		["You: We don't even know you, thanks for the info",null],
 		["unknown : What you are going to find out..",null],
 		["...",null], #everyone shoots the islanders
-		["You: Let's head to the caves while these things are eating, the treasure is porbably there, we will take it then we will head to the boat",null],
+		["You: Let's head to the caves while these things are eating, the treasure is porbably there, we will take it then we will head to the boat",func (): get_tree().call_group("soliders","enable_shooting_mode")],
 		["Crewmate 1: Sir yes sir!",func (): mc.ammo = 100],
 		
 		
