@@ -12578,6 +12578,8 @@ _data = {
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mms23"]
 
 [node name="islander" type="CharacterBody3D" unique_id=659406128]
+collision_layer = 32
+collision_mask = 63
 script = ExtResource("1_nakb2")
 
 [node name="rig_003" type="Node3D" parent="." unique_id=89218274]

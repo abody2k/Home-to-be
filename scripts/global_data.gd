@@ -24,7 +24,7 @@ func is_this_mission_over(mission : int):
 	
 var last_mission_finished : MISSIONS
 
-var current_mission : MISSIONS = MISSIONS.WAKING_UP
+var current_mission : MISSIONS = MISSIONS.TAKING_BOAT
 
 func mission_completed():
 	print("MISSION IS ACTUALLY DONE and its number is : " + str(current_mission))
