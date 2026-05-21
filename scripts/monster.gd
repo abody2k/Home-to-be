@@ -1,10 +1,10 @@
 extends CharacterBody3D
-enum MODES {SEARCHING, IDLE, EATING, HUNTING}
+enum MODES {SEARCHING, IDLE, EATING, HUNTING, NOTHING}
 
 
 var target : CharacterBody3D
 
-var mode : MODES = MODES.IDLE
+var mode : MODES = MODES.NOTHING
 
 var eating = false
 var reached_body = false
@@ -48,12 +48,10 @@ func _physics_process(delta):
 				if player.global_position.distance_to(global_position) < 4:
 					#print([attacking,is_down])
 					if not player.is_down:
-						print("player is not down")
 						if attacking:
 							print("attackong")
 							return
 						else:
-							print("Just started an attack")
 							attacking = true
 							$AnimationPlayer2.play("rig_001|monster_attack")
 						
@@ -63,8 +61,7 @@ func _physics_process(delta):
 						reached_body = true
 						$AnimationPlayer2.play("monster_get_down_to_eat")
 				else:
-					print(player.global_position.distance_to(global_position))
-					print("WALKING")
+
 					$AnimationPlayer2.play("rig_001|monster_walk")
 					look_at(Vector3(player.global_position.x,global_position.y,player.global_position.z))
 					velocity = -basis.z * 5
@@ -75,13 +72,13 @@ func _physics_process(delta):
 			#path.progress_ratio+=delta * 0.01
 
 func _on_detector_body_entered(body : CharacterBody3D):
-	
+	if mode == MODES.NOTHING:
+		return
 	if eating or has_a_target or (body.hunter != null):
 		return
 	has_a_target = true
 	body.hunter = self
 	
-	print("assigned a new target")
 	
 	player = body
 	mode = MODES.HUNTING
@@ -102,13 +99,14 @@ func _on_animation_player_2_animation_finished(anim_name):
 
 func make_visible():
 	visible = true
+	mode = MODES.IDLE
+	$AnimationPlayer2.play("rig_001|monster_walk")
 	
 	
 	
 func _on_area_3d_body_entered(body):
-	print(body)
-	print(player)
-	print([( (body  != player)) , not attacking])
+	if mode == MODES.NOTHING:
+		return
 	if ( (body  != player)) or not attacking:
 		return
 	
