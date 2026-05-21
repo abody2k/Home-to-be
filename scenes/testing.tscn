@@ -38,7 +38,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35835302, 2.5505323, -7.6942263)
 
 [node name="mc" parent="." unique_id=2014978484 instance=ExtResource("2_l6grw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.8791113, 2.1379912, 23.748652)
+transform = Transform3D(0.24530324, 0, 2.4879363, 0, 2.5, 0, -2.4879363, 0, 0.24530324, 14.485081, 2.1379912, 0.012048721)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1266793034]
 
@@ -46,4 +46,4 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.8791113, 2.1379912, 23.748
 shape = SubResource("ConcavePolygonShape3D_nuoa6")
 
 [node name="islander" parent="." unique_id=659406128 instance=ExtResource("3_l6grw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.08968067)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.46328282, -0.08968067)
