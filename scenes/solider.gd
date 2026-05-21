@@ -5,6 +5,11 @@ var player : CharacterBody3D
 var hunter : CharacterBody3D 
 var is_down = false
 
+
+func die():
+	$AnimationPlayer.play("islander_death")
+	
+	
 func remove_player():
 	player = null
 

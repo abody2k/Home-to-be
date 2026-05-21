@@ -152,7 +152,8 @@ func _ready():
 	#go to the captain
 	$dialog.next()
 
-
+func die():
+	$AnimationPlayer.play("islander_death")
 
 func _input(event):
 	
