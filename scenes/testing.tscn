@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://scp1y43p0n18" path="res://scenes/monster.tscn" id="1_pcu7d"]
 [ext_resource type="PackedScene" uid="uid://d4gibrj0qhoaf" path="res://scenes/mc.tscn" id="2_l6grw"]
-[ext_resource type="PackedScene" uid="uid://ds8t8lo2u7aq1" path="res://scenes/solider.tscn" id="3_l6grw"]
+[ext_resource type="PackedScene" uid="uid://bdq5xnd7b3iih" path="res://scenes/islander.tscn" id="3_3dx25"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3dx25"]
 size = Vector3(81, 1, 70)
@@ -34,9 +34,6 @@ environment = SubResource("Environment_3dx25")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="monster" parent="." unique_id=1281038519 instance=ExtResource("1_pcu7d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35835302, 2.5505323, -7.6942263)
-
 [node name="mc" parent="." unique_id=2014978484 instance=ExtResource("2_l6grw")]
 transform = Transform3D(0.24530324, 0, 2.4879363, 0, 2.5, 0, -2.4879363, 0, 0.24530324, 14.485081, 2.1379912, 0.012048721)
 
@@ -45,5 +42,71 @@ transform = Transform3D(0.24530324, 0, 2.4879363, 0, 2.5, 0, -2.4879363, 0, 0.24
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=217052854]
 shape = SubResource("ConcavePolygonShape3D_nuoa6")
 
-[node name="solider" parent="." unique_id=570714499 instance=ExtResource("3_l6grw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.040418625, 0.17298174, -1.9977188)
+[node name="islander" parent="." unique_id=659406128 instance=ExtResource("3_3dx25")]
+transform = Transform3D(1.57, 0, 0, 0, 1.568632, -0.06552577, 0, 0.06552577, 1.568632, 0, 0.67710066, -4.874345)
+collision_mask = 31
+
+[node name="monster" parent="." unique_id=1281038519 instance=ExtResource("1_pcu7d")]
+transform = Transform3D(-1.0148783, 0, 0.01561363, 0, 1.0149906, 0, -0.015613746, 0, -1.0148708, -1.7662153, 2.5113277, -11.111152)
+mode = 1
+
+[node name="Skeleton3D" parent="monster/rig_001" parent_id_path=PackedInt32Array(1281038519, 182233355) index="0" unique_id=2052903781]
+bones/10/position = Vector3(0.0021823312, 0.0006311501, -0.004174535)
+bones/10/rotation = Quaternion(0.99999166, -2.3419861e-06, 2.3419866e-06, -0.004097462)
+bones/10/scale = Vector3(1, 23.344513, 1)
+bones/11/position = Vector3(-0.0021858548, -0.0015889072, -0.003983562)
+bones/11/rotation = Quaternion(0.99986285, -3.3227902e-06, 3.3227907e-06, -0.016566219)
+bones/11/scale = Vector3(0.99999994, 18.466179, 0.99999994)
+bones/26/rotation = Quaternion(0.99544126, 3.2327775e-06, -8.5927994e-08, 0.09537625)
+bones/26/scale = Vector3(0.98981607, 0.98981583, 0.9898162)
+bones/27/rotation = Quaternion(0.24695659, -3.08557e-13, -7.4661e-13, 0.96902657)
+bones/27/scale = Vector3(0.99808085, 0.99808085, 0.99808085)
+bones/28/rotation = Quaternion(-0.7077224, -0.0002999487, 0.0003022386, 0.70649046)
+bones/28/scale = Vector3(1.0122317, 1.0122315, 1.0122317)
+bones/33/scale = Vector3(1.0122313, 1.0122312, 1.0122311)
+bones/35/scale = Vector3(1.012232, 1.0122317, 1.0122316)
+bones/37/scale = Vector3(1.0102886, 1.0102885, 1.0102884)
+bones/38/scale = Vector3(1.0102888, 1.0102888, 1.0102887)
+bones/40/rotation = Quaternion(0.9542146, 4.7132185e-06, -4.1460362e-07, 0.29912305)
+bones/40/scale = Vector3(1.0157758, 1.0157754, 1.0157757)
+bones/41/rotation = Quaternion(0.013840735, -3.1179052e-13, 1.9840173e-13, 0.9999042)
+bones/41/scale = Vector3(1.0028182, 1.0028181, 1.0028182)
+bones/42/rotation = Quaternion(-0.33567345, -0.000117195705, 4.4888955e-05, 0.9419784)
+bones/42/scale = Vector3(0.9817028, 0.98170274, 0.98170257)
+bones/47/scale = Vector3(0.9817026, 0.98170257, 0.98170245)
+bones/49/scale = Vector3(0.98170286, 0.98170304, 0.98170257)
+bones/51/scale = Vector3(0.9844692, 0.9844692, 0.9844692)
+bones/52/scale = Vector3(0.9844222, 0.984422, 0.98440623)
+bones/62/rotation = Quaternion(-0.5977459, -3.2653988e-06, -3.2832177e-06, 0.8016857)
+bones/63/rotation = Quaternion(-0.11383192, -1.4152976e-08, 1.412377e-06, 0.9935)
+bones/63/scale = Vector3(0.989816, 0.98981625, 0.98981637)
+bones/64/rotation = Quaternion(0.24695656, -3.5998545e-13, -3.7927037e-13, 0.9690266)
+bones/64/scale = Vector3(0.9980808, 0.9980808, 0.99808073)
+bones/65/rotation = Quaternion(0.9954413, 3.056045e-06, -5.021546e-07, 0.0953764)
+bones/67/rotation = Quaternion(0.99544126, 5.0976437e-06, -6.977667e-07, 0.09537625)
+bones/67/scale = Vector3(1.0051314, 0.9898156, 1.0051311)
+bones/69/rotation = Quaternion(0.24696729, 2.961653e-08, -1.8494997e-06, 0.9690238)
+bones/69/scale = Vector3(1.0009611, 0.9946173, 1.00453)
+bones/71/rotation = Quaternion(-0.708136, -0.0003204755, 0.00027623906, 0.70607597)
+bones/71/scale = Vector3(0.9940865, 0.9936483, 1.0123781)
+bones/72/rotation = Quaternion(-0.0001224185, 0.96141005, -0.27511945, -0.0004049921)
+bones/81/rotation = Quaternion(-0.8172722, -4.065725e-06, -4.086611e-06, 0.576252)
+bones/82/rotation = Quaternion(-0.006356395, -5.318321e-08, 1.0570482e-06, 0.9999798)
+bones/82/scale = Vector3(1.0157758, 1.0157758, 1.0157758)
+bones/83/rotation = Quaternion(0.013840737, 5.6689103e-14, -2.5510103e-13, 0.9999043)
+bones/83/scale = Vector3(1.0028181, 1.0028181, 1.0028182)
+bones/84/rotation = Quaternion(0.95421463, 4.499052e-06, -7.415979e-07, 0.29912305)
+bones/86/rotation = Quaternion(0.95421445, 5.9293275e-06, -1.1899534e-06, 0.2991234)
+bones/86/scale = Vector3(0.99220496, 1.0157741, 0.9922047)
+bones/88/rotation = Quaternion(0.013843747, -1.1281352e-05, -2.8598527e-06, 0.9999043)
+bones/88/scale = Vector3(0.9986665, 1.0028346, 0.9986649)
+bones/90/rotation = Quaternion(-0.33518803, -0.00011373089, 4.0019087e-05, 0.9421513)
+bones/90/scale = Vector3(1.0086184, 0.9940898, 0.9977163)
+bones/91/rotation = Quaternion(-3.5725556e-05, 0.9611057, -0.27618083, -0.000116642805)
+bones/189/position = Vector3(4.470348e-10, 0.002671444, 0.0007693309)
+bones/203/position = Vector3(-2.9802322e-10, -0.003422304, 0.00037703276)
+
+[node name="BoneAttachment3D" parent="monster" index="4" unique_id=505390147]
+transform = Transform3D(10.218937, -97.690094, 174.21892, -13.76355, -174.37657, -96.97114, 199.26404, -7.034679, -15.632496, -1.4751527, 0.3681574, -0.06769085)
+
+[editable path="monster"]

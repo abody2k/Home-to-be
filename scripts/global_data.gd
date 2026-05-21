@@ -17,6 +17,15 @@ enum MISSIONS{
 }
 
 
+var eating = 0
+
+
+func increase_eaters():
+	eating+=1
+	
+	if eating == 4:
+		mission_completed()
+		
 func is_this_mission_over(mission : int):
 	return current_mission > mission
 	
@@ -24,7 +33,7 @@ func is_this_mission_over(mission : int):
 	
 var last_mission_finished : MISSIONS
 
-var current_mission : MISSIONS = MISSIONS.TAKING_BOAT
+var current_mission : MISSIONS = MISSIONS.FINDING_LOCALS
 
 func mission_completed():
 	print("MISSION IS ACTUALLY DONE and its number is : " + str(current_mission))

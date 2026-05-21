@@ -4,7 +4,7 @@ enum MODES {SEARCHING, IDLE, EATING, HUNTING, NOTHING}
 
 var target : CharacterBody3D
 
-var mode : MODES = MODES.NOTHING
+@export var mode : MODES = MODES.NOTHING
 
 var eating = false
 var reached_body = false
@@ -74,7 +74,7 @@ func _physics_process(delta):
 func _on_detector_body_entered(body : CharacterBody3D):
 	if mode == MODES.NOTHING:
 		return
-	if eating or has_a_target or (body.hunter != null):
+	if eating:
 		return
 	has_a_target = true
 	body.hunter = self
@@ -92,6 +92,7 @@ func _on_detector_body_entered(body : CharacterBody3D):
 
 func _on_animation_player_2_animation_finished(anim_name):
 	if anim_name == "rig_001|monster_get_down_to_eat":
+		GlobalData.increase_eaters()
 		$AnimationPlayer2.play("rig_001|eating")
 	elif anim_name == "rig_001|monster_attack":
 		attacking = false

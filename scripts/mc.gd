@@ -17,6 +17,8 @@ const NORMAL_ARM_OFFSET = 4.0
 
 @export var prison_anchor : Node3D
 
+@export var in_tunnels : Node3D
+
 
 var hunter : CharacterBody3D 
 
@@ -332,9 +334,9 @@ func _on_reaching_cells_body_entered(body):
 
 
 func _on_mc_reached_caves_body_entered(body):
-	print("WE ENTERED A NEW PLACEEEEEEE 3")
 	if not GlobalData.is_this_mission_over(6):
 		return
+	flash_screen_black(get_inside_home.bind(in_tunnels))
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("mc_reached_caves").queue_free()

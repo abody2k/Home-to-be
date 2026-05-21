@@ -122,10 +122,10 @@ point_count = 8
 
 [sub_resource type="Curve3D" id="Curve3D_tbgi4"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 637.8448, 0, 100.45799, 0, 0, 0, 0, 0, 0, 600.43, 0, 110.019554, 0, 0, 0, 0, 0, 0, 560.9366, 0, 101.28943, 0, 0, 0, 0, 0, 0, 503.1515, 0, 107.94095, 0, 0, 0, 0, 0, 0, 447.0293, 0, 107.52524, 0, 0, 0, 0, 0, 0, 386.9746, 0, 135.90259, 0, 0, 0, 0, 0, 0, 333.88123, 0, 145.13623, 0, 0, 0, 0, 0, 0, 282.3268, 0, 122.05216, 0, 0, 0, 0, 0, 0, 247.70068, 0, 82.03978, 0, 0, 0, 0, 0, 0, 199.22412, 0, 66.65038, 0, 0, 0, 0, 0, 0, 178.0681, 0, 27.804352, 0, 0, 0, 0, 0, 0, 154.44676, 2.3481512, -11.511381),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 637.8448, 0, 100.45799, 0, 0, 0, 0, 0, 0, 600.43, 0, 110.019554, 0, 0, 0, 0, 0, 0, 560.9366, 0, 101.28943, 0, 0, 0, 0, 0, 0, 503.1515, 0, 107.94095, 0, 0, 0, 0, 0, 0, 447.0293, 0, 107.52524, 0, 0, 0, 0, 0, 0, 386.9746, 0, 135.90259, 0, 0, 0, 0, 0, 0, 333.88123, 0, 145.13623, 0, 0, 0, 0, 0, 0, 282.3268, 0, 122.05216, 0, 0, 0, 0, 0, 0, 247.70068, 0, 82.03978, 0, 0, 0, 0, 0, 0, 220.66689, 12.868713, 73.45762),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 12
+point_count = 10
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tefeu"]
 radius = 36.437
@@ -469,14 +469,14 @@ _data = {
 
 [sub_resource type="Curve3D" id="Curve3D_tipki"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 182.60715, 0, -32.089447, 0, 0, 0, 0, 0, 0, 159.50229, 0, -60.007843, 0, 0, 0, 0, 0, 0, 128.69577, 0, -62.89595, 0, 0, 0, 0, 0, 0, 78.63522, 0, -82.15001, 0, 0, 0, 0, 0, 0, 60.34384, 0, -68.672165, 0, 0, 0, 0, 0, 0, 17.022186, 0, -45.56729, 0, 0, 0, 0, 0, 0, -34.963776, 0, -46.52999, 0, 0, 0, 0, 0, 0, -71.54651, 0, -72.52298),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 196.15065, 0, -15.7243595, 0, 0, 0, 0, 0, 0, 115.592384, 0, -23.668652, 0, 0, 0, 0, 0, 0, 90.819214, 0, -55.691174, 0, 0, 0, 0, 0, 0, 60.34384, 0, -68.672165, 0, 0, 0, 0, 0, 0, 17.022186, 0, -45.56729, 0, 0, 0, 0, 0, 0, -34.963776, 0, -46.52999, 0, 0, 0, 0, 0, 0, -46.493416, 0, -69.20164),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 8
+point_count = 7
 
 [sub_resource type="Curve3D" id="Curve3D_85g3d"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 153.72604, 0, -5.133746, 0, 0, 0, 0, 0, 0, 131.5839, 0, -8.021861, 0, 0, 0, 0, 0, 0, 93.075775, 0, 2.5678756, 0, 0, 0, 0, 0, 0, 99.81467, 0, 48.77763, 0, 0, 0, 0, 0, 0, 121.49258, 3.6199036, 94.98741, 0, 0, 0, 0, 0, 0, 122.45522, 8.791203, 129.64471, 0, 0, 0, 0, 0, 0, 120.52981, 10.859722, 149.8615),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 196.58218, 0, 37.408463, 0, 0, 0, 0, 0, 0, 158.4218, 0, 61.767914, 0, 0, 0, 0, 0, 0, 126.9089, 0.9878082, 56.053837, 0, 0, 0, 0, 0, 0, 106.0565, 0.49644458, 63.47976, 0, 0, 0, 0, 0, 0, 121.49258, 3.6199036, 94.98741, 0, 0, 0, 0, 0, 0, 122.45522, 8.791203, 129.64471, 0, 0, 0, 0, 0, 0, 120.52981, 10.859722, 149.8615),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 7
@@ -524,11 +524,17 @@ transform = Transform3D(-0.004504682, -0.017566962, -0.14170136, 4.8661014e-10, 
 [node name="island" parent="." unique_id=1412437666 instance=ExtResource("1_o5qli")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2, 0)
 
+[node name="Node3D2" type="Node3D" parent="island" unique_id=965337133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.20176, -3.5048347, -9.162932)
+
+[node name="in_tunnels" type="Node3D" parent="island/Node3D2" unique_id=283934650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0877051, -0.098728344, 0.15506682)
+
 [node name="sea" type="MeshInstance3D" parent="." unique_id=237375839]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 75.993385, 1.9408035, 50.839085)
 mesh = SubResource("ArrayMesh_o6xl0")
 
-[node name="mc" parent="." unique_id=2014978484 node_paths=PackedStringArray("boat", "troops", "shore_to_cave_path", "shore_to_cave_prison", "home_anchor", "prison_anchor") instance=ExtResource("3_sugp2")]
+[node name="mc" parent="." unique_id=2014978484 node_paths=PackedStringArray("boat", "troops", "shore_to_cave_path", "shore_to_cave_prison", "home_anchor", "prison_anchor", "in_tunnels") instance=ExtResource("3_sugp2")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 603.892, 43.740143, 41.987534)
 boat = NodePath("../boat_to_island/PathFollow3D/boat")
 troops = NodePath("../boat_to_island/PathFollow3D/boat/troops")
@@ -536,6 +542,7 @@ shore_to_cave_path = NodePath("../paths/shore_to_caves/shore_to_caves_follower")
 shore_to_cave_prison = NodePath("../paths/shore_to_prison/shore_to_prison_follower")
 home_anchor = NodePath("../StaticBody3D/house")
 prison_anchor = NodePath("../prison/prison_anchor")
+in_tunnels = NodePath("../island/Node3D2/in_tunnels")
 
 [node name="ship" parent="." unique_id=1459893465 instance=ExtResource("4_jyhfs")]
 transform = Transform3D(-0.5249944, 0, 0.0024282385, 0, 0.525, 0, -0.0024282385, 0, -0.5249944, 653.46045, 13.131723, 42.368584)
@@ -601,7 +608,7 @@ collision_mask = 2
 shape = SubResource("SphereShape3D_o6xl0")
 
 [node name="mc_reached_caves" type="Area3D" parent="." unique_id=1648140523]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.132416, 222.10071, -70.75075)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.132416, 11.785397, -62.546413)
 collision_layer = 128
 collision_mask = 2
 
@@ -636,14 +643,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.015396, 0)
 curve = SubResource("Curve3D_tipki")
 
 [node name="shore_to_caves_follower" type="PathFollow3D" parent="paths/shore_to_caves" unique_id=1386763247]
-transform = Transform3D(0.77039385, 0, 0.6375668, 0, 1, 0, -0.6375668, 0, 0.77039385, 182.60715, 0, -32.089447)
+transform = Transform3D(0.09813934, 0, 0.99517155, 0, 1, 0, -0.99517155, 0, 0.09813934, 196.15065, 0, -15.7243595)
 
 [node name="shore_to_prison" type="Path3D" parent="paths" unique_id=790226843]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.619865, 0)
 curve = SubResource("Curve3D_85g3d")
 
 [node name="shore_to_prison_follower" type="PathFollow3D" parent="paths/shore_to_prison" unique_id=718779171]
-transform = Transform3D(0.12933934, 0, 0.9915989, 0, 1, 0, -0.9915989, 0, 0.12933934, 153.72604, 0, -5.133746)
+transform = Transform3D(-0.5380616, 0, 0.8429022, 0, 1, 0, -0.8429022, 0, -0.5380616, 196.58218, 0, 37.408463)
 
 [node name="monster_1" type="Path3D" parent="paths" unique_id=1562490939 groups=["monster_paths"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.35847, 24.629944, 94.041595)
@@ -925,23 +932,19 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 110.169, 27.15394, 147.24681)
 visible = false
 
 [node name="islander" parent="islander" unique_id=659406128 instance=ExtResource("10_choun")]
-transform = Transform3D(1, 0, 0, 0, 0.99912864, -0.04173615, 0, 0.04173615, 0.99912864, 0, 1.0206108, 0)
-collision_layer = 16
+transform = Transform3D(1.57, 0, 0, 0, 1.568632, -0.06552577, 0, 0.06552577, 1.568632, 0, 1.0206108, 0)
 collision_mask = 31
 
 [node name="islander2" parent="islander" unique_id=561222832 instance=ExtResource("10_choun")]
-transform = Transform3D(0.64039123, -0.080122985, 0.76385826, 0, 0.99454385, 0.10432017, -0.7680488, -0.06680572, 0.63689715, 1.1168518, 1.2668781, 3.1306458)
-collision_layer = 16
+transform = Transform3D(1.0054142, -0.1257931, 1.1992575, 0, 1.5614338, 0.16378267, -1.2058368, -0.10488498, 0.99992853, 1.1168518, 1.2668781, 3.1306458)
 collision_mask = 31
 
 [node name="islander3" parent="islander" unique_id=710168399 instance=ExtResource("10_choun")]
-transform = Transform3D(-0.98112094, 0.008071575, 0.19322678, 0, 0.9991287, -0.04173615, -0.19339536, -0.040948205, -0.980266, 11.454685, 0.4500084, -1.9769897)
-collision_layer = 16
+transform = Transform3D(-1.5403599, 0.01267238, 0.3033662, 0, 1.568632, -0.065525755, -0.3036308, -0.06428869, -1.5390177, 11.454685, 0.4500084, -1.9769897)
 collision_mask = 31
 
 [node name="islander4" parent="islander" unique_id=1263701327 instance=ExtResource("10_choun")]
-transform = Transform3D(-0.7768383, 0.06569044, -0.62626445, 2.319487e-09, 0.9945438, 0.10432016, 0.6297002, 0.0810399, -0.7725997, 10.964359, 0.6962757, -5.2645264)
-collision_layer = 16
+transform = Transform3D(-1.2196363, 0.10313398, -0.98323494, 3.6415948e-09, 1.5614338, 0.16378269, 0.98862916, 0.12723269, -1.2129817, 10.964359, 0.6962757, -5.2645264)
 collision_mask = 31
 
 [node name="random" type="AudioStreamPlayer" parent="." unique_id=1049115999 groups=["random"]]
