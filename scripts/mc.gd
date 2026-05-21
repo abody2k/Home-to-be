@@ -43,7 +43,7 @@ var food_is_there : Area3D
 
 
 
-var ammo = 0:
+var ammo = 10:
 	set(value):
 		ammo = value
 		$CanvasLayer/Control/HBoxContainer/bullets.text = str(value)
@@ -100,13 +100,15 @@ func attack():
 	if mode == MODES.DIALOG:
 		$dialog.next()
 	else:
-		if ammo > 0 and !attacking:	
-			ammo -= 1
-			attacking = true
-			$Timer.start()
-			$shooting.play()
-		else:
-			$no_ammo.play()
+		if !attacking :
+			if ammo > 0:	
+				ammo -= 1
+				attacking = true
+				$Timer.start()
+				if not $shooting.playing:
+					$shooting.play()
+			else:
+				$no_ammo.play()
 
 func chng_color(alpha):
 	var style_box = StyleBoxFlat.new()

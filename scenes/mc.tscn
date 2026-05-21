@@ -10990,7 +10990,7 @@ visible = false
 mesh = SubResource("BoxMesh_yc5nw")
 
 [node name="Timer" type="Timer" parent="." unique_id=1075939269]
-wait_time = 0.09
+wait_time = 2.0
 one_shot = true
 
 [node name="jumping" type="Timer" parent="." unique_id=1772532581]
@@ -13391,10 +13391,9 @@ speed_scale = 4.0
 [node name="no_ammo" type="AudioStreamPlayer3D" parent="." unique_id=573127758]
 stream = ExtResource("11_4rxjt")
 
-[node name="shooting" type="AudioStreamPlayer3D" parent="." unique_id=729674791]
+[node name="shooting" type="AudioStreamPlayer3D" parent="." unique_id=1955908844]
 stream = ExtResource("12_dlm4k")
-volume_db = -7.0
-autoplay = true
+volume_db = -15.276
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="jumping" to="." method="_on_jumping_timeout"]
