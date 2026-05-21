@@ -164,7 +164,7 @@ func start_talking_to_locals():
 		["unknown: Nothing works on these things, this screaching sound you here outside? that's them and they are coming for us, we are the food of the island.",null],
 		["You: What are you suggesting then?",null],
 		["unknown: There is an ancient machine in the caves that can help reverse everything and fix everything. You see, before you did what you did we weren't actually here, but you had to catch him didn't you?",null],
-		["You: What?",],
+		["You: What?",null],
 		["unknown: It is not a dream!",func (): mc.ammo = 10],
 		["You: But how? do you..",func (): (get_tree().get_first_node_in_group("screeching") as AudioStreamPlayer3D).play()],
 		["...",func (): get_tree().call_group("monsters","make_visible")], # screaching sound and monsters come in
