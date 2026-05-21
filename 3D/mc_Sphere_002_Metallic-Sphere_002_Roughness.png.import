@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cufs3c26u58ch"
-path.s3tc="res://.godot/imported/mc_mc_clothes_low_Metallic.png-656a2a6347b4e021b1b74a04a3185d57.s3tc.ctex"
+uid="uid://dwm5vu8wt5a3h"
+path.s3tc="res://.godot/imported/mc_Sphere_002_Metallic-Sphere_002_Roughness.png-93f8e690493e7384d9cb7c6347178215.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "93c69183d430f93f90b450468ac87094"
+"md5": "398d06e6a11fe16b95cd759594c8a004"
 }
 
 [deps]
 
-source_file="res://3D/mc_mc_clothes_low_Metallic.png"
-dest_files=["res://.godot/imported/mc_mc_clothes_low_Metallic.png-656a2a6347b4e021b1b74a04a3185d57.s3tc.ctex"]
+source_file="res://3D/mc_Sphere_002_Metallic-Sphere_002_Roughness.png"
+dest_files=["res://.godot/imported/mc_Sphere_002_Metallic-Sphere_002_Roughness.png-93f8e690493e7384d9cb7c6347178215.s3tc.ctex"]
 
 [params]
 

@@ -111,6 +111,7 @@ func _on_area_3d_body_entered(body):
 	player.is_down = true
 	attacking = true
 	eating = true
+	player.die()
 	$AnimationPlayer2.play("rig_001|monster_get_down_to_eat")
 	mode = MODES.EATING
 	
