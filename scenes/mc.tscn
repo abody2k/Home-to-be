@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cb1fbho226tf5" path="res://3D/hair_low_BaseColor.png" id="6_3ylss"]
 [ext_resource type="Texture2D" uid="uid://cldrxldwio1yl" path="res://3D/mc_mc_body_low_BaseColor.png" id="6_ibph8"]
 [ext_resource type="Texture2D" uid="uid://cye1jko81fp1t" path="res://3D/hair_low_Normal.png" id="9_2vtfs"]
+[ext_resource type="AudioStream" uid="uid://c5h8u47xrouo2" path="res://media/Weapon trigger no ammo.mp3" id="11_4rxjt"]
+[ext_resource type="AudioStream" uid="uid://bf2map2ijdyx0" path="res://media/freesound_community-bullet-hit-metal-84818.mp3" id="12_dlm4k"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hy1be"]
 
@@ -10950,6 +10952,7 @@ _data = {
 [node name="mc" type="CharacterBody3D" unique_id=2014978484 groups=["mc"]]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 collision_layer = 2
+collision_mask = 255
 script = ExtResource("1_yc5nw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=758614270]
@@ -10988,7 +10991,7 @@ visible = false
 mesh = SubResource("BoxMesh_yc5nw")
 
 [node name="Timer" type="Timer" parent="." unique_id=1075939269]
-wait_time = 0.09
+wait_time = 2.0
 one_shot = true
 
 [node name="jumping" type="Timer" parent="." unique_id=1772532581]
@@ -13385,6 +13388,13 @@ skeleton = NodePath("..")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=762694233]
 libraries/ = SubResource("AnimationLibrary_qsn7k")
 speed_scale = 4.0
+
+[node name="no_ammo" type="AudioStreamPlayer3D" parent="." unique_id=573127758]
+stream = ExtResource("11_4rxjt")
+
+[node name="shooting" type="AudioStreamPlayer3D" parent="." unique_id=1955908844]
+stream = ExtResource("12_dlm4k")
+volume_db = -15.276
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="jumping" to="." method="_on_jumping_timeout"]

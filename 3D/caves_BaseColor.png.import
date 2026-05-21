@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cufs3c26u58ch"
-path.s3tc="res://.godot/imported/mc_mc_clothes_low_Metallic.png-656a2a6347b4e021b1b74a04a3185d57.s3tc.ctex"
+uid="uid://dta4m5j7fw5du"
+path.s3tc="res://.godot/imported/caves_BaseColor.png-72fba8652c3a62037b26d9f3284d2938.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "93c69183d430f93f90b450468ac87094"
-}
 
 [deps]
 
-source_file="res://3D/mc_mc_clothes_low_Metallic.png"
-dest_files=["res://.godot/imported/mc_mc_clothes_low_Metallic.png-656a2a6347b4e021b1b74a04a3185d57.s3tc.ctex"]
+source_file="res://3D/caves_BaseColor.png"
+dest_files=["res://.godot/imported/caves_BaseColor.png-72fba8652c3a62037b26d9f3284d2938.s3tc.ctex"]
 
 [params]
 

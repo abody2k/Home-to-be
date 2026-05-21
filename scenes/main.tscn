@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://chega6nprcvk3" path="res://scenes/house.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://bdq5xnd7b3iih" path="res://scenes/islander.tscn" id="10_choun"]
 [ext_resource type="AudioStream" uid="uid://dwaneeubu8j0l" path="res://media/screeching.mp3" id="10_ya4ey"]
+[ext_resource type="AudioStream" uid="uid://swmqw65c7we1" path="res://media/screams/dragon-studio-female-zombie-screams-324744.mp3" id="12_jkv2x"]
+[ext_resource type="AudioStream" uid="uid://c0bo32q7j1pqw" path="res://media/screams/dragon-studio-pterodactyl-call-382716.mp3" id="13_jbj1t"]
+[ext_resource type="AudioStream" uid="uid://cshmhsiiwukxa" path="res://media/screams/jusatti890-scream-horror-sfx-490910.mp3" id="14_muem4"]
+[ext_resource type="AudioStream" uid="uid://nmpfcdowkrjf" path="res://media/screams/jusatti890-scream-horror-sfx-490916.mp3" id="15_dp3eg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -118,10 +122,10 @@ point_count = 8
 
 [sub_resource type="Curve3D" id="Curve3D_tbgi4"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 637.8448, 0, 100.45799, 0, 0, 0, 0, 0, 0, 600.43, 0, 110.019554, 0, 0, 0, 0, 0, 0, 560.9366, 0, 101.28943, 0, 0, 0, 0, 0, 0, 503.1515, 0, 107.94095, 0, 0, 0, 0, 0, 0, 447.0293, 0, 107.52524, 0, 0, 0, 0, 0, 0, 386.9746, 0, 135.90259, 0, 0, 0, 0, 0, 0, 333.88123, 0, 145.13623, 0, 0, 0, 0, 0, 0, 282.3268, 0, 122.05216, 0, 0, 0, 0, 0, 0, 247.70068, 0, 82.03978, 0, 0, 0, 0, 0, 0, 199.22412, 0, 66.65038, 0, 0, 0, 0, 0, 0, 178.0681, 0, 27.804352, 0, 0, 0, 0, 0, 0, 154.44676, 2.3481512, -11.511381),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 637.8448, 0, 100.45799, 0, 0, 0, 0, 0, 0, 600.43, 0, 110.019554, 0, 0, 0, 0, 0, 0, 560.9366, 0, 101.28943, 0, 0, 0, 0, 0, 0, 503.1515, 0, 107.94095, 0, 0, 0, 0, 0, 0, 447.0293, 0, 107.52524, 0, 0, 0, 0, 0, 0, 386.9746, 0, 135.90259, 0, 0, 0, 0, 0, 0, 333.88123, 0, 145.13623, 0, 0, 0, 0, 0, 0, 282.3268, 0, 122.05216, 0, 0, 0, 0, 0, 0, 247.70068, 0, 82.03978, 0, 0, 0, 0, 0, 0, 220.66689, 12.868713, 73.45762),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 12
+point_count = 10
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tefeu"]
 radius = 36.437
@@ -187,6 +191,102 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("paths/monster_1/monster:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.040623665, -1.0949726, -10.328346)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("paths/monster_1/monster:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.126209, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("paths/monster_1/monster2:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.9577498, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("paths/monster_1/monster2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.84727985, 3.7879982, 30.529991)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("paths/monster_2/monster3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(122.99977, 5.594618, 137.89143)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("paths/monster_2/monster3:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.0884898, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("paths/monster_2/monster4:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(122.21352, 4.190983, 124.066574)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("paths/monster_2/monster4:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.0096357, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_tefeu"]
 resource_name = "massacre"
@@ -233,6 +333,102 @@ tracks/0/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("paths/monster_1/monster:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.06, 5.01),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.040623665, -1.0949726, -10.328346), Vector3(-0.78551245, 4.5079246, 38.0887), Vector3(8.131, 5.461, 42.593)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("paths/monster_1/monster:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.06, 5.01, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.126209, 0), Vector3(0, 4.8467793, 0), Vector3(0, 3.126209, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("paths/monster_1/monster2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 2.9577498, 0), Vector3(0, 2.9577498, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("paths/monster_1/monster2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.84727985, 3.7879982, 30.529991), Vector3(-7.6288843, 6.5808105, 52.054836)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("paths/monster_2/monster3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.04, 4.08),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(122.39761, 4.3312607, 126.56268), Vector3(122.99977, 5.594618, 137.89143), Vector3(115.825, 7.391, 153.732)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("paths/monster_2/monster3:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.04, 4.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -3.0884898, 0), Vector3(0, -3.0884898, 0), Vector3(0, -5.279621, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("paths/monster_2/monster4:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(2.91, 3.47, 4.18, 5.03),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(122.21352, 4.190983, 124.066574), Vector3(123.335724, 4.190983, 132.52148), Vector3(124.665634, 4.200874, 131.65031), Vector3(123.13665, 4.212715, 131.0216)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("paths/monster_2/monster4:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2.91, 3.47, 4.18, 5.03),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -3.0096357, 0), Vector3(0, -3.0096357, 0), Vector3(0, -3.0096357, 0), Vector3(0, -3.0096357, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_o6xl0"]
 resource_name = "troops_marching_from_shore"
@@ -273,31 +469,40 @@ _data = {
 
 [sub_resource type="Curve3D" id="Curve3D_tipki"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 182.60715, 0, -32.089447, 0, 0, 0, 0, 0, 0, 159.50229, 0, -60.007843, 0, 0, 0, 0, 0, 0, 128.69577, 0, -62.89595, 0, 0, 0, 0, 0, 0, 78.63522, 0, -82.15001, 0, 0, 0, 0, 0, 0, 60.34384, 0, -68.672165, 0, 0, 0, 0, 0, 0, 17.022186, 0, -45.56729, 0, 0, 0, 0, 0, 0, -34.963776, 0, -46.52999, 0, 0, 0, 0, 0, 0, -71.54651, 0, -72.52298),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 196.15065, 0, -15.7243595, 0, 0, 0, 0, 0, 0, 115.592384, 0, -23.668652, 0, 0, 0, 0, 0, 0, 90.819214, 0, -55.691174, 0, 0, 0, 0, 0, 0, 60.34384, 0, -68.672165, 0, 0, 0, 0, 0, 0, 17.022186, 0, -45.56729, 0, 0, 0, 0, 0, 0, -34.963776, 0, -46.52999, 0, 0, 0, 0, 0, 0, -46.493416, 0, -69.20164),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 8
+point_count = 7
 
 [sub_resource type="Curve3D" id="Curve3D_85g3d"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 153.72604, 0, -5.133746, 0, 0, 0, 0, 0, 0, 131.5839, 0, -8.021861, 0, 0, 0, 0, 0, 0, 93.075775, 0, 2.5678756, 0, 0, 0, 0, 0, 0, 99.81467, 0, 48.77763, 0, 0, 0, 0, 0, 0, 121.49258, 3.6199036, 94.98741, 0, 0, 0, 0, 0, 0, 122.45522, 8.791203, 129.64471, 0, 0, 0, 0, 0, 0, 120.52981, 10.859722, 149.8615),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 196.58218, 0, 37.408463, 0, 0, 0, 0, 0, 0, 158.4218, 0, 61.767914, 0, 0, 0, 0, 0, 0, 126.9089, 0.9878082, 56.053837, 0, 0, 0, 0, 0, 0, 106.0565, 0.49644458, 63.47976, 0, 0, 0, 0, 0, 0, 121.49258, 3.6199036, 94.98741, 0, 0, 0, 0, 0, 0, 122.45522, 8.791203, 129.64471, 0, 0, 0, 0, 0, 0, 120.52981, 10.859722, 149.8615),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 7
 
 [sub_resource type="Curve3D" id="Curve3D_ya4ey"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -32.055054, -6.1035156e-05, 0.07193756, 0, 0, 0, 0, 0, 0, -13.606873, -6.1035156e-05, -0.53791046, 0, 0, 0, 0, 0, 0, -0.3424759, -6.1035156e-05, -0.8428421, 0, 0, 0, 0, 0, 0, 0.5723114, -6.1035156e-05, 11.354301, 0, 0, 0, 0, 0, 0, 0.8772354, -6.1035156e-05, 21.264473, 0, 0, 0, 0, 0, 0, 0.8772354, -6.1035156e-05, 28.582764, 0, 0, 0, 0, 0, 0, 0.7247696, -6.1035156e-05, 38.49295, 0, 0, 0, 0, 0, 0, -5.98365, -6.1035156e-05, 42.914413),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -32.055054, -6.1035156e-05, 0.07193756, 0, 0, 0, 0, 0, 0, -13.606873, -6.1035156e-05, -0.53791046, 0, 0, 0, 0, 0, 0, -0.3424759, -6.1035156e-05, -0.8428421, 0, 0, 0, 0, 0, 0, 0.5723114, -6.1035156e-05, 11.354301, 0, 0, 0, 0, 0, 0, 0.8772354, 1.9005241, 21.264473, 0, 0, 0, 0, 0, 0, 0.8772354, 2.1276054, 28.582764, 0, 0, 0, 0, 0, 0, 0.7247696, 2.7397404, 38.49295, 0, 0, 0, 0, 0, 0, -5.98365, 2.7663383, 42.914413),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 8
 
 [sub_resource type="Curve3D" id="Curve3D_eb6dy"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 166.14542, 0, 92.74136, 0, 0, 0, 0, 0, 0, 147.23984, 0, 91.67412, 0, 0, 0, 0, 0, 0, 137.32965, 0, 92.13151, 0, 0, 0, 0, 0, 0, 120.863525, 0, 92.43644, 0, 0, 0, 0, 0, 0, 121.16845, 0, 108.59766, 0, 0, 0, 0, 0, 0, 121.47338, 0, 118.965225, 0, 0, 0, 0, 0, 0, 121.47338, 0, 131.77222, 0, 0, 0, 0, 0, 0, 124.217735, 0, 137.87079),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 166.14542, 0, 92.74136, 0, 0, 0, 0, 0, 0, 147.23984, 0, 91.67412, 0, 0, 0, 0, 0, 0, 137.32965, 0, 92.13151, 0, 0, 0, 0, 0, 0, 120.863525, 0, 92.43644, 0, 0, 0, 0, 0, 0, 121.16845, 0, 108.59766, 0, 0, 0, 0, 0, 0, 121.47338, 1.5772018, 118.965225, 0, 0, 0, 0, 0, 0, 121.47338, 3.1324005, 131.77222, 0, 0, 0, 0, 0, 0, 124.217735, 4.1891212, 137.87079),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 8
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_0ld40"]
+shuffle = true
+stream_count = 5
+stream_0 = ExtResource("12_jkv2x")
+stream_1 = ExtResource("13_jbj1t")
+stream_2 = ExtResource("14_muem4")
+stream_3 = ExtResource("15_dp3eg")
+stream_4 = ExtResource("10_ya4ey")
 
 [node name="main" type="Node3D" unique_id=485170224]
 
@@ -314,16 +519,22 @@ mesh = SubResource("ArrayMesh_ya4ey")
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
 [node name="prison_anchor" type="Node3D" parent="prison" unique_id=2099426419]
-transform = Transform3D(-0.004504682, -0.017566962, -0.14170136, 4.8661014e-10, 0.14177185, -0.017575702, 0.1427861, -0.00055421144, -0.0044704597, -6.36357, -2.0710816, 0.26425362)
+transform = Transform3D(-0.004504682, -0.017566962, -0.14170136, 4.8661014e-10, 0.14177185, -0.017575702, 0.1427861, -0.00055421144, -0.0044704597, -8.758987, -2.2130768, 0.18868187)
 
 [node name="island" parent="." unique_id=1412437666 instance=ExtResource("1_o5qli")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2, 0)
+
+[node name="Node3D2" type="Node3D" parent="island" unique_id=965337133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.20176, -3.5048347, -9.162932)
+
+[node name="in_tunnels" type="Node3D" parent="island/Node3D2" unique_id=283934650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0877051, -0.098728344, 0.15506682)
 
 [node name="sea" type="MeshInstance3D" parent="." unique_id=237375839]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 75.993385, 1.9408035, 50.839085)
 mesh = SubResource("ArrayMesh_o6xl0")
 
-[node name="mc" parent="." unique_id=2014978484 node_paths=PackedStringArray("boat", "troops", "shore_to_cave_path", "shore_to_cave_prison", "home_anchor", "prison_anchor") instance=ExtResource("3_sugp2")]
+[node name="mc" parent="." unique_id=2014978484 node_paths=PackedStringArray("boat", "troops", "shore_to_cave_path", "shore_to_cave_prison", "home_anchor", "prison_anchor", "in_tunnels") instance=ExtResource("3_sugp2")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 603.892, 43.740143, 41.987534)
 boat = NodePath("../boat_to_island/PathFollow3D/boat")
 troops = NodePath("../boat_to_island/PathFollow3D/boat/troops")
@@ -331,6 +542,7 @@ shore_to_cave_path = NodePath("../paths/shore_to_caves/shore_to_caves_follower")
 shore_to_cave_prison = NodePath("../paths/shore_to_prison/shore_to_prison_follower")
 home_anchor = NodePath("../StaticBody3D/house")
 prison_anchor = NodePath("../prison/prison_anchor")
+in_tunnels = NodePath("../island/Node3D2/in_tunnels")
 
 [node name="ship" parent="." unique_id=1459893465 instance=ExtResource("4_jyhfs")]
 transform = Transform3D(-0.5249944, 0, 0.0024282385, 0, 0.525, 0, -0.0024282385, 0, -0.5249944, 653.46045, 13.131723, 42.368584)
@@ -353,7 +565,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.446472, 0)
 curve = SubResource("Curve3D_tbgi4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="boat_to_island" unique_id=1826125259]
-transform = Transform3D(-0.2475984, 0, 0.9688628, 0, 1, 0, -0.9688628, 0, -0.2475984, 637.8448, 0, 100.45799)
+transform = Transform3D(-0.24759804, 0, 0.96886164, 0, 0.99999905, 0, -0.9688614, 0, -0.2475981, 637.8448, 0, 100.45799)
 
 [node name="boat" parent="boat_to_island/PathFollow3D" unique_id=1471290188 node_paths=PackedStringArray("path") instance=ExtResource("6_tefeu")]
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 3.0433445, 0)
@@ -363,19 +575,19 @@ path = NodePath("..")
 transform = Transform3D(0.5, 0, 0, 0, 0.49999988, 0, 0, 0, 0.5, 25.338787, 0.9161174, -47.66417)
 
 [node name="solider" parent="boat_to_island/PathFollow3D/boat/troops" unique_id=570714499 instance=ExtResource("7_o6xl0")]
-transform = Transform3D(0.58693963, 0, -0.4669064, 0, 0.7499998, 0, 0.4669064, 0, 0.58693963, -0.96948624, -0.07883346, -0.24775696)
+transform = Transform3D(0.3912932, 0, -0.311271, 0, 0.5, 0, 0.311271, 0, 0.3912932, -0.96948624, -0.07883346, -0.24775696)
 
 [node name="solider2" parent="boat_to_island/PathFollow3D/boat/troops" unique_id=1428989885 instance=ExtResource("7_o6xl0")]
-transform = Transform3D(0.74999994, 0, 0, 0, 0.74999976, 0, 0, 0, 0.74999994, -0.113861084, -0.07883346, 1.1794815)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.113861084, -0.07883346, 1.1794815)
 
 [node name="solider3" parent="boat_to_island/PathFollow3D/boat/troops" unique_id=2123212811 instance=ExtResource("7_o6xl0")]
-transform = Transform3D(0.41023415, 0, 0.62785965, 0, 0.7499998, 0, -0.62785965, 0, 0.41023415, 0.9611416, -0.07883346, 0.24562836)
+transform = Transform3D(0.27348948, 0, 0.41857317, 0, 0.5, 0, -0.41857317, 0, 0.27348948, 0.9611416, -0.07883346, 0.24562836)
 
 [node name="solider4" parent="boat_to_island/PathFollow3D/boat/troops" unique_id=667445317 instance=ExtResource("7_o6xl0")]
-transform = Transform3D(-0.67345726, 0, 0.33008367, 0, 0.7499996, 0, -0.33008367, 0, -0.67345726, 0.4424057, -0.07883346, -1.4748688)
+transform = Transform3D(-0.44897154, 0, 0.2200558, 0, 0.5, 0, -0.2200558, 0, -0.44897154, 0.4424057, -0.07883346, -1.4748688)
 
 [node name="solider5" parent="boat_to_island/PathFollow3D/boat/troops" unique_id=2123375140 instance=ExtResource("7_o6xl0")]
-transform = Transform3D(0.64027214, 0, 0.39057833, 0, 0.7499994, 0, -0.39057833, 0, 0.64027214, 0.7469673, -0.07883346, 1.1299362)
+transform = Transform3D(0.42684814, 0, 0.2603856, 0, 0.5, 0, -0.2603856, 0, 0.42684814, 0.7469673, -0.07883346, 1.1299362)
 
 [node name="troops2" type="Node3D" parent="boat_to_island/PathFollow3D/boat" unique_id=1360585146]
 
@@ -396,7 +608,7 @@ collision_mask = 2
 shape = SubResource("SphereShape3D_o6xl0")
 
 [node name="mc_reached_caves" type="Area3D" parent="." unique_id=1648140523]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.132416, 222.10071, -70.75075)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.132416, 11.785397, -62.546413)
 collision_layer = 128
 collision_mask = 2
 
@@ -431,53 +643,274 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.015396, 0)
 curve = SubResource("Curve3D_tipki")
 
 [node name="shore_to_caves_follower" type="PathFollow3D" parent="paths/shore_to_caves" unique_id=1386763247]
-transform = Transform3D(0.77039385, 0, 0.6375668, 0, 1, 0, -0.6375668, 0, 0.77039385, 182.60715, 0, -32.089447)
+transform = Transform3D(0.09813934, 0, 0.99517155, 0, 1, 0, -0.99517155, 0, 0.09813934, 196.15065, 0, -15.7243595)
 
 [node name="shore_to_prison" type="Path3D" parent="paths" unique_id=790226843]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.619865, 0)
 curve = SubResource("Curve3D_85g3d")
 
 [node name="shore_to_prison_follower" type="PathFollow3D" parent="paths/shore_to_prison" unique_id=718779171]
-transform = Transform3D(0.12933934, 0, 0.9915989, 0, 1, 0, -0.9915989, 0, 0.12933934, 153.72604, 0, -5.133746)
+transform = Transform3D(-0.5380616, 0, 0.8429022, 0, 1, 0, -0.8429022, 0, -0.5380616, 196.58218, 0, 37.408463)
 
-[node name="monster_1" type="Path3D" parent="paths" unique_id=1562490939]
+[node name="monster_1" type="Path3D" parent="paths" unique_id=1562490939 groups=["monster_paths"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.35847, 24.629944, 94.041595)
 curve = SubResource("Curve3D_ya4ey")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="paths/monster_1" unique_id=26237897]
-transform = Transform3D(0.55031365, 0, -0.8349578, 0, 1, 0, 0.8349578, 0, 0.55031365, -5.98365, -6.1035156e-05, 42.914406)
-progress = 79.13656
-use_model_front = true
+[node name="monster" parent="paths/monster_1" unique_id=838362247 instance=ExtResource("5_tbgi4")]
+transform = Transform3D(-1.0148783, 0, 0.01561363, 0, 1.0149906, 0, -0.015613746, 0, -1.0148708, -0.040623665, -1.0949726, -10.328346)
+visible = false
 
-[node name="CharacterBody3D" parent="paths/monster_1/PathFollow3D" unique_id=253069950 instance=ExtResource("5_tbgi4")]
-transform = Transform3D(0.049558852, 0, 1.4991812, 0, 1.5, 0, -1.4991812, 0, 0.049558852, 0, 3.1990242, 0)
+[node name="Skeleton3D" parent="paths/monster_1/monster/rig_001" parent_id_path=PackedInt32Array(838362247, 182233355) index="0" unique_id=2052903781]
+bones/10/position = Vector3(0.0021823312, 0.0006311501, -0.004174535)
+bones/10/rotation = Quaternion(0.99999166, -2.3419861e-06, 2.3419866e-06, -0.004097462)
+bones/10/scale = Vector3(1, 23.344513, 1)
+bones/11/position = Vector3(-0.0021858548, -0.0015889072, -0.003983562)
+bones/11/rotation = Quaternion(0.99986285, -3.3227902e-06, 3.3227907e-06, -0.016566219)
+bones/11/scale = Vector3(0.99999994, 18.466179, 0.99999994)
+bones/26/rotation = Quaternion(0.99544126, 3.2327775e-06, -8.5927994e-08, 0.09537625)
+bones/26/scale = Vector3(0.98981607, 0.98981583, 0.9898162)
+bones/27/rotation = Quaternion(0.24695659, -3.08557e-13, -7.4661e-13, 0.96902657)
+bones/27/scale = Vector3(0.99808085, 0.99808085, 0.99808085)
+bones/28/rotation = Quaternion(-0.7077224, -0.0002999487, 0.0003022386, 0.70649046)
+bones/28/scale = Vector3(1.0122317, 1.0122315, 1.0122317)
+bones/33/scale = Vector3(1.0122313, 1.0122312, 1.0122311)
+bones/35/scale = Vector3(1.012232, 1.0122317, 1.0122316)
+bones/37/scale = Vector3(1.0102886, 1.0102885, 1.0102884)
+bones/38/scale = Vector3(1.0102888, 1.0102888, 1.0102887)
+bones/40/rotation = Quaternion(0.9542146, 4.7132185e-06, -4.1460362e-07, 0.29912305)
+bones/40/scale = Vector3(1.0157758, 1.0157754, 1.0157757)
+bones/41/rotation = Quaternion(0.013840735, -3.1179052e-13, 1.9840173e-13, 0.9999042)
+bones/41/scale = Vector3(1.0028182, 1.0028181, 1.0028182)
+bones/42/rotation = Quaternion(-0.33567345, -0.000117195705, 4.4888955e-05, 0.9419784)
+bones/42/scale = Vector3(0.9817028, 0.98170274, 0.98170257)
+bones/47/scale = Vector3(0.9817026, 0.98170257, 0.98170245)
+bones/49/scale = Vector3(0.98170286, 0.98170304, 0.98170257)
+bones/51/scale = Vector3(0.9844692, 0.9844692, 0.9844692)
+bones/52/scale = Vector3(0.9844222, 0.984422, 0.98440623)
+bones/62/rotation = Quaternion(-0.5977459, -3.2653988e-06, -3.2832177e-06, 0.8016857)
+bones/63/rotation = Quaternion(-0.11383192, -1.4152976e-08, 1.412377e-06, 0.9935)
+bones/63/scale = Vector3(0.989816, 0.98981625, 0.98981637)
+bones/64/rotation = Quaternion(0.24695656, -3.5998545e-13, -3.7927037e-13, 0.9690266)
+bones/64/scale = Vector3(0.9980808, 0.9980808, 0.99808073)
+bones/65/rotation = Quaternion(0.9954413, 3.056045e-06, -5.021546e-07, 0.0953764)
+bones/67/rotation = Quaternion(0.99544126, 5.0976437e-06, -6.977667e-07, 0.09537625)
+bones/67/scale = Vector3(1.0051314, 0.9898156, 1.0051311)
+bones/69/rotation = Quaternion(0.24696729, 2.961653e-08, -1.8494997e-06, 0.9690238)
+bones/69/scale = Vector3(1.0009611, 0.9946173, 1.00453)
+bones/71/rotation = Quaternion(-0.708136, -0.0003204755, 0.00027623906, 0.70607597)
+bones/71/scale = Vector3(0.9940865, 0.9936483, 1.0123781)
+bones/72/rotation = Quaternion(-0.0001224185, 0.96141005, -0.27511945, -0.0004049921)
+bones/81/rotation = Quaternion(-0.8172722, -4.065725e-06, -4.086611e-06, 0.576252)
+bones/82/rotation = Quaternion(-0.006356395, -5.318321e-08, 1.0570482e-06, 0.9999798)
+bones/82/scale = Vector3(1.0157758, 1.0157758, 1.0157758)
+bones/83/rotation = Quaternion(0.013840737, 5.6689103e-14, -2.5510103e-13, 0.9999043)
+bones/83/scale = Vector3(1.0028181, 1.0028181, 1.0028182)
+bones/84/rotation = Quaternion(0.95421463, 4.499052e-06, -7.415979e-07, 0.29912305)
+bones/86/rotation = Quaternion(0.95421445, 5.9293275e-06, -1.1899534e-06, 0.2991234)
+bones/86/scale = Vector3(0.99220496, 1.0157741, 0.9922047)
+bones/88/rotation = Quaternion(0.013843747, -1.1281352e-05, -2.8598527e-06, 0.9999043)
+bones/88/scale = Vector3(0.9986665, 1.0028346, 0.9986649)
+bones/90/rotation = Quaternion(-0.33518803, -0.00011373089, 4.0019087e-05, 0.9421513)
+bones/90/scale = Vector3(1.0086184, 0.9940898, 0.9977163)
+bones/91/rotation = Quaternion(-3.5725556e-05, 0.9611057, -0.27618083, -0.000116642805)
+bones/189/position = Vector3(4.470348e-10, 0.002671444, 0.0007693309)
+bones/203/position = Vector3(-2.9802322e-10, -0.003422304, 0.00037703276)
 
-[node name="PathFollow3D2" type="PathFollow3D" parent="paths/monster_1" unique_id=1467097548]
-transform = Transform3D(0.55031365, 0, -0.8349578, 0, 1, 0, 0.8349578, 0, 0.55031365, -0.2873807, -6.1035156e-05, 39.160053)
-progress = 72.31499
-use_model_front = true
+[node name="BoneAttachment3D" parent="paths/monster_1/monster" index="4" unique_id=505390147]
+transform = Transform3D(10.218937, -97.690094, 174.21892, -13.76355, -174.37657, -96.97114, 199.26404, -7.034679, -15.632496, -1.4751511, 0.36815643, -0.06768799)
 
-[node name="CharacterBody3D" parent="paths/monster_1/PathFollow3D2" unique_id=920750672 instance=ExtResource("5_tbgi4")]
-transform = Transform3D(0.049558852, 0, 1.4991812, 0, 1.5, 0, -1.4991812, 0, 0.049558852, 0, 3.1990242, 0)
+[node name="monster2" parent="paths/monster_1" unique_id=1064366220 instance=ExtResource("5_tbgi4")]
+transform = Transform3D(-0.99789417, 0, 0.18554944, 0, 1.0149906, 0, -0.18555081, 0, -0.9978868, 0.84727985, 3.7879982, 30.529991)
+visible = false
 
-[node name="monster_2" type="Path3D" parent="paths" unique_id=972609378]
+[node name="Skeleton3D" parent="paths/monster_1/monster2/rig_001" parent_id_path=PackedInt32Array(1064366220, 182233355) index="0" unique_id=2052903781]
+bones/10/position = Vector3(0.0021823312, 0.0006311501, -0.004174535)
+bones/10/rotation = Quaternion(0.99999166, -2.3419861e-06, 2.3419866e-06, -0.004097462)
+bones/10/scale = Vector3(1, 23.344513, 1)
+bones/11/position = Vector3(-0.0021858548, -0.0015889072, -0.003983562)
+bones/11/rotation = Quaternion(0.99986285, -3.3227902e-06, 3.3227907e-06, -0.016566219)
+bones/11/scale = Vector3(0.99999994, 18.466179, 0.99999994)
+bones/26/rotation = Quaternion(0.99544126, 3.2327775e-06, -8.5927994e-08, 0.09537625)
+bones/26/scale = Vector3(0.98981607, 0.98981583, 0.9898162)
+bones/27/rotation = Quaternion(0.24695659, -3.08557e-13, -7.4661e-13, 0.96902657)
+bones/27/scale = Vector3(0.99808085, 0.99808085, 0.99808085)
+bones/28/rotation = Quaternion(-0.7077224, -0.0002999487, 0.0003022386, 0.70649046)
+bones/28/scale = Vector3(1.0122317, 1.0122315, 1.0122317)
+bones/33/scale = Vector3(1.0122313, 1.0122312, 1.0122311)
+bones/35/scale = Vector3(1.012232, 1.0122317, 1.0122316)
+bones/37/scale = Vector3(1.0102886, 1.0102885, 1.0102884)
+bones/38/scale = Vector3(1.0102888, 1.0102888, 1.0102887)
+bones/40/rotation = Quaternion(0.9542146, 4.7132185e-06, -4.1460362e-07, 0.29912305)
+bones/40/scale = Vector3(1.0157758, 1.0157754, 1.0157757)
+bones/41/rotation = Quaternion(0.013840735, -3.1179052e-13, 1.9840173e-13, 0.9999042)
+bones/41/scale = Vector3(1.0028182, 1.0028181, 1.0028182)
+bones/42/rotation = Quaternion(-0.33567345, -0.000117195705, 4.4888955e-05, 0.9419784)
+bones/42/scale = Vector3(0.9817028, 0.98170274, 0.98170257)
+bones/47/scale = Vector3(0.9817026, 0.98170257, 0.98170245)
+bones/49/scale = Vector3(0.98170286, 0.98170304, 0.98170257)
+bones/51/scale = Vector3(0.9844692, 0.9844692, 0.9844692)
+bones/52/scale = Vector3(0.9844222, 0.984422, 0.98440623)
+bones/62/rotation = Quaternion(-0.5977459, -3.2653988e-06, -3.2832177e-06, 0.8016857)
+bones/63/rotation = Quaternion(-0.11383192, -1.4152976e-08, 1.412377e-06, 0.9935)
+bones/63/scale = Vector3(0.989816, 0.98981625, 0.98981637)
+bones/64/rotation = Quaternion(0.24695656, -3.5998545e-13, -3.7927037e-13, 0.9690266)
+bones/64/scale = Vector3(0.9980808, 0.9980808, 0.99808073)
+bones/65/rotation = Quaternion(0.9954413, 3.056045e-06, -5.021546e-07, 0.0953764)
+bones/67/rotation = Quaternion(0.99544126, 5.0976437e-06, -6.977667e-07, 0.09537625)
+bones/67/scale = Vector3(1.0051314, 0.9898156, 1.0051311)
+bones/69/rotation = Quaternion(0.24696729, 2.961653e-08, -1.8494997e-06, 0.9690238)
+bones/69/scale = Vector3(1.0009611, 0.9946173, 1.00453)
+bones/71/rotation = Quaternion(-0.708136, -0.0003204755, 0.00027623906, 0.70607597)
+bones/71/scale = Vector3(0.9940865, 0.9936483, 1.0123781)
+bones/72/rotation = Quaternion(-0.0001224185, 0.96141005, -0.27511945, -0.0004049921)
+bones/81/rotation = Quaternion(-0.8172722, -4.065725e-06, -4.086611e-06, 0.576252)
+bones/82/rotation = Quaternion(-0.006356395, -5.318321e-08, 1.0570482e-06, 0.9999798)
+bones/82/scale = Vector3(1.0157758, 1.0157758, 1.0157758)
+bones/83/rotation = Quaternion(0.013840737, 5.6689103e-14, -2.5510103e-13, 0.9999043)
+bones/83/scale = Vector3(1.0028181, 1.0028181, 1.0028182)
+bones/84/rotation = Quaternion(0.95421463, 4.499052e-06, -7.415979e-07, 0.29912305)
+bones/86/rotation = Quaternion(0.95421445, 5.9293275e-06, -1.1899534e-06, 0.2991234)
+bones/86/scale = Vector3(0.99220496, 1.0157741, 0.9922047)
+bones/88/rotation = Quaternion(0.013843747, -1.1281352e-05, -2.8598527e-06, 0.9999043)
+bones/88/scale = Vector3(0.9986665, 1.0028346, 0.9986649)
+bones/90/rotation = Quaternion(-0.33518803, -0.00011373089, 4.0019087e-05, 0.9421513)
+bones/90/scale = Vector3(1.0086184, 0.9940898, 0.9977163)
+bones/91/rotation = Quaternion(-3.5725556e-05, 0.9611057, -0.27618083, -0.000116642805)
+bones/189/position = Vector3(4.470348e-10, 0.002671444, 0.0007693309)
+bones/203/position = Vector3(-2.9802322e-10, -0.003422304, 0.00037703276)
+
+[node name="BoneAttachment3D" parent="paths/monster_1/monster2" index="4" unique_id=505390147]
+transform = Transform3D(10.218941, -97.69011, 174.21895, -13.763552, -174.37659, -96.971146, 199.26404, -7.0346756, -15.632496, -1.4751587, 0.36815643, -0.06768036)
+
+[node name="monster_2" type="Path3D" parent="paths" unique_id=972609378 groups=["monster_paths"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24.63, 0)
 curve = SubResource("Curve3D_eb6dy")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="paths/monster_2" unique_id=1930218248]
-transform = Transform3D(0.9119203, 0, 0.41036355, 0, 1, 0, -0.41036355, 0, 0.9119203, 124.21774, 0, 137.87077)
-progress = 91.35616
-use_model_front = true
+[node name="monster3" parent="paths/monster_2" unique_id=2097006686 instance=ExtResource("5_tbgi4")]
+transform = Transform3D(-1.0135676, 0, -0.05387361, 0, 1.0149906, 0, 0.05387401, 0, -1.01356, 122.99977, 5.594618, 137.89143)
+visible = false
 
-[node name="CharacterBody3D" parent="paths/monster_2/PathFollow3D" unique_id=913459675 instance=ExtResource("5_tbgi4")]
-transform = Transform3D(0.049558852, 0, 1.4991812, 0, 1.5, 0, -1.4991812, 0, 0.049558852, 0, 2.9950886, 0)
+[node name="Skeleton3D" parent="paths/monster_2/monster3/rig_001" parent_id_path=PackedInt32Array(2097006686, 182233355) index="0" unique_id=2052903781]
+bones/10/position = Vector3(0.0021823312, 0.0006311501, -0.004174535)
+bones/10/rotation = Quaternion(0.99999166, -2.3419861e-06, 2.3419866e-06, -0.004097462)
+bones/10/scale = Vector3(1, 23.344513, 1)
+bones/11/position = Vector3(-0.0021858548, -0.0015889072, -0.003983562)
+bones/11/rotation = Quaternion(0.99986285, -3.3227902e-06, 3.3227907e-06, -0.016566219)
+bones/11/scale = Vector3(0.99999994, 18.466179, 0.99999994)
+bones/26/rotation = Quaternion(0.99544126, 3.2327775e-06, -8.5927994e-08, 0.09537625)
+bones/26/scale = Vector3(0.98981607, 0.98981583, 0.9898162)
+bones/27/rotation = Quaternion(0.24695659, -3.08557e-13, -7.4661e-13, 0.96902657)
+bones/27/scale = Vector3(0.99808085, 0.99808085, 0.99808085)
+bones/28/rotation = Quaternion(-0.7077224, -0.0002999487, 0.0003022386, 0.70649046)
+bones/28/scale = Vector3(1.0122317, 1.0122315, 1.0122317)
+bones/33/scale = Vector3(1.0122313, 1.0122312, 1.0122311)
+bones/35/scale = Vector3(1.012232, 1.0122317, 1.0122316)
+bones/37/scale = Vector3(1.0102886, 1.0102885, 1.0102884)
+bones/38/scale = Vector3(1.0102888, 1.0102888, 1.0102887)
+bones/40/rotation = Quaternion(0.9542146, 4.7132185e-06, -4.1460362e-07, 0.29912305)
+bones/40/scale = Vector3(1.0157758, 1.0157754, 1.0157757)
+bones/41/rotation = Quaternion(0.013840735, -3.1179052e-13, 1.9840173e-13, 0.9999042)
+bones/41/scale = Vector3(1.0028182, 1.0028181, 1.0028182)
+bones/42/rotation = Quaternion(-0.33567345, -0.000117195705, 4.4888955e-05, 0.9419784)
+bones/42/scale = Vector3(0.9817028, 0.98170274, 0.98170257)
+bones/47/scale = Vector3(0.9817026, 0.98170257, 0.98170245)
+bones/49/scale = Vector3(0.98170286, 0.98170304, 0.98170257)
+bones/51/scale = Vector3(0.9844692, 0.9844692, 0.9844692)
+bones/52/scale = Vector3(0.9844222, 0.984422, 0.98440623)
+bones/62/rotation = Quaternion(-0.5977459, -3.2653988e-06, -3.2832177e-06, 0.8016857)
+bones/63/rotation = Quaternion(-0.11383192, -1.4152976e-08, 1.412377e-06, 0.9935)
+bones/63/scale = Vector3(0.989816, 0.98981625, 0.98981637)
+bones/64/rotation = Quaternion(0.24695656, -3.5998545e-13, -3.7927037e-13, 0.9690266)
+bones/64/scale = Vector3(0.9980808, 0.9980808, 0.99808073)
+bones/65/rotation = Quaternion(0.9954413, 3.056045e-06, -5.021546e-07, 0.0953764)
+bones/67/rotation = Quaternion(0.99544126, 5.0976437e-06, -6.977667e-07, 0.09537625)
+bones/67/scale = Vector3(1.0051314, 0.9898156, 1.0051311)
+bones/69/rotation = Quaternion(0.24696729, 2.961653e-08, -1.8494997e-06, 0.9690238)
+bones/69/scale = Vector3(1.0009611, 0.9946173, 1.00453)
+bones/71/rotation = Quaternion(-0.708136, -0.0003204755, 0.00027623906, 0.70607597)
+bones/71/scale = Vector3(0.9940865, 0.9936483, 1.0123781)
+bones/72/rotation = Quaternion(-0.0001224185, 0.96141005, -0.27511945, -0.0004049921)
+bones/81/rotation = Quaternion(-0.8172722, -4.065725e-06, -4.086611e-06, 0.576252)
+bones/82/rotation = Quaternion(-0.006356395, -5.318321e-08, 1.0570482e-06, 0.9999798)
+bones/82/scale = Vector3(1.0157758, 1.0157758, 1.0157758)
+bones/83/rotation = Quaternion(0.013840737, 5.6689103e-14, -2.5510103e-13, 0.9999043)
+bones/83/scale = Vector3(1.0028181, 1.0028181, 1.0028182)
+bones/84/rotation = Quaternion(0.95421463, 4.499052e-06, -7.415979e-07, 0.29912305)
+bones/86/rotation = Quaternion(0.95421445, 5.9293275e-06, -1.1899534e-06, 0.2991234)
+bones/86/scale = Vector3(0.99220496, 1.0157741, 0.9922047)
+bones/88/rotation = Quaternion(0.013843747, -1.1281352e-05, -2.8598527e-06, 0.9999043)
+bones/88/scale = Vector3(0.9986665, 1.0028346, 0.9986649)
+bones/90/rotation = Quaternion(-0.33518803, -0.00011373089, 4.0019087e-05, 0.9421513)
+bones/90/scale = Vector3(1.0086184, 0.9940898, 0.9977163)
+bones/91/rotation = Quaternion(-3.5725556e-05, 0.9611057, -0.27618083, -0.000116642805)
+bones/189/position = Vector3(4.470348e-10, 0.002671444, 0.0007693309)
+bones/203/position = Vector3(-2.9802322e-10, -0.003422304, 0.00037703276)
 
-[node name="PathFollow3D2" type="PathFollow3D" parent="paths/monster_2" unique_id=2139525484]
-transform = Transform3D(-0.056361556, 0, -0.9984084, 0, 1, 0, 0.9984084, 0, -0.056361556, 166.14542, 0, 92.74136)
-use_model_front = true
+[node name="BoneAttachment3D" parent="paths/monster_2/monster3" index="4" unique_id=505390147]
+transform = Transform3D(10.218937, -97.69011, 174.21893, -13.76355, -174.37657, -96.97114, 199.264, -7.0346785, -15.632493, -1.4751511, 0.36815834, -0.06768799)
 
-[node name="CharacterBody3D" parent="paths/monster_2/PathFollow3D2" unique_id=1631444513 instance=ExtResource("5_tbgi4")]
-transform = Transform3D(0.049558852, 0, 1.4991812, 0, 1.5, 0, -1.4991812, 0, 0.049558852, 0, 2.9950886, 0)
+[node name="monster4" parent="paths/monster_2" unique_id=760364165 instance=ExtResource("5_tbgi4")]
+transform = Transform3D(-1.0061743, 0, -0.13354675, 0, 1.0149906, 0, 0.13354775, 0, -1.0061668, 122.21352, 4.190983, 124.066574)
+visible = false
+
+[node name="Skeleton3D" parent="paths/monster_2/monster4/rig_001" parent_id_path=PackedInt32Array(760364165, 182233355) index="0" unique_id=2052903781]
+bones/10/position = Vector3(0.0021823312, 0.0006311501, -0.004174535)
+bones/10/rotation = Quaternion(0.99999166, -2.3419861e-06, 2.3419866e-06, -0.004097462)
+bones/10/scale = Vector3(1, 23.344513, 1)
+bones/11/position = Vector3(-0.0021858548, -0.0015889072, -0.003983562)
+bones/11/rotation = Quaternion(0.99986285, -3.3227902e-06, 3.3227907e-06, -0.016566219)
+bones/11/scale = Vector3(0.99999994, 18.466179, 0.99999994)
+bones/26/rotation = Quaternion(0.99544126, 3.2327775e-06, -8.5927994e-08, 0.09537625)
+bones/26/scale = Vector3(0.98981607, 0.98981583, 0.9898162)
+bones/27/rotation = Quaternion(0.24695659, -3.08557e-13, -7.4661e-13, 0.96902657)
+bones/27/scale = Vector3(0.99808085, 0.99808085, 0.99808085)
+bones/28/rotation = Quaternion(-0.7077224, -0.0002999487, 0.0003022386, 0.70649046)
+bones/28/scale = Vector3(1.0122317, 1.0122315, 1.0122317)
+bones/33/scale = Vector3(1.0122313, 1.0122312, 1.0122311)
+bones/35/scale = Vector3(1.012232, 1.0122317, 1.0122316)
+bones/37/scale = Vector3(1.0102886, 1.0102885, 1.0102884)
+bones/38/scale = Vector3(1.0102888, 1.0102888, 1.0102887)
+bones/40/rotation = Quaternion(0.9542146, 4.7132185e-06, -4.1460362e-07, 0.29912305)
+bones/40/scale = Vector3(1.0157758, 1.0157754, 1.0157757)
+bones/41/rotation = Quaternion(0.013840735, -3.1179052e-13, 1.9840173e-13, 0.9999042)
+bones/41/scale = Vector3(1.0028182, 1.0028181, 1.0028182)
+bones/42/rotation = Quaternion(-0.33567345, -0.000117195705, 4.4888955e-05, 0.9419784)
+bones/42/scale = Vector3(0.9817028, 0.98170274, 0.98170257)
+bones/47/scale = Vector3(0.9817026, 0.98170257, 0.98170245)
+bones/49/scale = Vector3(0.98170286, 0.98170304, 0.98170257)
+bones/51/scale = Vector3(0.9844692, 0.9844692, 0.9844692)
+bones/52/scale = Vector3(0.9844222, 0.984422, 0.98440623)
+bones/62/rotation = Quaternion(-0.5977459, -3.2653988e-06, -3.2832177e-06, 0.8016857)
+bones/63/rotation = Quaternion(-0.11383192, -1.4152976e-08, 1.412377e-06, 0.9935)
+bones/63/scale = Vector3(0.989816, 0.98981625, 0.98981637)
+bones/64/rotation = Quaternion(0.24695656, -3.5998545e-13, -3.7927037e-13, 0.9690266)
+bones/64/scale = Vector3(0.9980808, 0.9980808, 0.99808073)
+bones/65/rotation = Quaternion(0.9954413, 3.056045e-06, -5.021546e-07, 0.0953764)
+bones/67/rotation = Quaternion(0.99544126, 5.0976437e-06, -6.977667e-07, 0.09537625)
+bones/67/scale = Vector3(1.0051314, 0.9898156, 1.0051311)
+bones/69/rotation = Quaternion(0.24696729, 2.961653e-08, -1.8494997e-06, 0.9690238)
+bones/69/scale = Vector3(1.0009611, 0.9946173, 1.00453)
+bones/71/rotation = Quaternion(-0.708136, -0.0003204755, 0.00027623906, 0.70607597)
+bones/71/scale = Vector3(0.9940865, 0.9936483, 1.0123781)
+bones/72/rotation = Quaternion(-0.0001224185, 0.96141005, -0.27511945, -0.0004049921)
+bones/81/rotation = Quaternion(-0.8172722, -4.065725e-06, -4.086611e-06, 0.576252)
+bones/82/rotation = Quaternion(-0.006356395, -5.318321e-08, 1.0570482e-06, 0.9999798)
+bones/82/scale = Vector3(1.0157758, 1.0157758, 1.0157758)
+bones/83/rotation = Quaternion(0.013840737, 5.6689103e-14, -2.5510103e-13, 0.9999043)
+bones/83/scale = Vector3(1.0028181, 1.0028181, 1.0028182)
+bones/84/rotation = Quaternion(0.95421463, 4.499052e-06, -7.415979e-07, 0.29912305)
+bones/86/rotation = Quaternion(0.95421445, 5.9293275e-06, -1.1899534e-06, 0.2991234)
+bones/86/scale = Vector3(0.99220496, 1.0157741, 0.9922047)
+bones/88/rotation = Quaternion(0.013843747, -1.1281352e-05, -2.8598527e-06, 0.9999043)
+bones/88/scale = Vector3(0.9986665, 1.0028346, 0.9986649)
+bones/90/rotation = Quaternion(-0.33518803, -0.00011373089, 4.0019087e-05, 0.9421513)
+bones/90/scale = Vector3(1.0086184, 0.9940898, 0.9977163)
+bones/91/rotation = Quaternion(-3.5725556e-05, 0.9611057, -0.27618083, -0.000116642805)
+bones/189/position = Vector3(4.470348e-10, 0.002671444, 0.0007693309)
+bones/203/position = Vector3(-2.9802322e-10, -0.003422304, 0.00037703276)
+
+[node name="BoneAttachment3D" parent="paths/monster_2/monster4" index="4" unique_id=505390147]
+transform = Transform3D(10.218933, -97.69011, 174.21893, -13.763552, -174.37659, -96.971146, 199.26405, -7.0346775, -15.6325, -1.4751511, 0.36815834, -0.06768799)
 
 [node name="StaticBody3D" parent="." unique_id=239885512 instance=ExtResource("9_85g3d")]
 transform = Transform3D(2, 0, 0, 0, 1.9829673, -0.26046404, 0, 0.26046404, 1.9829673, -32.491367, 115.96559, -534.7532)
@@ -499,24 +932,24 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 110.169, 27.15394, 147.24681)
 visible = false
 
 [node name="islander" parent="islander" unique_id=659406128 instance=ExtResource("10_choun")]
-transform = Transform3D(1, 0, 0, 0, 0.99912864, -0.04173615, 0, 0.04173615, 0.99912864, 0, 1.0206108, 0)
-collision_layer = 16
+transform = Transform3D(1.57, 0, 0, 0, 1.568632, -0.06552577, 0, 0.06552577, 1.568632, 0, 1.0206108, 0)
 collision_mask = 31
 
 [node name="islander2" parent="islander" unique_id=561222832 instance=ExtResource("10_choun")]
-transform = Transform3D(0.64039123, -0.080122985, 0.76385826, 0, 0.99454385, 0.10432017, -0.7680488, -0.06680572, 0.63689715, 1.1168518, 1.2668781, 3.1306458)
-collision_layer = 16
+transform = Transform3D(1.0054142, -0.1257931, 1.1992575, 0, 1.5614338, 0.16378267, -1.2058368, -0.10488498, 0.99992853, 1.1168518, 1.2668781, 3.1306458)
 collision_mask = 31
 
 [node name="islander3" parent="islander" unique_id=710168399 instance=ExtResource("10_choun")]
-transform = Transform3D(-0.98112094, 0.008071575, 0.19322678, 0, 0.9991287, -0.04173615, -0.19339536, -0.040948205, -0.980266, 11.454685, 0.4500084, -1.9769897)
-collision_layer = 16
+transform = Transform3D(-1.5403599, 0.01267238, 0.3033662, 0, 1.568632, -0.065525755, -0.3036308, -0.06428869, -1.5390177, 11.454685, 0.4500084, -1.9769897)
 collision_mask = 31
 
 [node name="islander4" parent="islander" unique_id=1263701327 instance=ExtResource("10_choun")]
-transform = Transform3D(-0.7768383, 0.06569044, -0.62626445, 2.319487e-09, 0.9945438, 0.10432016, 0.6297002, 0.0810399, -0.7725997, 10.964359, 0.6962757, -5.2645264)
-collision_layer = 16
+transform = Transform3D(-1.2196363, 0.10313398, -0.98323494, 3.6415948e-09, 1.5614338, 0.16378269, 0.98862916, 0.12723269, -1.2129817, 10.964359, 0.6962757, -5.2645264)
 collision_mask = 31
+
+[node name="random" type="AudioStreamPlayer" parent="." unique_id=1049115999 groups=["random"]]
+stream = SubResource("AudioStreamPlaylist_0ld40")
+volume_db = -12.34
 
 [connection signal="body_entered" from="mc_reached_house" to="mc" method="_on_mc_reached_house_body_entered"]
 [connection signal="body_entered" from="reaching_cells" to="mc" method="_on_reaching_cells_body_entered"]
@@ -524,4 +957,7 @@ collision_mask = 31
 [connection signal="body_entered" from="reached_time_machine" to="mc" method="_on_reached_time_machine_body_entered"]
 [connection signal="body_entered" from="time_travel_zone" to="mc" method="_on_time_travel_zone_body_entered"]
 
-[editable path="paths/monster_2/PathFollow3D2/CharacterBody3D"]
+[editable path="paths/monster_1/monster"]
+[editable path="paths/monster_1/monster2"]
+[editable path="paths/monster_2/monster3"]
+[editable path="paths/monster_2/monster4"]

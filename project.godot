@@ -29,6 +29,8 @@ troops_group=""
 soliders=""
 screeching=""
 islanders=""
+monster_paths=""
+random=""
 
 [input]
 

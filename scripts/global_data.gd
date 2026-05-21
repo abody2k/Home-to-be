@@ -17,6 +17,15 @@ enum MISSIONS{
 }
 
 
+var eating = 0
+
+
+func increase_eaters():
+	eating+=1
+	
+	if eating == 4:
+		mission_completed()
+		
 func is_this_mission_over(mission : int):
 	return current_mission > mission
 	
@@ -24,7 +33,7 @@ func is_this_mission_over(mission : int):
 	
 var last_mission_finished : MISSIONS
 
-var current_mission : MISSIONS = MISSIONS.WAKING_UP
+var current_mission : MISSIONS = MISSIONS.FINDING_LOCALS
 
 func mission_completed():
 	print("MISSION IS ACTUALLY DONE and its number is : " + str(current_mission))
@@ -165,11 +174,11 @@ func start_talking_to_locals():
 		["You: What are you suggesting then?",null],
 		["unknown: There is an ancient machine in the caves that can help reverse everything and fix everything. You see, before you did what you did we weren't actually here, but you had to catch him didn't you?",null],
 		["You: What?",null],
-		["unknown: It is not a dream!",null],
+		["unknown: It is not a dream!",func (): mc.ammo = 10],
 		["You: But how? do you..",func (): (get_tree().get_first_node_in_group("screeching") as AudioStreamPlayer3D).play()],
-		["...",null], # screaching sound and monsters come in
-		["unknown: They are here!",null],
-		["You: EVERYONE AIM AND SHOOT THE MONSTERS!",null],
+		["...",func (): get_tree().call_group("monsters","make_visible")], # screaching sound and monsters come in
+		["unknown: They are here!",func (): get_tree().get_first_node_in_group("player").play("prison_mission_start") ],
+		["You: EVERYONE AIM AND SHOOT THE MONSTERS!",func (): get_tree().get_first_node_in_group("random").playing = true],
 		
 	])
 	
@@ -185,8 +194,8 @@ func start_delivering_food_mission():
 		["You: We don't even know you, thanks for the info",null],
 		["unknown : What you are going to find out..",null],
 		["...",null], #everyone shoots the islanders
-		["You: Let's head to the caves while these things are eating, the treasure is porbably there, we will take it then we will head to the boat",null],
-		["Crewmate 1: Sir yes sir!",null],
+		["You: Let's head to the caves while these things are eating, the treasure is porbably there, we will take it then we will head to the boat",func (): get_tree().call_group("soliders","enable_shooting_mode")],
+		["Crewmate 1: Sir yes sir!",func (): mc.ammo = 100],
 		
 		
 	])

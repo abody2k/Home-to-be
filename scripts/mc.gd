@@ -17,6 +17,8 @@ const NORMAL_ARM_OFFSET = 4.0
 
 @export var prison_anchor : Node3D
 
+@export var in_tunnels : Node3D
+
 
 var hunter : CharacterBody3D 
 
@@ -43,7 +45,7 @@ var food_is_there : Area3D
 
 
 
-var ammo = 0:
+var ammo = 10:
 	set(value):
 		ammo = value
 		$CanvasLayer/Control/HBoxContainer/bullets.text = str(value)
@@ -100,10 +102,15 @@ func attack():
 	if mode == MODES.DIALOG:
 		$dialog.next()
 	else:
-		if ammo > 0 and !attacking:	
-			ammo -= 1
-			attacking = true
-			$Timer.start()
+		if !attacking :
+			if ammo > 0:	
+				ammo -= 1
+				attacking = true
+				$Timer.start()
+				if not $shooting.playing:
+					$shooting.play()
+			else:
+				$no_ammo.play()
 
 func chng_color(alpha):
 	var style_box = StyleBoxFlat.new()
@@ -152,7 +159,9 @@ func _ready():
 	#go to the captain
 	$dialog.next()
 
-
+func die():
+	return
+	#$AnimationPlayer.play("islander_death")
 
 func _input(event):
 	
@@ -325,9 +334,9 @@ func _on_reaching_cells_body_entered(body):
 
 
 func _on_mc_reached_caves_body_entered(body):
-	print("WE ENTERED A NEW PLACEEEEEEE 3")
 	if not GlobalData.is_this_mission_over(6):
 		return
+	flash_screen_black(get_inside_home.bind(in_tunnels))
 	GlobalData.mission_completed()
 	GlobalData.start_new_mission()
 	get_parent().get_node("mc_reached_caves").queue_free()

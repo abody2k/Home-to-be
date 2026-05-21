@@ -1,10 +1,10 @@
 extends CharacterBody3D
-enum MODES {SEARCHING, IDLE, EATING, HUNTING}
+enum MODES {SEARCHING, IDLE, EATING, HUNTING, NOTHING}
 
 
 var target : CharacterBody3D
 
-var mode : MODES = MODES.IDLE
+@export var mode : MODES = MODES.NOTHING
 
 var eating = false
 var reached_body = false
@@ -22,6 +22,7 @@ var has_a_target = false
 
 
 func reset_location():
+	return
 	reparent(path)
 	transform.origin = Vector3.ZERO
 
@@ -40,15 +41,19 @@ func _physics_process(delta):
 			return
 			
 		MODES.HUNTING:
+			if attacking:
+				return
+				
 			if player:
-				if player.global_position.distance_to(global_position) < 2:
+				if player.global_position.distance_to(global_position) < 4:
+					#print([attacking,is_down])
 					if not player.is_down:
-						
 						if attacking:
+							print("attackong")
 							return
 						else:
 							attacking = true
-							$AnimationPlayer.play("rig_001|monster_attack")
+							$AnimationPlayer2.play("rig_001|monster_attack")
 						
 						return
 						
@@ -56,20 +61,24 @@ func _physics_process(delta):
 						reached_body = true
 						$AnimationPlayer2.play("monster_get_down_to_eat")
 				else:
+
 					$AnimationPlayer2.play("rig_001|monster_walk")
-					look_at(player.global_position)
-					velocity = basis.z * 5
+					look_at(Vector3(player.global_position.x,global_position.y,player.global_position.z))
+					velocity = -basis.z * 5
+					velocity.y = -10
 					move_and_slide()
 					
 			return
 			#path.progress_ratio+=delta * 0.01
 
 func _on_detector_body_entered(body : CharacterBody3D):
-	
-	if eating or has_a_target or (body.hunter != null):
+	if mode == MODES.NOTHING:
+		return
+	if eating:
 		return
 	has_a_target = true
 	body.hunter = self
+	
 	
 	player = body
 	mode = MODES.HUNTING
@@ -82,16 +91,31 @@ func _on_detector_body_entered(body : CharacterBody3D):
 
 
 func _on_animation_player_2_animation_finished(anim_name):
-	if anim_name == "monster_get_down_to_eat":
+	if anim_name == "rig_001|monster_get_down_to_eat":
+		GlobalData.increase_eaters()
 		$AnimationPlayer2.play("rig_001|eating")
 	elif anim_name == "rig_001|monster_attack":
 		attacking = false
 
 
+func make_visible():
+	visible = true
+	mode = MODES.IDLE
+	$AnimationPlayer2.play("rig_001|monster_walk")
+	
+	
+	
 func _on_area_3d_body_entered(body):
-	if not body  == player or not attacking:
+	if mode == MODES.NOTHING:
+		return
+	if ( (body  != player)) or not attacking:
 		return
 	
 	player.is_down = true
+	attacking = true
+	eating = true
+	player.die()
+	$AnimationPlayer2.play("rig_001|monster_get_down_to_eat")
+	mode = MODES.EATING
 	
 		
