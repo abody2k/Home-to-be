@@ -94,7 +94,7 @@ func _on_detector_body_entered(body : CharacterBody3D):
 
 
 func _on_animation_player_2_animation_finished(anim_name):
-	if anim_name == "monster_get_down_to_eat":
+	if anim_name == "rig_001|monster_get_down_to_eat":
 		$AnimationPlayer2.play("rig_001|eating")
 	elif anim_name == "rig_001|monster_attack":
 		attacking = false
@@ -111,7 +111,7 @@ func _on_area_3d_body_entered(body):
 	player.is_down = true
 	attacking = true
 	eating = true
-	$AnimationPlayer2.play("monster_get_down_to_eat")
+	$AnimationPlayer2.play("rig_001|monster_get_down_to_eat")
 	mode = MODES.EATING
 	
 		
