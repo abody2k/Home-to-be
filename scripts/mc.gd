@@ -104,6 +104,9 @@ func attack():
 			ammo -= 1
 			attacking = true
 			$Timer.start()
+			$shooting.play()
+		else:
+			$no_ammo.play()
 
 func chng_color(alpha):
 	var style_box = StyleBoxFlat.new()

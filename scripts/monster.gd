@@ -100,7 +100,11 @@ func _on_animation_player_2_animation_finished(anim_name):
 		attacking = false
 
 
-
+func make_visible():
+	visible = true
+	
+	
+	
 func _on_area_3d_body_entered(body):
 	print(body)
 	print(player)
