@@ -165,7 +165,7 @@ func start_talking_to_locals():
 		["You: What are you suggesting then?",null],
 		["unknown: There is an ancient machine in the caves that can help reverse everything and fix everything. You see, before you did what you did we weren't actually here, but you had to catch him didn't you?",null],
 		["You: What?",null],
-		["unknown: It is not a dream!",null],
+		["unknown: It is not a dream!",func (): mc.ammo = 10],
 		["You: But how? do you..",func (): (get_tree().get_first_node_in_group("screeching") as AudioStreamPlayer3D).play()],
 		["...",func (): get_tree().get_first_node_in_group("monster_paths").visible = true], # screaching sound and monsters come in
 		["unknown: They are here!",func (): get_tree().get_first_node_in_group("player").play("prison_mission_start") ],
@@ -186,7 +186,7 @@ func start_delivering_food_mission():
 		["unknown : What you are going to find out..",null],
 		["...",null], #everyone shoots the islanders
 		["You: Let's head to the caves while these things are eating, the treasure is porbably there, we will take it then we will head to the boat",null],
-		["Crewmate 1: Sir yes sir!",null],
+		["Crewmate 1: Sir yes sir!",func (): mc.ammo = 100],
 		
 		
 	])
