@@ -17366,6 +17366,7 @@ _data = {
 radius = 0.0058090724
 
 [node name="monster" type="CharacterBody3D" unique_id=1281038519 groups=["monsters"]]
+collision_layer = 128
 collision_mask = 255
 script = ExtResource("1_jlss8")
 

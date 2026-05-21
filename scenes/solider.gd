@@ -5,6 +5,12 @@ var player : CharacterBody3D
 var hunter : CharacterBody3D 
 var is_down = false
 
+var shooting_mode = false
+
+
+func enable_shooting_mode():
+	shooting_mode = true
+	$detector.monitoring = true
 
 func die():
 	$AnimationPlayer.play("rig_004|islander_death")
@@ -35,3 +41,8 @@ func _physics_process(delta):
 			$AnimationPlayer.stop()
 			
 		
+
+
+func _on_detector_body_entered(body):
+	look_at(Vector3(body.global_position.x,global_position.y,body.global_position.z))
+	$shooting.play()

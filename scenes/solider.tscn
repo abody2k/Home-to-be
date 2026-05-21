@@ -15648,9 +15648,12 @@ _data = {
 &"solider_walking": SubResource("Animation_wo6kb")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_cwp3t"]
+radius = 2.716427
+
 [node name="solider" type="CharacterBody3D" unique_id=570714499 groups=["soliders"]]
 collision_layer = 4
-collision_mask = 7
+collision_mask = 255
 script = ExtResource("1_tkvbb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=903138516]
@@ -17715,3 +17718,13 @@ stream = ExtResource("4_cwp3t")
 
 [node name="shooting" type="AudioStreamPlayer3D" parent="." unique_id=811688901]
 stream = ExtResource("5_ku2jq")
+
+[node name="detector" type="Area3D" parent="." unique_id=1320453670]
+collision_mask = 96
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="detector" unique_id=377358338]
+shape = SubResource("SphereShape3D_cwp3t")
+
+[connection signal="body_entered" from="detector" to="." method="_on_detector_body_entered"]
